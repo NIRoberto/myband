@@ -1,0 +1,715 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+/*-------nav-bar -------*/
+
+.nav {
+  background-color: white;
+  height: 66px;
+  box-shadow: 0px 0.1px 3px rgba(0, 0, 0, 0.5);
+  font-family: "Roboto", sans-serif;
+}
+.nav .logo {
+  float: left;
+  text-align: center;
+  display: flex;
+  font-family: "Lobster", cursive;
+  margin-left: 3em;
+  font-size: small;
+}
+.nav .logo > h1 {
+  text-align: center;
+}
+.nav-list {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding: 5px 0 0;
+  margin-right: 3rem;
+}
+.nav-ilist {
+  text-decoration: none;
+  padding: 2px 12px;
+  margin: 0px;
+  /* padding: 0px; */
+  text-align: center;
+  /* border: 1px solid red; */
+  float: left;
+}
+
+.nav-link {
+  padding: 1rem;
+  font-size: 15px;
+  color: #444;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.active {
+  color: rgb(12, 90, 236);
+}
+.nav .nav-list .nav-ilist .nav-link:hover {
+  color: rgb(17, 98, 219);
+  transition: 0.3s;
+}
+.nav .menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+#check {
+  display: none;
+}
+/*-------------end of navbar ------------------*/
+/*  media query for nav bar */
+@media (max-width: 700px) {
+  .nav {
+    position: relative;
+  }
+  .nav-ilist {
+    text-decoration: none;
+    padding: 2px 12px;
+    margin: 0px;
+    text-align: center;
+  }
+  /* .nav-link {
+      left: 100%;
+    } */
+
+  .nav-list {
+    width: 100%;
+    margin-top: 0;
+    float: left;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    background: whitesmoke;
+    /* transform: translateX(100%); */
+    /* left: -100%; */
+    transition: 0.6s ease-in;
+  }
+  #check:checked ~ ul {
+    left: 0%;
+  }
+  .showing {
+    transform: translateX(0%);
+  }
+  .nav-link {
+    padding: 12px 10px;
+    width: 100%;
+    /* border: 1px solid red; */
+    float: left;
+  }
+  .nav .menu-icon {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    display: block;
+    font-size: 1.5rem;
+  }
+}
+
+/*  media query for nav bar */
+/* intro section  */
+
+.intro-section {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  padding: 5rem 5rem 0 0rem;
+
+  width: 100%;
+  height: 100%;
+}
+.intro-1 {
+  padding-left: 14rem;
+}
+.intro-1 img {
+  width: 20rem;
+  height: 20rem;
+
+  border-radius: 100rem;
+}
+
+.intro-2 {
+  height: 100%;
+  padding: 8rem 0 0 0rem;
+}
+
+.intro-2 #p {
+  font-size: large;
+  padding-left: 5rem;
+  color: #444;
+  font-family: "Roboto", sans-serif;
+}
+#p1 {
+  font-size: 2em;
+  padding-left: 5rem;
+  font-family: "Roboto", sans-serif;
+  color: #444;
+}
+.intro-2 #p2 {
+  /* font-size: large; */
+  padding-left: 5rem;
+  /* font-family: "Roboto", sans-serif; */
+  color: #444;
+}
+.intro-3 {
+  margin-left: 5rem;
+  margin-top: 7rem;
+  background: white;
+  width: 70rem;
+  height: 10rem;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  font-family: "Roboto", sans-serif;
+  grid-column-gap: 1em;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+
+  box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.2);
+}
+#profile img {
+  width: 8rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 100rem;
+  height: 8em;
+}
+
+/*  end of intro to my self intro section  * /
+  
+  /* servise that i can offer  */
+.servise-offers-text {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+#about-me p {
+  font-size: 15px;
+  padding-right: 1rem;
+  color: #444;
+}
+#about-me h4 {
+  text-align: center;
+  color: #444;
+}
+
+.servise-offers-text p {
+  text-align: center;
+}
+
+/* my skills in web development */
+.skills h1 {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: #444;
+}
+.skills-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 27% 27% 27%);
+  grid-template-rows: repeat(1, auto);
+  justify-content: center;
+  align-content: center;
+  grid-gap: 1rem 1rem;
+}
+.skills-item {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.2);
+}
+.skills-item .p,
+.h3 {
+  padding: 5px 2em;
+
+  font-family: "Roboto", sans-serif;
+  color: #444;
+}
+.skills-item i {
+  font-size: 5rem;
+  padding-left: 1.7em;
+  margin-top: 0.5em;
+  color: rgb(10, 10, 10);
+}
+
+/* servise that i can offers */
+
+.servise {
+  font-family: "Roboto", sans-serif;
+}
+.servie-card {
+  display: flex;
+  flex-flow: wrap;
+
+  width: 100%;
+  padding: 1rem;
+}
+h1 {
+  color: #444;
+}
+.card1 {
+  background: white;
+  display: block;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  flex-basis: 30%;
+  width: 100%;
+}
+.img {
+  flex-basis: 50%;
+}
+.img img {
+  /* width: 100%; */
+  object-fit: cover;
+  height: 100%;
+}
+.text-info {
+  flex-basis: 50%;
+}
+
+.card1:hover {
+  box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2),
+    0 6px 20px 6px rgba(0, 0, 0, 0.19);
+}
+.card1 img {
+  width: 100%;
+}
+.card1 #p,
+#h3 {
+  padding-left: 1em;
+  color: #444;
+}
+#title {
+  text-align: center;
+  color: white;
+}
+#titles {
+  color: white;
+  margin-left: 2.9rem;
+  color: white;
+}
+ul {
+  list-style: none;
+}
+.contact-me,
+.contact-me-s {
+  display: flex;
+  height: 300px;
+  width: 100%;
+  background-color: grey;
+  color: grey;
+  list-style: none;
+  z-index: 1;
+}
+.contact-me .contact-me-s .contact-me-s1 {
+  flex: 2;
+
+  justify-content: center;
+  align-content: center;
+}
+.location {
+  padding-left: 8rem;
+}
+.location #social {
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+#social li a {
+  color: white;
+}
+#social li {
+  color: white;
+}
+#link li {
+  color: white;
+
+  padding: 5px 5px;
+}
+#social li {
+  color: white;
+
+  display: inline-block;
+  font-size: 1.3em;
+  padding: 1rem 1rem;
+}
+.contact {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-content: space-evenly;
+}
+input[type="email"] {
+  height: 1.7rem;
+  width: 15rem;
+  color: grey;
+  background: rgb(255, 249, 249);
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 12px;
+}
+
+textarea {
+  height: 5rem;
+  width: 15rem;
+  color: grey;
+  background: rgb(247, 245, 245);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  color: black;
+}
+#button {
+  background: rgb(114, 97, 3);
+  padding: 5px 8px;
+  color: rgb(243, 250, 249);
+  text-decoration: none;
+  border-radius: 5px;
+}
+#footer {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(212, 211, 211);
+}
+#footer p {
+  font-size: smaller;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .intro-section {
+    display: grid;
+    grid-template-columns: repeat(1, 50%);
+    grid-template-rows: repeat(1, 50%);
+    justify-content: center;
+  }
+  .intro-1 img {
+    width: auto;
+    height: 50%;
+    display: none;
+  }
+  .location {
+    margin-right: 5rem;
+    padding-right: 5rem;
+  }
+
+  .intro-2 #p {
+    font-size: smaller;
+    padding-left: 5rem;
+  }
+  #p1 {
+    font-size: 1em;
+    padding-left: 5rem;
+  }
+  .intro-2 #p2 {
+    font-size: small;
+    padding-left: 5rem;
+    font-weight: normal;
+  }
+  .intro-3 {
+    background: white;
+    width: 15rem;
+    margin-left: 5em;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 50%);
+
+    justify-content: center;
+    border-radius: 1rem;
+
+    box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.2);
+  }
+  #about-me p {
+    font-size: small;
+    padding-right: 0rem;
+  }
+  .skills-content {
+    display: grid;
+    grid-template-columns: repeat(1, 60%);
+    grid-template-rows: repeat(1, auto);
+    grid-gap: 1rem 1rem;
+    padding-left: 2em;
+  }
+  .skills-item i {
+    font-size: 4rem;
+    padding-left: 1em;
+  }
+  .servise-offers-text p {
+    text-align: center;
+    font-size: small;
+  }
+  .servie-card {
+    display: grid;
+    grid-template-columns: repeat(1, 30%);
+    grid-row-gap: 1em;
+    margin-right: 13em;
+  }
+  .contact-me,
+  .contact-me-s {
+    height: 600px;
+    flex-direction: column;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .intro-section {
+    display: grid;
+    grid-template-columns: repeat(1, 50%);
+    grid-template-rows: repeat(1, 50%);
+    justify-content: center;
+  }
+  .intro-1 img {
+    width: auto;
+    height: 50%;
+  }
+
+  .intro-2 #p {
+    font-size: smaller;
+    padding-left: 5rem;
+  }
+  #p1 {
+    font-size: 1em;
+    padding-left: 5rem;
+  }
+  .intro-2 #p2 {
+    font-size: small;
+    padding-left: 5rem;
+    font-weight: normal;
+  }
+  .intro-3 {
+    background: white;
+    width: 15rem;
+    margin-left: 10em;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 50%);
+
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.2);
+  }
+  #about-me p {
+    font-size: small;
+    padding-right: 0rem;
+  }
+  .skills-content {
+    display: grid;
+    grid-template-columns: repeat(1, 40%);
+    grid-template-rows: repeat(1, auto);
+    grid-gap: 1rem 1rem;
+  }
+  .skills-item i {
+    font-size: 4rem;
+    padding-left: 1em;
+  }
+  .servise-offers-text p {
+    text-align: center;
+    font-size: small;
+  }
+  .servie-card {
+    display: grid;
+    grid-template-columns: repeat(1, 30%);
+    grid-row-gap: 1em;
+    margin-right: 17em;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .intro-1 img {
+    width: 20rem;
+    height: 20rem;
+
+    border-radius: 100rem;
+  }
+  .intro-2 {
+    height: 100%;
+    padding: 8rem 0 0 0rem;
+  }
+
+  .intro-2 #p {
+    font-size: large;
+    padding-left: 5rem;
+
+    font-family: "Roboto", sans-serif;
+  }
+  #p1 {
+    font-size: 2em;
+    padding-left: 5rem;
+    font-family: "Roboto", sans-serif;
+  }
+  .intro-2 #p2 {
+    font-size: large;
+    padding-left: 5rem;
+    font-family: "Roboto", sans-serif;
+  }
+  .contact-me,
+  .contact-me-s {
+    display: flex;
+    height: 300px;
+    width: 100%;
+    background-color: grey;
+    color: grey;
+    list-style: none;
+  }
+  .contact-me .contact-me-s .contact-me-s1 {
+    flex: 1;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .servise {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr 2fr);
+    font-family: "Roboto", sans-serif;
+    display: block;
+  }
+  .servie-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30%);
+    padding-left: 5em;
+    grid-column-gap: 2em;
+  }
+  .skills-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 27% 27% 27%);
+    grid-template-rows: repeat(1, auto);
+    justify-content: center;
+    align-content: center;
+    grid-gap: 1rem 1rem;
+  }
+  .intro-3 {
+    width: 40rem;
+    height: 10rem;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+  .intro-1 img {
+    width: 20rem;
+    height: 20rem;
+
+    border-radius: 100rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .intro-1 img {
+    width: 20rem;
+    height: 20rem;
+
+    border-radius: 100rem;
+  }
+  .intro-section {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    padding: 5rem 5rem 0 0rem;
+
+    width: 100%;
+    height: 100%;
+  }
+  .intro-2 {
+    height: 100%;
+    padding: 8rem 0 0 0rem;
+  }
+
+  .intro-2 #p {
+    /* font-size: large; */
+    padding-left: 5rem;
+    font-family: "Roboto", sans-serif;
+  }
+  #p1 {
+    font-size: 2em;
+    padding-left: 5rem;
+    font-family: "Roboto", sans-serif;
+  }
+  .intro-2 #p2 {
+    /* font-size: large; */
+    padding-left: 5rem;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .intro-3 {
+    margin-left: 5rem;
+    margin-top: 7rem;
+    background: white;
+    width: 50rem;
+
+    height: 10rem;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    font-family: "Roboto", sans-serif;
+    grid-column-gap: 1em;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    justify-items: center;
+    grid-auto-rows: minmax(100, auto);
+    box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.2);
+    position: relative;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .intro-1 img {
+    width: 20rem;
+    height: 20rem;
+
+    border-radius: 100rem;
+  }
+  .intro-2 {
+    height: 100%;
+    padding: 8rem 0 0 0rem;
+  }
+
+  .intro-2 #p {
+    font-size: large;
+    padding-left: 5rem;
+
+    font-family: "Roboto", sans-serif;
+  }
+  #p1 {
+    font-size: 2em;
+    padding-left: 5rem;
+    font-family: "Roboto", sans-serif;
+  }
+  .intro-2 #p2 {
+    font-size: large;
+    padding-left: 5rem;
+    font-family: "Roboto", sans-serif;
+  }
+  .intro-section {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    padding: 5rem 5rem 0 0rem;
+
+    width: 100%;
+    height: 100%;
+  }
+  .intro-3 {
+    width: 70rem;
+
+    height: 10rem;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+  .contact-me,
+  .contact-me-s {
+    display: flex;
+    height: 300px;
+    width: 100%;
+    background-color: grey;
+    color: grey;
+    list-style: none;
+    z-index: 1;
+  }
+  .contact-me .contact-me-s .contact-me-s1 {
+    flex: 2;
+    justify-content: center;
+    align-content: center;
+  }
+}
