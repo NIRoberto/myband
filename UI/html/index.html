@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+       <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <!-- css file-->
+    <link rel="stylesheet" href="/UI/css/main.css">
+    <!--end of css file-->
+    <!--font awasome -->
+    <script src="https://kit.fontawesome.com/9b2e6ce5e3.js" crossorigin="anonymous"></script>
+    <!--end of font awasome -->
+<!--google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <!--end of google font-->
+</head> 
+<body>
+    <!--nav bar -->
+    <header class="nav">
+        <div class="nav-main">
+        <div class="nav-section">
+            <div class="logo">
+                <h1>Robert</h1>
+                 </div>
+                 <div >
+                     <input type="checkbox"  id="check">
+                 <i class="fas fa-bars menu-icon"></i></div>
+                 <label for="check"> 
+                     </label>
+                <ul class="nav-list">
+                   
+                    <li class="nav-ilist"><a href="/UI/html/index.html" class="nav-link active" >home</a></li>
+                    <li class="nav-ilist"><a href="/UI/html/portfolio.html" target="_blank" class="nav-link">portfolio</a></li>
+                    <li class="nav-ilist"><a href="/UI/html/blog.html" class="nav-link" target="_blank">blog </a></li>
+                    <li class="nav-ilist"><a href="/UI/html/loginpage.html" target="_blank" class="nav-link">login</a></li>
+                    <li class="nav-ilist"><a href="/UI/html/register.html"  target="_blank" class="nav-link">signup</a></li>
+                </ul>
+            </div>
+            
+          </div>
+    </header>
+<!---end of nav bar -->
+<!--start the section -->
+<div class="landing-page">
+    <div class="landing-content">
+        <span class="p1">Hello,</span><br>
+        <span class="p2">I'm Robert NIYITANGA</span><br>
+        <span class="P3">Junior full stack web developer</span><br>
+        <a class="portfolio" href="/UI/html/portfolio.html">View my portfolio</a>
+    </div><br>
+    <div class="landing-contents">
+        <img src="/UI/img/undraw_programming_2svr.svg" alt="developer on coding">
+    </div>
+</div>
+
+<!-- end of section start the section -->
+
+<!--About me page -->
+<div class="about-me">
+    <div class="about-content">
+        <img src="/UI/img/ROBERT.jpg" alt="">
+    </div>
+    <div class="about-content">
+        <h1 class="about-title">  About me</h1>
+        <p>I as I stated above my name is Robert NIYITANGA ,I finish my secondary in 2019 in the field of MPC(Mathematics-Physics-Computer),I start the career of web development in 2020 ,where I  start by building sample project but now I can also build larger project.I had </p>
+        <p>  <span id="one">1</span> year of experience </p>
+        
+    </div>
+</div><br><br><br><br>
+<!-- end of about me pages-->
+
+<section class="contact">
+
+<div class="contact-page">
+<div class="contact-content">
+    <h1 id="title"> Messsage me </h1>
+<form  class="form" onsubmit="return valid()">
+ <input type="text" placeholder="Enter full name..." id="name" name="fname" >
+ <span id="m1"></span><br>
+<input type="email" value="" placeholder="Enter your email...." name="email" id="email" required >
+<span id="m2"></span><br>
+
+<input type="text" value="" placeholder="Subject" id="subject" name="subject" >
+<span id="m3"></span><br>
+
+<textarea name="message" id="message" cols="52" rows="15">Type your message here...</textarea>
+<span id="m4"></span><br>
+
+<button type="submit">Send</button>
+    </form>
+</div>
+<div class="contact-content">
+    <h1 id="titles">contact me</h1>
+    <ul id="link">
+      <li>
+        <i class="fas fa-map-marker-alt"></i>
+        Rwanda, Huye
+      </li><br>
+      <li>
+        <i class="fas fa-phone-square-alt"></i
+        >+250787491277
+      </li><br>
+      <li><i class="fas fa-envelope"></i>robertwilly668@gmail.com</li><br>
+    </ul>
+ 
+  <ul id="social">
+    <li>
+      <a
+        href="https://free.facebook.com/roberto.will.906?ref_component=mfreebasic_home_header&ref_page=MFriendsCenterMBasicController"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+    </li>
+    <li>
+      <a href="https://github.com/NIRoberto/"
+        ><i class="fab fa-github"></i
+      ></a>
+    </li>
+    <li>
+      <a href="https://twitter.com/RobertNiyitanga"
+        ><i class="fab fa-twitter"></i
+      ></a>
+    </li>
+    <li>
+      <a
+        href="https://www.youtube.com/channel/UC4FwAAnpXrzSxXpXXBQyldw"
+        ><i class="fab fa-youtube"></i
+      ></a>
+    </li>
+  </ul>
+</div>
+       
+
+</div>
+</section>
+
+<footer>
+    <p>&copy;copyright by Robert NIYITANGA</p>
+</footer>
+</body>
+</html>
