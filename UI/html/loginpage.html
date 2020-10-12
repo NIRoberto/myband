@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--css file-->
+    <link rel="stylesheet" href="/UI/css/loginpage.css" />
+    <!-- end  of css file-->
+    <!---google font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!---end of google font-->
+    <title>login</title>
+  </head>
+  <body>
+    <!--nav bar -->
+    <header class="nav">
+      <div class="nav-main">
+      <div class="nav-section">
+          <div class="logo">
+              <h1>Robert</h1>
+               </div>
+              <div class="burger">
+                <div class="l1"></div>
+                <div class="l2"></div>
+                <div class="l2"></div>
+              </div>
+                
+              <ul class="nav-list">
+                 
+                  <li class="nav-ilist"><a href="/UI/html/index.html" class="nav-link" >home</a></li>
+                  <li class="nav-ilist"><a href="/UI/html/portfolio.html" target="_blank" class="nav-link">portfolio</a></li>
+                  <li class="nav-ilist"><a href="/UI/html/blog.html" class="nav-link" target="_blank">blog </a></li>
+                  <li class="nav-ilist"><a href="/UI/html/loginpage.html" target="_blank" class="nav-link  active">login</a></li>
+                  <li class="nav-ilist"><a href="/UI/html/register.html"  target="_blank" class="nav-link">signup</a></li>
+              </ul>
+          </div>
+          
+        </div>
+  </header>
+<!---end of nav bar -->
+    <div class="loginpage">
+      <form id="formm" onsubmit="return loginvalidation()">
+        <h1 class="ll">Login here</h1>
+        <div id="log-ele">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            id="email"
+          />
+          <span id="spaceemail"></span><br />
+          <span id="invalidemail"></span><br />
+        </div>
+        <div id="log-ele">
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            id="password"
+            min="6"
+            max="8"
+          />
+          <span id="spacedpass"></span><br />
+          <span id="char"></span><br />
+        </div>
+        <div class="log">
+          <div>
+            <h2></h2>
+          </div>
+          <div>
+            <button type="submit">login</button>
+            <a class="dd" href="/UI/html/register.html">Create account</a>
+          </div>
+        </div>
+      </form>
+    </div>
+<script src="/UI/js/index.js"></script>
+    <script src="/UI/js/nav.js"></script>
+  </body>
+</html>
