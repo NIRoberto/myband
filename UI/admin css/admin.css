@@ -14,6 +14,7 @@ h3 {
   font-family: "Roboto", sans-serif;
   color: whitesmoke;
 }
+
 .dash-card {
   color: black;
   margin: 3em 3em;
@@ -422,6 +423,7 @@ th,
   text-align: center;
   color: red;
 }
+
 #update:hover {
   /* background-color: rgb(5, 92, 5); */
   color: green;
