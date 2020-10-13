@@ -6,6 +6,8 @@
       <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-storage.js"></script>
+
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <!-- fontawasome -->
@@ -28,37 +30,43 @@
           <h3><i class="fas fa-users-cog"></i>Robert</h3>
         </div>
         <div class="link-item">
-          <h3><i class="fas fa-user-shield"></i></i>Dashboard</h3>
-          <a href="/UI/admin post/dashboard.html" >Dashboard</a>
-       
-
+          <h3><i class="fas fa-home"></i>Dashboard</h3>
+          <a href="/UI/admin post/dashboard.html " class="active" >Dashboard</a>
 
           <a href="/UI/admin post/index.html" >Profile information</a>
         </div>
         <div class="link-item">
-          <h3>User information</h3>
+          <h3><i class="fas fa-users-cog"></i>User information</h3>
           <a href="/UI/admin post/users/all.html">All users</a>
           <a href="/UI/admin post/users/create.html">Add  Users</a>
         </div>
         <div class="link-item">
-          <h3>Post</h3>
+          <h3><i class="fas fa-envelope-open-text"></i>Post</h3>
           <a href="/UI/admin post/post/all.html">All post</a>
-          <a href="/UI/admin post/post/create.html" class="active">Add new post</a>
+          <a href="/UI/admin post/post/create.html" >Add new post</a>
           <a href="/UI/admin post/post/update.html">Update post</a>
 
         </div>
         <div class="link-item">
-          <h3>Questions</h3>
+          <h3><i class="fas fa-question-circle"></i>Questions</h3>
           <a href="/UI/admin post/queries/all.html">All question</a>
         </div>
       </div>
       <div class="content-wrapper">
         <div class="nav">
-          <i class="fas fa-bell"></i>
-          <i class="fas fa-envelope-open-text"></i>
+        
+         
+          <ul class="admin-list">
+            <li class="admin-link"><a href="/UI/html/index.html">Home</a></li>
+            <li class="admin-link"> <i class="fas fa-bell i"></i></li>
+            <li class="admin-link">
+              <i class="fas fa-envelope-open-text i"></i>
+            </li>
+          </ul>
         </div>
+        <h1>Add new post </h1>
+
         <div class="add-new-post">
-          <h1>Add new post </h1>
           <form action="#" id="form">
               Title
               <input type="text" id="title" name="title" placeholder="enter title ...">
@@ -68,12 +76,12 @@
               Body
              <textarea name="body" id="textarea" cols="30" rows="9">enter full blog post here...</textarea>
                Image 
-              <input type="file" id="file"  name="file" placeholder="image"><br>
-
-               <button type="submit">Add user</button>
-
-          </form>
-
+              
+              <div class="btn-file">
+               <button type="submit">Add post</button><br>
+             </form>
+          <input type="file" id="file"  name="file" >
+        </div>
         </div>
         <div class="footer"><p>&copy;copyright by Robert </p> </div>
       </div>
@@ -98,7 +106,9 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   var db = firebase.firestore();
+  
+
 </script>
-<script src="/UI/js/index.js"></script>
+<script src="/UI/js/post.js"></script>
   </body>
 </html>
