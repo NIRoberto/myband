@@ -80,10 +80,10 @@
 <div class="contact-page">
 <div class="contact-content">
     <h1 id="title"> Messsage me </h1>
-<form  class="form" onsubmit="return valid()">
+<form  class="form" onsubmit="return contact()">
  <input type="text" placeholder="Enter full name..." id="name" name="fname" >
  <span id="m1"></span><br>
-<input type="email" value="" placeholder="Enter your email...." name="email" id="email" required >
+<input type="email" value="" placeholder="Enter your email...." name="email" id="email"  >
 <span id="m2"></span><br>
 
 <input type="text" value="" placeholder="Subject" id="subject" name="subject" >
@@ -142,5 +142,29 @@
 <footer>
     <p>&copy;copyright by Robert NIYITANGA</p>
 </footer>
+
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBTD8mvWiUv3sN10vpmhd7SOeC8-npKaV4",
+    authDomain: "blog-5686d.firebaseapp.com",
+    databaseURL: "https://blog-5686d.firebaseio.com",
+    projectId: "blog-5686d",
+    storageBucket: "blog-5686d.appspot.com",
+    messagingSenderId: "901218445844",
+    appId: "1:901218445844:web:60c0867d6506139b84d501",
+    measurementId: "G-D9FQWJR2PW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db =firebase.firestore();
+</script>
+<script src="/UI/js/contact.js"></script>
+
+<script src="/UI/js/questions.js"></script>
 </body>
 </html>
