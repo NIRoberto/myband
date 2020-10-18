@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawasome -->
+    <script
+      src="https://kit.fontawesome.com/dc095f94cf.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--  end of fontawasome -->
+
+    <!-- custom file  -->
+    <link rel="stylesheet" href="/UI//admin css/admin.css" />
+    <!-- end of  custom file  -->
+    <title>users</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="admin">
+         <div class="burger">
+           <div class="l1"></div>
+           <div class="l2"></div>
+           <div class="l3"></div>
+         </div>
+    </div>
+   </div>
+    <div class="wrapper">
+      <div class="link-wrapper">
+    
+        <div class="link-item">
+          <h3><i class="fas fa-home"></i>Dashboard</h3>
+        
+
+          <a href="/UI/admin post/index.html" >Profile information</a>
+        </div>
+        <div class="link-item">
+          <h3><i class="fas fa-users-cog"></i>User information</h3>
+          <a href="/UI/admin post/users/all.html"class="active">All users</a>
+          <a href="/UI/admin post/users/create.html">Add  Users</a>
+        </div>
+        <div class="link-item">
+          <h3><i class="fas fa-envelope-open-text"></i>Post</h3>
+          <a href="/UI/admin post/post/all.html">All post</a>
+          <a href="/UI/admin post/post/create.html" >Add new post</a>
+          <a href="/UI/admin post/post/update.html">Update post</a>
+
+        </div>
+        <div class="link-item">
+          <h3><i class="fas fa-question-circle"></i>Questions</h3>
+          <a href="/UI/admin post/queries/all.html">All question</a>
+          <a href="#" class="logout">Logout</a>
+        </div>
+      </div>
+      <div class="content-wrapper">
+       
+        <h1> All users</h1>
+        <div class="all-users-table">
+          
+            <div id="table">
+            <table class="users-table" >
+                <tr class="row">
+                    <th>Full name</th>
+                    <th>email</th>
+                    <th colspan="2" class="th">action</th>
+               
+                </tr>
+                <tr class="row">
+                    <td class="td">Robert NIYITANGA</td>
+                    <td class="td">robz@gmail.com</td>
+                    <td id="update"> <a href="update" id="update">update</a></td>
+                    <td id="delete"><a href="" id="delete">delete</a><td>
+                </tr>
+                <tr class="row">
+                    <td class="td">dev ed</td>
+                    <td class="td">dev@gmail.com</td>
+                    <td id="update"> <a href="update" id="update">update</a></td>
+                    <td id="delete"><a href="" id="delete">delete</a><td>
+                </tr>
+                <tr class="row">
+                    <td class="td">william </td>
+                    <td class="td">willy@gmail.com</td>
+                    <td id="update"> <a href="update" id="update">update</a></td>
+                    <td id="delete"><a href="" id="delete">delete</a><td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+    </div>
+<script src="/UI/js/adminrespo.js"></script>
+
+  </body>
+</html>
