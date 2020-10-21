@@ -52,10 +52,10 @@ body {
   text-transform: capitalize;
 }
 .active {
-  color: #1187ee;
+  color: rgb(12, 90, 236);
 }
 .nav .nav-list .nav-ilist .nav-link:hover {
-  color: #1187ee;
+  color: rgb(17, 98, 219);
   transition: 0.3s;
 }
 .burger div {
@@ -76,7 +76,6 @@ body {
 @media (max-width: 700px) {
   .nav {
     position: relative;
-    /* overflow-x: hidden; */
   }
   .burger {
     display: block;
@@ -95,18 +94,18 @@ body {
     margin-right: 0px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: whitesmoke;
-    transform: translateX(0%);
+    background: white;
+    display: none;
 
     transition: 0.6s ease-in;
   }
   .nav-active {
-    transform: translateX(0%);
+    display: flex;
+    flex-direction: column;
   }
   .nav-link {
     padding: 12px 10px;
-    width: 10%;
+    width: 100%;
     /* border: 1px solid red; */
     float: left;
   }
