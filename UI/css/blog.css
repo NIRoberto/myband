@@ -1,3 +1,5 @@
+/** @format */
+
 * {
   box-sizing: border-box;
 }
@@ -75,7 +77,7 @@ body {
 /*  media query for nav bar */
 @media (max-width: 700px) {
   .nav {
-    position: relative;
+    width: 100%;
   }
   .burger {
     display: block;
@@ -125,7 +127,6 @@ body {
 }
 .blog-section .p {
   padding-left: 4.5em;
-
   color: #1187ee;
 }
 .blog-section .i {
@@ -234,6 +235,14 @@ h3 {
     color: whITE;
     padding: 4px 10px;
   }
+  .blog-section h1 {
+    padding-left: 1em;
+    color: #444;
+  }
+  .blog-section .p {
+    padding-left: 2.5em;
+    color: #1187ee;
+  }
   .pagination a {
     color: black;
     float: left;
@@ -258,7 +267,7 @@ h3 {
 
     width: 69%;
     height: auto;
-    margin-left: 4em;
+    margin-left: 2em;
   }
   .blog-img img {
     width: 100%;
@@ -270,7 +279,7 @@ h3 {
     /* border-bottom: 1px solid grey; */
   }
   .button {
-    padding: 0.1em 0 0 5rem;
+    padding: 0.1em 0 0 1rem;
   }
   .button a {
     padding: 6px 12px;
@@ -472,7 +481,12 @@ textarea {
     flex-direction: column-reverse;
   }
   .location {
-    padding-left: 2rem;
+    padding-left: 0rem;
+  }
+  .location i {
+    color: black;
+    font-size: 1em;
+    margin: 0 4px;
   }
 }
 
