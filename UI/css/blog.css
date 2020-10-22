@@ -40,9 +40,7 @@ body {
   text-decoration: none;
   padding: 2px 12px;
   margin: 0px;
-  /* padding: 0px; */
   text-align: center;
-  /* border: 1px solid red; */
   float: left;
 }
 
@@ -62,7 +60,7 @@ body {
 }
 .burger div {
   width: 25px;
-  height: 5px;
+  height: 2px;
   background: #000;
   margin: 5px;
 }
@@ -75,6 +73,101 @@ body {
 }
 /*-------------end of navbar ------------------*/
 /*  media query for nav bar */
+@media (max-width: 240px) {
+  .nav {
+    width: 100%;
+  }
+  .burger {
+    display: block;
+    transition: 0.5s;
+  }
+  .nav-ilist {
+    text-decoration: none;
+    padding: 2px 12px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .nav-list {
+    width: 100%;
+    margin-top: 0;
+    float: left;
+    margin-right: 0px;
+    display: none;
+    transition: 0.6s ease-in;
+    position: relative;
+  }
+  .nav-active {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-link {
+    padding: 12px 10px;
+    width: 100%;
+    float: left;
+  }
+  .toggle .l1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    transition: 0.7s;
+  }
+  .toggle .l2 {
+    opacity: 0;
+  }
+  .toggle .l3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    transition: 0.7s;
+  }
+}
+@media (max-width: 500px) {
+  .nav {
+    width: 100%;
+  }
+  .burger {
+    display: block;
+    transition: 0.5s;
+  }
+  .nav-ilist {
+    text-decoration: none;
+    padding: 2px 12px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .nav-list {
+    width: 100%;
+    margin-top: 0;
+    float: left;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    display: none;
+    transition: 0.6s ease-in;
+  }
+  .nav-active {
+    display: flex;
+    flex-direction: column;
+    transition: 0.6s ease-in;
+  }
+  .nav-link {
+    padding: 12px 10px;
+    transition: 0.6s ease-in;
+    width: 100%;
+
+    float: left;
+  }
+  .toggle .l1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    transition: 0.7s;
+  }
+  .toggle .l2 {
+    opacity: 0;
+  }
+  .toggle .l3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    transition: 0.7s;
+  }
+}
 @media (max-width: 700px) {
   .nav {
     width: 100%;
@@ -108,8 +201,18 @@ body {
   .nav-link {
     padding: 12px 10px;
     width: 100%;
-    /* border: 1px solid red; */
     float: left;
+  }
+  .toggle .l1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+    transition: 00.7s;
+  }
+  .toggle .l2 {
+    opacity: 0;
+  }
+  .toggle .l3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+    transition: 00.7s;
   }
 }
 
@@ -154,7 +257,7 @@ body {
   font-size: 5px;
 }
 .blog-img {
-  flex-basis: 30%;
+  flex-basis: 35%;
 }
 
 .blog-img img {
@@ -226,7 +329,7 @@ h3 {
   border: 1px solid #1187ee;
 }
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 460px) {
   .intro-1 {
     padding-right: 5rem;
   }
@@ -258,7 +361,64 @@ h3 {
     font-size: large;
   }
   .text p {
-    font-size: smaller;
+    font-size: large;
+    line-height: 1.4em;
+  }
+  .blog-post {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    margin-left: 1em;
+  }
+  .blog-img img {
+    width: 100%;
+    height: 100%;
+  }
+  .blog-top {
+    padding-top: 1em;
+    padding-left: 0em;
+  }
+  .button {
+    padding: 0.1em 0 0 1rem;
+  }
+  .button a {
+    padding: 6px 12px;
+  }
+}
+@media only screen and (min-width: 460px) {
+  .intro-1 {
+    padding-right: 5rem;
+  }
+  .blog-desc a {
+    background: #1187ee;
+    color: whITE;
+    padding: 4px 10px;
+  }
+  .blog-section h1 {
+    padding-left: 1em;
+    color: #444;
+  }
+  .blog-section .p {
+    padding-left: 2.5em;
+    color: #1187ee;
+  }
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 4px 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid rgb(224, 236, 243);
+    margin: 0 4px;
+    border-radius: 6px;
+  }
+  .blog-section h1 {
+    padding-left: 1em;
+    font-size: large;
+  }
+  .text p {
+    font-size: small;
     line-height: 1.4em;
   }
   .blog-post {
@@ -276,7 +436,6 @@ h3 {
   .blog-top {
     padding-top: 1em;
     padding-left: 1em;
-    /* border-bottom: 1px solid grey; */
   }
   .button {
     padding: 0.1em 0 0 1rem;
@@ -323,6 +482,12 @@ h3 {
     font-size: smaller;
     line-height: 1.4em;
   }
+  .blog-section .p {
+    padding-left: 2.5em;
+    color: #1187ee;
+    font-size: x-large;
+  }
+
   .blog-post {
     display: flex;
     flex-direction: row;
@@ -350,22 +515,38 @@ h3 {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  /* .text p {
-      font-size: large;
-      line-height: 1.4em;
-    } */
   .blog-post {
     width: 86%;
+    height: auto;
+    margin-left: 4em;
+  }
+  .text p {
+    font-size: small;
+    line-height: 1.4em;
+  }
+  .button {
+    padding-left: 24rem;
+  }
+  .button {
+    padding-left: 20rem;
+    font-size: 1em;
+  }
+  .blog-section h1 {
+    padding-left: 1em;
+    font-size: 2em;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .blog-post {
+    width: 90%;
     height: auto;
     margin-left: 4em;
   }
   .button {
     padding-left: 28rem;
   }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
 }
 
 /* end of paginnation pagination  */
@@ -393,7 +574,7 @@ ul {
   width: 100%;
 }
 .location {
-  padding-left: 8rem;
+  padding-left: 6rem;
 }
 .location #social {
   color: white;
@@ -467,8 +648,12 @@ textarea {
 #footer p {
   font-size: smaller;
 }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .location {
+    padding-left: 1rem;
+  }
   .contact-me,
   .contact-me-s {
     display: flex;
