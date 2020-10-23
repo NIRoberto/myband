@@ -1,0 +1,380 @@
+/** @format */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*-------nav-bar -------*/
+
+.nav {
+  background-color: white;
+  height: 66px;
+  box-shadow: 0px 0.1px 3px rgba(0, 0, 0, 0.5);
+  font-family: "Roboto", sans-serif;
+}
+.nav .logo {
+  float: left;
+  text-align: center;
+  display: flex;
+  font-family: "Lobster", cursive;
+  margin-left: 3em;
+  font-size: small;
+}
+.nav .logo > h1 {
+  text-align: center;
+}
+.nav-list {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding: 5px 0 0;
+  margin-right: 3rem;
+}
+.nav-ilist {
+  text-decoration: none;
+  padding: 2px 12px;
+  margin: 0px;
+  text-align: center;
+  float: left;
+}
+
+.nav-link {
+  padding: 1rem;
+  font-size: 15px;
+  color: #444;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.active {
+  color: rgb(12, 90, 236);
+}
+.nav .nav-list .nav-ilist .nav-link:hover {
+  color: rgb(17, 98, 219);
+  transition: 0.3s;
+}
+.burger div {
+  width: 25px;
+  height: 2px;
+  background: #000;
+  margin: 5px;
+}
+.burger {
+  display: none;
+  float: right;
+  padding: 15px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+/*-------------end of navbar ------------------*/
+/*  media query for nav bar */
+@media (max-width: 240px) {
+  .nav {
+    width: 100%;
+  }
+  .burger {
+    display: block;
+    transition: 0.5s;
+  }
+  .nav-ilist {
+    text-decoration: none;
+    padding: 2px 12px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .nav-list {
+    width: 100%;
+    margin-top: 0;
+    float: left;
+    margin-right: 0px;
+    display: none;
+    transition: 0.6s ease-in;
+    position: relative;
+  }
+  .nav-active {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-link {
+    padding: 12px 10px;
+    width: 100%;
+    float: left;
+  }
+  .toggle .l1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    transition: 0.7s;
+  }
+  .toggle .l2 {
+    opacity: 0;
+  }
+  .toggle .l3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    transition: 0.7s;
+  }
+}
+@media (max-width: 500px) {
+  .nav {
+    width: 100%;
+  }
+  .burger {
+    display: block;
+    transition: 0.5s;
+  }
+  .nav-ilist {
+    text-decoration: none;
+    padding: 2px 12px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .nav-list {
+    width: 100%;
+    margin-top: 0;
+    float: left;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    display: none;
+    transition: 0.6s ease-in;
+  }
+  .nav-active {
+    display: flex;
+    flex-direction: column;
+    transition: 0.6s ease-in;
+  }
+  .nav-link {
+    padding: 12px 10px;
+    transition: 0.6s ease-in;
+    width: 100%;
+
+    float: left;
+  }
+  .toggle .l1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    transition: 0.7s;
+  }
+  .toggle .l2 {
+    opacity: 0;
+  }
+  .toggle .l3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    transition: 0.7s;
+  }
+}
+@media (max-width: 700px) {
+  .nav {
+    width: 100%;
+  }
+  .burger {
+    display: block;
+  }
+  .nav-ilist {
+    text-decoration: none;
+    padding: 2px 12px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .nav-list {
+    width: 100%;
+    margin-top: 0;
+    float: left;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    display: none;
+
+    transition: 0.6s ease-in;
+  }
+  .nav-active {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-link {
+    padding: 12px 10px;
+    width: 100%;
+    float: left;
+  }
+  .toggle .l1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+    transition: 00.7s;
+  }
+  .toggle .l2 {
+    opacity: 0;
+  }
+  .toggle .l3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+    transition: 00.7s;
+  }
+}
+
+/*  media query for nav bar */
+
+/*-------------end of navbar ------------------*/
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.loginpage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8em;
+  color: white;
+}
+input[type="email"],
+input[type="password"] {
+  width: 20.1rem;
+  height: 3rem;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: #e5e5e5;
+  color: black;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+button {
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  background-color: rgb(26, 126, 240);
+  color: white;
+}
+button:hover {
+  background-color: rgb(35, 103, 182);
+  color: white;
+}
+.ll {
+  color: #666;
+  padding-bottom: 10px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.log {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.dd {
+  padding: 0 0 0 8px;
+  color: black;
+  font-size: small;
+  color: rgb(26, 126, 240);
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 280px) {
+  .loginpage {
+    width: 100%;
+    height: 100%;
+  }
+  input[type="email"],
+  input[type="password"] {
+    width: 10rem;
+    height: 2.1rem;
+  }
+  button {
+    width: 3rem;
+    height: 2rem;
+  }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 320px) {
+  .loginpage {
+    width: 100%;
+    height: 100%;
+  }
+  input[type="email"],
+  input[type="password"] {
+    width: 14rem;
+    height: 2.3rem;
+  }
+  button {
+    width: 3rem;
+    height: 2rem;
+  }
+}
+@media only screen and (min-width: 460px) {
+  .loginpage {
+    width: 100%;
+    height: 100%;
+  }
+  input[type="email"],
+  input[type="password"] {
+    width: 12rem;
+    height: 2.3rem;
+  }
+  button {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .loginpage {
+    width: 100%;
+    height: 100%;
+  }
+  input[type="email"],
+  input[type="password"] {
+    width: 14rem;
+    height: 2.3rem;
+  }
+  button {
+    width: 5rem;
+    height: 2rem;
+  }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 600px) {
+  .loginpage {
+    width: 100%;
+    height: 100%;
+  }
+  input[type="email"],
+  input[type="password"] {
+    width: 15rem;
+    height: 2rem;
+  }
+  button {
+    width: 3rem;
+    height: 2rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  input[type="email"],
+  input[type="password"] {
+    width: 20.1rem;
+    height: 3rem;
+  }
+  button {
+    width: 5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
