@@ -151,14 +151,14 @@ h4 {
 button {
   width: 5rem;
   height: 2.3rem;
-  background-color: green;
+  background-color: rgb(38, 88, 252);
   color: white;
   outline: none;
   border: none;
   border-radius: 5px;
 }
 button:hover {
-  background-color: rgb(7, 160, 7);
+  background-color: blue;
   transition: 0.9s;
   color: white;
   outline: none;
@@ -473,7 +473,7 @@ th,
 }
 
 #update:hover {
-  color: green;
+  color: blue;
   transition: 0.9s;
 
   text-decoration: none;
@@ -488,7 +488,7 @@ th,
 }
 .updatess {
   padding: 5px 10px;
-  background-color: green;
+  background-color: rgb(13, 78, 218);
   color: white;
   width: 5rem;
   text-decoration: none;
