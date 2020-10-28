@@ -15,7 +15,6 @@ db.on('open', () => {
 db.on('error', () => {
     console.log("db connected falied");
 })
-
 // app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
