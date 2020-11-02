@@ -59,5 +59,26 @@ export default class blopost {
       });
     }
   }
+  static async deleteOne(req, res) {
+    const id = req.params.blogid;
+    const post = await blog.findById(id);
+    if (!post) {
+      res.status(400).json({
+        message: "not found"
+      })
+    }
+
+    try {
+      const deleteone = await blog.remove({ _id: id });
+      res.status(200).json({
+        message: "delete  a blog post was succesfull deleted!",
+      });
+    }
+    catch (error) {
+      res.status(404).json({
+        error: error.message,
+      });
+    }
+  }
 
 }
