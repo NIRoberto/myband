@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 body {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -37,9 +38,7 @@ body {
   text-decoration: none;
   padding: 2px 12px;
   margin: 0px;
-  /* padding: 0px; */
   text-align: center;
-  /* border: 1px solid red; */
   float: left;
 }
 
@@ -57,19 +56,28 @@ body {
   color: rgb(17, 98, 219);
   transition: 0.3s;
 }
-.nav .menu-icon {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
+.burger div {
+  width: 25px;
+  height: 2px;
+  background: #000;
+  margin: 5px;
 }
-#check {
+.burger {
   display: none;
+  float: right;
+  padding: 15px;
+  margin-right: 1rem;
+  cursor: pointer;
 }
 /*-------------end of navbar ------------------*/
 /*  media query for nav bar */
-@media (max-width: 700px) {
+@media (max-width: 240px) {
   .nav {
-    position: relative;
+    width: 100%;
+  }
+  .burger {
+    display: block;
+    transition: 0.5s;
   }
   .nav-ilist {
     text-decoration: none;
@@ -77,9 +85,51 @@ body {
     margin: 0px;
     text-align: center;
   }
-  /* .nav-link {
-      left: 100%;
-    } */
+
+  .nav-list {
+    width: 100%;
+    margin-top: 0;
+    float: left;
+    margin-right: 0px;
+    display: none;
+    transition: 0.6s ease-in;
+    position: relative;
+  }
+  .nav-active {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-link {
+    padding: 12px 10px;
+    width: 100%;
+    float: left;
+  }
+  .toggle .l1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    transition: 0.7s;
+  }
+  .toggle .l2 {
+    opacity: 0;
+  }
+  .toggle .l3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    transition: 0.7s;
+  }
+}
+@media (max-width: 500px) {
+  .nav {
+    width: 100%;
+  }
+  .burger {
+    display: block;
+    transition: 0.5s;
+  }
+  .nav-ilist {
+    text-decoration: none;
+    padding: 2px 12px;
+    margin: 0px;
+    text-align: center;
+  }
 
   .nav-list {
     width: 100%;
@@ -88,39 +138,89 @@ body {
     margin-right: 0px;
     display: flex;
     flex-direction: column;
-    background: whitesmoke;
-    /* transform: translateX(100%); */
-    /* left: -100%; */
+    background: white;
+    display: none;
     transition: 0.6s ease-in;
   }
-  #check:checked ~ ul {
-    left: 0%;
+  .nav-active {
+    display: flex;
+    flex-direction: column;
+    transition: 0.6s ease-in;
   }
-  .showing {
-    transform: translateX(0%);
+  .nav-link {
+    padding: 12px 10px;
+    transition: 0.6s ease-in;
+    width: 100%;
+
+    float: left;
+  }
+  .toggle .l1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    transition: 0.7s;
+  }
+  .toggle .l2 {
+    opacity: 0;
+  }
+  .toggle .l3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    transition: 0.7s;
+  }
+}
+@media (max-width: 700px) {
+  .nav {
+    width: 100%;
+  }
+  .burger {
+    display: block;
+  }
+  .nav-ilist {
+    text-decoration: none;
+    padding: 2px 12px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .nav-list {
+    width: 100%;
+    margin-top: 0;
+    float: left;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    display: none;
+
+    transition: 0.6s ease-in;
+  }
+  .nav-active {
+    display: flex;
+    flex-direction: column;
   }
   .nav-link {
     padding: 12px 10px;
     width: 100%;
-    /* border: 1px solid red; */
     float: left;
   }
-  .nav .menu-icon {
-    position: absolute;
-    right: 30px;
-    top: 20px;
-    display: block;
-    font-size: 1.5rem;
+  .toggle .l1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+    transition: 00.7s;
+  }
+  .toggle .l2 {
+    opacity: 0;
+  }
+  .toggle .l3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+    transition: 00.7s;
   }
 }
 
 /*  media query for nav bar */
 
+/*-------------end of navbar ------------------*/
 /*-------------section ------------------*/
 .landing-page {
   display: flex;
   font-family: "Roboto", sans-serif;
-  /* padding: 7em 0em 4em 5em; */
   padding: 2rem;
   width: 100%;
   height: 100vh;
@@ -146,7 +246,6 @@ body {
   text-decoration: none;
   text-align: center;
   border: none;
-  /* font-size: 13px; */
 }
 .portfolio:hover {
   background: rgb(0, 58, 248);
@@ -158,7 +257,6 @@ body {
 }
 .landing-content .p2 {
   font-size: 2em;
-  /* font-weight: bold; */
   color: rgb(56, 55, 55);
 }
 .landing-page .p3 {
@@ -183,15 +281,17 @@ body {
 .about-content {
   background-color: white;
   box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.1);
-  height: 17rem;
+  height: auto;
+  padding-right: 5px;
+  width: auto;
 }
 #one {
   color: rgba(27, 89, 223, 0.822);
   font-size: 4em;
 }
 .about-content img {
-  width: 14rem;
-  height: 15em;
+  width: 100%;
+  height: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .about-content .about-title {
@@ -212,31 +312,35 @@ body {
   }
   .landing-page {
     display: flex;
-    font-family: "Roboto", sans-serif;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .landing-content{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .about-me {
     display: flex;
     flex-direction: column;
-
-    padding: 1em 3em 1em 3em;
+     padding: 1em 3em 1em 3em;
     font-family: "Roboto", sans-serif;
   }
   .landing-content .p1 {
     font-size: 10px;
   }
-  .landing-content .p2 {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  .landing-page .p3 {
+  .landing-content .p2 ,.p3{
     font-size: 1em;
+    font-weight: bold;
+
   }
-  .landing-content {
-    padding-top: 3em;
-    padding-left: 10em;
-  }
+
+ 
 }
+
+
 
 /*---------------contact me page---------------*/
 .contact-page {
@@ -263,7 +367,7 @@ body {
 .contact-content #social {
   display: flex;
   flex-direction: row;
-  /* padding-top: 7rem; */
+  padding-top: 5rem;
 }
 .contact-content #social li a {
   padding: 1em 2em 0 0;
@@ -330,16 +434,26 @@ footer p {
   .contact-content .form {
     display: flex;
     flex-direction: column;
-    padding-left: 1em;
+    padding-left: 0em;
   }
   .contact-content #title {
-    padding-left: 1em;
+    padding-left: 0em;
   }
   .contact-content #social li a {
     padding: 1em 2em 0 0;
     color: black;
     font-size: large;
   }
+  input[type="text"],
+input[type="email"],
+input[type="text"] {
+  width: 12rem;
+
+}
+textarea {
+  width: 12rem;
+
+}
 }
 @media only screen and (max-width: 760px) {
   .contact-page {
@@ -350,10 +464,10 @@ footer p {
   .contact-content .form {
     display: flex;
     flex-direction: column;
-    padding-left: 3em;
+    padding-left: 0em;
   }
   .contact-content #title {
-    padding-left: 3em;
+    padding-left: 0em;
   }
   .contact-content #social li a {
     padding: 1em 2em 0 0;
