@@ -9,4 +9,8 @@ router.get('/questions', questioncontroller.findAll);
 
 router.post('/question', questioncontroller.postOne);
 
+
+
+// delete one
+router.delete('/question/delete/:id', questioncontroller.deleteOne);
 export default router;
