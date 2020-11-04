@@ -16,6 +16,31 @@ export default class blopost {
       });
     }
   }
+  //   create one blog post
 
+  static async postOne(req, res) {
+    const blogpost = new blog({
+      _id: new mongoose.Types.ObjectId(),
+      title: req.body.title,
+      subbody: req.body.subbody,
+      body: req.body.body,
+      blogimgs: req.file.path
+
+    })
+    try {
+      const newblog = await blogpost.save();
+      res.status(201).json({
+        message: "success created",
+        data: blogpost
+      });
+
+    }
+    catch (error) {
+      res.status(404).json({
+        error: error.message
+      });
+    }
+    console.log(blogpost);
+  }
 
 }
