@@ -42,5 +42,22 @@ export default class blopost {
     }
     console.log(blogpost);
   }
+  static async patchOne(req, res) {
+    const id = req.params.blogid;
+    try {
+      const getone = await blog.updateOne(
+        { _id: id },
+        { $set: { title: req.body.title, subbody: req.body.subbody, body: req.body.body, blogimgs: req.file.path } }
+      );
+      res.status(200).json({
+        message: "update blog post was successfull done",
+
+      });
+    } catch (error) {
+      res.status(404).json({
+        error: error.message,
+      });
+    }
+  }
 
 }

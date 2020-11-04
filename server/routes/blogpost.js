@@ -1,8 +1,6 @@
 import express from 'express';
 import blogcontroller from '../controllers/blogcontroller.js';
 import multer from 'multer';
-
-
 const upload = multer({ dest: '../routes/img/' })
 let image = upload.single('blogimgs');
 const router = express.Router();
@@ -13,4 +11,6 @@ router.get('/blogs', blogcontroller.findAll)
 // create one
 router.post('/blog', image, blogcontroller.postOne);
 
+// update one blog post
+router.patch('/update/:blogid', image, blogcontroller.patchOne)
 export default router;
