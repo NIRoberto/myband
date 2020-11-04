@@ -42,6 +42,33 @@ export default class questionscontroller {
       });
     }
   }
+ 
+
+  // delete question
+  static async deleteOne(req, res) {
+    const id = req.params.id;
+        const quest = await questionmodel.findById(id);
+    if (!quest) {
+      res.status(404).json({
+        message: "not found"
+      });
+    }
+
+    try {
+  
+      const deletequest = await questionmodel.remove({ _id: id });
+      res.status(200).json({
+        message: "delete  a quest was succesfull done!",
+      });
+   
+    }
+    
+    catch (error) {
+      res.status(404).json({
+        error: error.message,
+      });
+    }
+}
 
 
 }
