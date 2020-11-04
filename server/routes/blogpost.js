@@ -12,5 +12,8 @@ router.get('/blogs', blogcontroller.findAll)
 router.post('/blog', image, blogcontroller.postOne);
 
 // update one blog post
-router.patch('/update/:blogid', image, blogcontroller.patchOne)
+router.patch('/update/:blogid', image, blogcontroller.patchOne);
+// delete one
+
+router.delete('/delete/:blogid', blogcontroller.deleteOne);
 export default router;
