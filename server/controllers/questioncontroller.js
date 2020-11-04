@@ -17,6 +17,31 @@ export default class questionscontroller {
       });
     }
   }
+ static async postOne(req, res) {
+    // validate data 
+  
+    const quest = new questionmodel({
+      _id: new mongoose.Types.ObjectId(),
+      fullname: req.body.fullname,
+      email: req.body.email,
+      subject: req.body.subject,
+      message: req.body.message,
+
+    })
+    try {
+      const newblog = await quest.save();
+      res.status(201).json({
+        message: "success question created",
+        data: quest
+      });
+
+    }
+    catch (error) {
+      res.status(400).json({
+        error: error.message
+      });
+    }
+  }
 
 
 }
