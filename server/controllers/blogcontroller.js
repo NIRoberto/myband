@@ -42,6 +42,34 @@ export default class blopost {
     }
     console.log(blogpost);
   }
+
+  //get one blog post 
+  static async getOne(req, res) {
+    const id = req.params.blogid;
+
+
+
+    try {
+    const post = await blog.findById(id);
+    if (!post) {
+      res.status(400).json({
+        message: "not found"
+      })
+    }
+      return res.status(200).json({
+        message: "success",
+        data: post
+      });
+
+    }
+    catch (error) {
+      res.status(400).json({
+        message: "blog not found"
+      })
+    }
+  }
+  // update one
+
   static async patchOne(req, res) {
     const id = req.params.blogid;
     try {
@@ -59,6 +87,8 @@ export default class blopost {
       });
     }
   }
+
+  // delete one blog post
   static async deleteOne(req, res) {
     const id = req.params.blogid;
     const post = await blog.findById(id);

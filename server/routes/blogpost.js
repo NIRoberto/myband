@@ -10,10 +10,13 @@ router.get('/blogs', blogcontroller.findAll)
 
 // create one
 router.post('/blog', image, blogcontroller.postOne);
+// get one blog post
+router.get('/blog/:blogid', blogcontroller.getOne)
 
 // update one blog post
 router.patch('/update/:blogid', image, blogcontroller.patchOne);
 // delete one
 
 router.delete('/delete/:blogid', blogcontroller.deleteOne);
+
 export default router;
