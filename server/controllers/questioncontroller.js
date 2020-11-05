@@ -54,9 +54,7 @@ export default class questionscontroller {
       });
     }
   }
- 
-
-  // delete question
+ // delete question
   static async deleteOne(req, res) {
     const id = req.params.id;
         const quest = await questionmodel.findById(id);
@@ -67,8 +65,7 @@ export default class questionscontroller {
     }
 
     try {
-  
-      const deletequest = await questionmodel.remove({ _id: id });
+       const deletequest = await questionmodel.remove({ _id: id });
       res.status(200).json({
         message: "delete  a quest was succesfull done!",
       });
