@@ -1,6 +1,13 @@
 import questionmodel from '../models/question.js';
 import mongoose from 'mongoose';
+import Joi from '@hapi/joi';
+const schema = {
+  fullname: Joi.string().min(6).max(20).required(),
+  email: Joi.string().min(6).required().email(),
+  subject: Joi.string().min(3).max(15).required(),
+  message: Joi.string().min(6).max(100).required()
 
+}
 export default class questionscontroller {
   // // get all blog post 
   static async findAll(req, res) {
@@ -18,8 +25,13 @@ export default class questionscontroller {
     }
   }
  static async postOne(req, res) {
-    // validate data 
-  
+  // validate data 
+    const { error } = Joi.validate(req.body, schema);
+    if (error) {
+      res.status(400).json({
+        message: error.details[0].message
+      })
+    }
     const quest = new questionmodel({
       _id: new mongoose.Types.ObjectId(),
       fullname: req.body.fullname,
