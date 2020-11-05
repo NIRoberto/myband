@@ -12,6 +12,7 @@ const app = express();
 // connection to mangodb to an api
 const mangoDB = `mongodb+srv://${process.env.dbuser}:${process.env.dbpass}@blog-db.bj3ci.mongodb.net/${process.env.dbname}?retryWrites=true&w=majority`
 mongoose.connect(mangoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+
 const db = mongoose.connection;
 db.on('open', () => {
     console.log("db connected")
