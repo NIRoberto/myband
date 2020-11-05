@@ -46,9 +46,9 @@ export default class usercontroller {
         const id = req.params.uid;
         // validate data 
         const { error } = Joi.validate(req.body, schema);
-        if (error) {
+         if (error) {
             res.status(400).json({
-                message: error.details[0].message
+            message: error.details[0].message
             })
         }
         // hash the password 
@@ -74,6 +74,7 @@ export default class usercontroller {
     static async postOne(req, res) {
         // validate data 
         const { error } = Joi.validate(req.body, schema);
+
         if (error) {
             res.status(400).json({
                 message: error.details[0].message
