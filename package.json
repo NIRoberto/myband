@@ -4,7 +4,7 @@
   "description": "blog api",
   "main": "app.js",
   "scripts": {
-    "start": "npm run build && node ./build/app.js ",
+    "start": "node ./build/app.js ",
     "build": "rm -rf ./build/ && babel ./server/ -d ./build/server/ && cp -r ./server/models/ ./build/models/ && babel ./app.js -d ./build/",
     "dev": "nodemon --exec babel-node app.js",
     "test": "mocha ./server/test/test.js --require @babel/register --timeout 0"
