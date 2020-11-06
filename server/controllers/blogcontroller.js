@@ -36,7 +36,7 @@ export default class blopost {
 
     }
     catch (error) {
-      res.status(404).json({
+      res.status(400).json({
         error: error.message
       });
     }
@@ -63,7 +63,7 @@ export default class blopost {
 
     }
     catch (error) {
-      res.status(400).json({
+      res.status(404).json({
         message: "blog not found"
       })
     }
