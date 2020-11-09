@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import blogpost from './server/routes/blogpost.js';
 import questroute from './server/routes/question.js';
+import commentroute from './server/routes/blog-comment';
 import signuproute from './server/routes/user.js';
 import * as bodyParser from 'body-parser';
 import dotenv from 'dotenv';
@@ -28,14 +29,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.status(200).json({
-    	status: 'success',
-        message: "Welcome to my blog's backend API"
+     message: "Welcome to my blog's backend API"
     });
 });
 
 app.use('/api/v1', blogpost);
 app.use('/api/v1', questroute);
 app.use('/api/v1', signuproute);
+app.use('/api/v1', commentroute);
+
+
 app.use((req, res, next) => {
     res.status(404).json({
         message: "invalid url"
