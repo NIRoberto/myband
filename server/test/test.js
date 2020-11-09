@@ -27,7 +27,7 @@ describe('TEST MY API', () => {
                })
     // get one blog post 
         
-               it("it should GET one   blog post", (done) => {
+        it("it should GET one   blog post", (done) => {
            const blogid = '5f9bb1538a075d2a24555953';
             chai.request(server)
                 .get('/api/v1/blog/'+ blogid)
@@ -40,16 +40,9 @@ describe('TEST MY API', () => {
                     done();
             })
        })
-            it("it should not GET one   blog posts", (done) => {
-            chai.request(server)
-                .get('/api/v1/blog')
-                .end((err, res) => {
-                    res.should.have.status(404);
-                    done();
-            })
-            })
+         
        let blogid = '5f9a794b0910db08c86bd445';
-             it("it should not GET one becase of invalid id number", (done) => {
+             it("it should not GET one because of invalid id number", (done) => {
             chai.request(server)
                 .get('/api/v1/blog'+blogid)
                 .end((err, res) => {
@@ -57,46 +50,65 @@ describe('TEST MY API', () => {
                     done();
             })
              })
+        
              it("it should POST one  the blog post", (done) => {
-           const blog = {
-               title: "iso",
-              subbody: "adsfgkewryewtrgfhdsgfjhksaf",
-              body: "fsauhilqewryuyqwuyeutyuywuiter",
-              blogimgs: ".img\\3571276a1e899da10db84620d3ba7508"
-           }
-        //    const token ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE4MGEzN2Q2ZGYwZjI2MjQ1ZDMwNTgiLCJlbWFpbCI6InJvYnpAZ21haWwuY29tIiwiaWF0IjoxNjA0ODQ4MTgzfQ.iKwY6vShvB7rqtdVP5ZllGLNZBLfHUM1c73bp15MwkA'
-                 let token =null;
+           let token =null;
                 chai.request(server)
                     .post('/api/v1/blog/')
                       .set('Content-Type', 'multipart/form-data')
                      .set('auth-token',token)
-                   .send(blog)
-                .end((err, res) => {
+                     .field('title','this is test title')
+                     .field('subbody', 'this is content from testing')
+			         .field('body','this is content from testing')
+                     .field('blogimgs','brand.jpg')
+                    .end((err, res) => {
                     res.should.have.status(201);
                     res.body.should.be.a('object');
                     done();
             })
        })
 
-    //        it("it should not  POST one  the blog post", (done) => {
-    //        const blog = {
+           it("it should not  POST one  the blog post", (done) => {
+           const blog = {
             
-    //           subbody: "adsfgkewryewtrgfhdsgfjhksaf",
-    //           body: "fsauhilqewryuyqwuyeutyuywuiter",
-    //           blogimgs: "..\\routes\\img\\1f181cd553a84c49ac33e21b6a71edfd"
-    //            }
-    //        const token ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE4MGEzN2Q2ZGYwZjI2MjQ1ZDMwNTgiLCJlbWFpbCI6InJvYnpAZ21haWwuY29tIiwiaWF0IjoxNjA0ODQ4MTgzfQ.iKwY6vShvB7rqtdVP5ZllGLNZBLfHUM1c73bp15MwkA'
-               
-    //         chai.request(server)
-    //             .post('/api/v1/blog/')
-    //             .set('auth-token',token)
-    //             .send(blog)
-    //             .end((err, res) => {
-    //                 res.should.have.status(404);
+             subbody: "adsfgkewryewtrgfhdsgfjhksaf",
+              body: "fsauhilqewryuyqwuyeutyuywuiter",
+              blogimgs: ".\\img\\1f181cd553a84c49ac33e21b6a71edfd"
+               }
+            const token = null;
+            chai.request(server)
+                .post('/api/v1/blog/')
+                .set('auth-token',token)
+                .send(blog)
+                .end((err, res) => {
+                    res.should.have.status(400);
                  
-    //                 done();
-    //         })
-    //    })
+                    done();
+            })
+           })
+         // get one blog post 
+        let token = null;
+        it("it should  delete  one   blog post", (done) => {
+           const blogid = '5fa5281946ff525870d6fc77';
+            chai.request(server)
+                .delete('/api/v1/blog/delete' +blogid)
+                .set('auth-token',token)
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                  done();
+            })
+       })
+         
+        it("it should not delete one blog post because of invalid id number", (done) => {
+                 
+            chai.request(server)
+                .delete('/api/v1/blog/delete'+blogid)
+                .end((err, res) => {
+                    res.should.have.status(404);
+                    done();
+            })
+            })
 })
  
    
@@ -138,8 +150,8 @@ describe('TEST MY API', () => {
  
    })
     //post one user
-   describe('POST  create a new users', () => {
-       it("it should POST one user", (done) => {
+   describe('Test all endpoint for the users', () => {
+       it("it should POST/create one user", (done) => {
            const user = {
                  email:"robert2i@gmail.com",
                 password:"123456"
@@ -182,7 +194,7 @@ describe('TEST MY API', () => {
             })
        })
 
-       it("it should not create user because password is rquired", (done) => {
+       it("it should not create user because password is required", (done) => {
            const quest = {
               email: "robz@gmail.com"
           
@@ -196,11 +208,7 @@ describe('TEST MY API', () => {
                     done();
             })
        })
- 
-   })
-      //login test 
-   describe('POST  create a new users', () => {
-       it("it should POST one user", (done) => {
+         it("it should login a user ", (done) => {
            const user = {
                  email:"robert2i@gmail.com",
                 password:"123456"
@@ -228,7 +236,7 @@ describe('TEST MY API', () => {
                     done();
             })
     })
-         it("it should not create user because  of invalid password", (done) => {
+         it("it should not login user because  of invalid password", (done) => {
            const user = {
                 email:"robertigmail.com",
                 password:"1234567"
@@ -243,7 +251,7 @@ describe('TEST MY API', () => {
             })
        })
 
-       it("it should not create user because password is rquired", (done) => {
+       it("it should not login user because password is rquired", (done) => {
            const quest = {
               email: "robz@gmail.com"
           
@@ -258,11 +266,9 @@ describe('TEST MY API', () => {
             })
        })
  
-       })
-    
-    
-    
-})
+   })
+
+    })
 
 
 
