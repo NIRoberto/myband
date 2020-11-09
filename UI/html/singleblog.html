@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>css</title>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
     <!--css file-->
     <link rel="stylesheet" href="/UI/css/singleblog.css" />
 
@@ -42,9 +47,10 @@
                 <li class="nav-ilist"><a href="/UI/html/index.html" class="nav-link" >home</a></li>
                 <li class="nav-ilist"><a href="/UI/html/portfolio.html" target="_blank" class="nav-link">portfolio</a></li>
                 <li class="nav-ilist"><a href="/UI/html/blog.html" class="nav-link active" target="_blank  ">blog </a></li>
-                <li class="nav-ilist"><a href="/UI/html/loginpage.html" target="_blank" class="nav-link ">login</a></li>
-                <li class="nav-ilist"><a href="/UI/html/register.html"  target="_blank" class="nav-link">signup</a></li>
-            </ul>
+                <li class="nav-ilist"><a href="/UI/html/loginpage.html" target="_blank" class="nav-link  login" style="display: none;">login</a></li>
+                <li class="nav-ilist"><a href="/UI/html/register.html"  target="_blank" class="nav-link  login" style="display: none;">signup</a></li>
+                  <li class="nav-ilist"><a href="/UI/html/blog.html" class="nav-link " id='log'>Logout </a></li>
+              </ul>
         </div>
         
       </div>
@@ -199,7 +205,31 @@ input here your message </textarea
     </div>
 
     <!--   end of the footer-->
+      <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-analytics.js"></script>
+      
+      <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+          apiKey: "AIzaSyBTD8mvWiUv3sN10vpmhd7SOeC8-npKaV4",
+          authDomain: "blog-5686d.firebaseapp.com",
+          databaseURL: "https://blog-5686d.firebaseio.com",
+          projectId: "blog-5686d",
+          storageBucket: "blog-5686d.appspot.com",
+          messagingSenderId: "901218445844",
+          appId: "1:901218445844:web:60c0867d6506139b84d501",
+          measurementId: "G-D9FQWJR2PW"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+
+      </script>
     <script src="/UI/js/nav.js"></script>
+    <script src="/UI/js/auth.js"></script>
   </body>
   
 </html>
