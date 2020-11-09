@@ -82,7 +82,7 @@ export default class usercontroller {
         }
         const emailexist = await usermodel.findOne({ email: req.body.email });
         if (emailexist) {
-            res.status(400).json({
+            res.status(409).json({
                 message: "email exist"
             })
         }
