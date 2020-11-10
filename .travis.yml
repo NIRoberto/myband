@@ -4,9 +4,10 @@ language: node_js
 cashe: npm 
 node_js:
   - '14.15.0'
+
 before_install: 
   - npm install
-  - travis_wait 30 mvn install
+  
 before_script:
   - npm test
 after_success: npm run coverage
