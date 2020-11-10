@@ -7,8 +7,9 @@
     "start": "node ./build/app.js ",
     "build": "rm -rf ./build/ && babel ./server/ -d ./build/server/ && cp -r ./server/models/ ./build/models/ && babel ./app.js -d ./build/",
     "dev": "nodemon --exec babel-node app.js",
-    "test": "mocha ./server/test/test.js --require @babel/register --timeout 0"
-  },
+    "test": "nyc --reporter=html --reporter=text mocha   ./server/test/test.js  --require @babel/register ",
+    "covarage":" nyc --reporter=html --reporter=text  npm test"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NIRoberto/myband1.git"
@@ -50,5 +51,9 @@
   "engines": {
     "node": "14.15.0",
     "npm": "6.14.8"
+  },
+  "devDependencies": {
+    "i": "^0.3.6",
+    "nyc": "^15.1.0"
   }
 }

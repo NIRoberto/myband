@@ -10,26 +10,7 @@ const navs = () => {
     });
   };
   navs();
-console.log('hello');
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    let logginstatus = document.querySelectorAll('.login');
-    
-    console.log(logginstatus);
-    logginstatus.forEach((res) => {
-    res.style.display = 'none';
-  })
-  }
-  else {
-    let loguserout = document.getElementById('log');
 
-    loguserout.style.display = 'none';
-      console.log(logginstatus);
-      logginstatus.forEach((res) => {
-      res.style.display = 'block';
-    });
-  }
-});
 //  logout 
 let logout = document.getElementById('log');
 logout.addEventListener('click', (e) => {

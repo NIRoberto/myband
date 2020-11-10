@@ -1,5 +1,6 @@
 import blog from '../models/blog';
 import mongoose from 'mongoose';
+import { compare } from 'bcryptjs';
 export default class blopost {
   // get all blog post 
   static async findAll(req, res) {
@@ -21,35 +22,30 @@ export default class blopost {
   static async postOne(req, res) {
     const blogpost = new blog({
       _id: new mongoose.Types.ObjectId(),
+      userId:req.loggeduser.userId,
       title: req.body.title,
       subbody: req.body.subbody,
       body: req.body.body,
       blogimgs: req.file.path
-
     })
     try {
       const newblog = await blogpost.save();
       res.status(201).json({
         message: "success created",
-        data: blogpost
+        data: newblog
       });
-
-    }
+}
     catch (error) {
       res.status(400).json({
         error: error.message
       });
     }
-    console.log(blogpost);
   }
 
   //get one blog post 
   static async getOne(req, res) {
     const id = req.params.blogid;
-
-
-
-    try {
+   try {
     const post = await blog.findById(id);
     if (!post) {
       res.status(400).json({
@@ -72,6 +68,18 @@ export default class blopost {
 
   static async patchOne(req, res) {
     const id = req.params.blogid;
+        const post = await blog.findById(id);
+  
+      if (!post) {
+       return res.status(400).json({
+        message: "not found"
+      })
+    }
+      if (req.loggeduser.userId !== post.userId) {
+      return res.status(403).json({
+        message:"You cann't update which not belongs to you"
+      })
+    }
     try {
       const getone = await blog.updateOne(
         { _id: id },
@@ -92,20 +100,26 @@ export default class blopost {
   static async deleteOne(req, res) {
     const id = req.params.blogid;
     const post = await blog.findById(id);
+  
     if (!post) {
-      res.status(400).json({
+       return res.status(400).json({
         message: "not found"
+      })
+    }
+    if (req.loggeduser.userId !== post.userId) {
+      return res.status(403).json({
+        message:"You cann't delete which not belongs to you"
       })
     }
 
     try {
       const deleteone = await blog.remove({ _id: id });
-      res.status(200).json({
+     return  res.status(200).json({
         message: "delete  a blog post was succesfull deleted!",
       });
     }
     catch (error) {
-      res.status(404).json({
+    return  res.status(404).json({
         error: error.message,
       });
     }

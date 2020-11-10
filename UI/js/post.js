@@ -42,7 +42,9 @@ db.collection("blog")
         title: createpost.title.value,
         subbody: createpost.subbody.value,
         body: createpost.body.value,
-      });
+       }).then(res =>{
+      alert("blog successfull created!")
+      })
     createpost.title.value='',
     createpost.subbody.value='', 
   createpost.body.value=''
@@ -54,7 +56,6 @@ let fileb = document.getElementById('file');
         var storageRef = firebase.storage().ref().child(`/blogimage/${file.name}`);
         // uploder file
         storageRef.put(file).then(()=>{
-          console.log("ok");
      }).catch((error)=>{
        console.log(error.message);
      });

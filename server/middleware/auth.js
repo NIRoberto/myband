@@ -4,12 +4,15 @@ module.exports = function (req, res, next) {
     const token = req.header('auth-token');
     if (!token) {
         res.status(401).json({
-            message: "auth failed"
+            message: "unauthorized"
         })
     }
+
     try {
         const verified = jwt.verify(token, process.env.tokens)
-        req.user = verified;
+        req.loggeduser = verified;
+        
+     
         next();
     }
     catch (error) {

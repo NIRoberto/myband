@@ -1,6 +1,6 @@
 import express from 'express';
 import blogcontroller from '../controllers/blogcontroller.js';
-import auth from '../middleware/auth.js';
+import auth from '../middleware/auth';
 import multer from 'multer';
 const upload = multer({ dest: '.img' })
 let image = upload.single('blogimgs');

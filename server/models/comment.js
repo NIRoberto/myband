@@ -1,6 +1,9 @@
 import mongoose ,{Schema} from 'mongoose';
  const commentschema = new Schema({
-    _id: mongoose.Schema.Types.ObjectId,
+     _id: mongoose.Schema.Types.ObjectId,
+     userId:{
+         type:String
+     },
          email: {
         type: String,
         required: true

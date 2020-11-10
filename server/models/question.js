@@ -1,6 +1,10 @@
 import mongoose ,{Schema} from 'mongoose';
  const questionschema = new Schema({
-    _id: mongoose.Schema.Types.ObjectId,
+     _id: mongoose.Schema.Types.ObjectId,
+       userId: {
+         type: String,
+         
+     },
     fullname: {
         type: String,
         required: true
