@@ -8,23 +8,23 @@ chai.use(chaiHttp);
 describe('TEST MY API', () => {
 //  GET all blog post routes
     describe('Test all endpoint  for blog post', () => {
-        it("it should GET all the blog post", (done) => {
-            chai.request(server)
-                .get('/api/v1/blogs')
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.should.be.a('object');
-                    done();
-            })
-        })
-               it("it should not GET all the blog posts", (done) => {
-            chai.request(server)
-                .get('/api/v1/blo')
-                .end((err, res) => {
-                    res.should.have.status(404);
-                    done();
-            })
-               })
+//         it("it should GET all the blog post", (done) => {
+//             chai.request(server)
+//                 .get('/api/v1/blogs')
+//                 .end((err, res) => {
+//                     res.should.have.status(200);
+//                     res.body.should.be.a('object');
+//                     done();
+//             })
+//         })
+//                it("it should not GET all the blog posts", (done) => {
+//             chai.request(server)
+//                 .get('/api/v1/blo')
+//                 .end((err, res) => {
+//                     res.should.have.status(404);
+//                     done();
+//             })
+//                })
     // get one blog post 
         
         it("it should GET one   blog post", (done) => {
