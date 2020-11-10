@@ -150,7 +150,7 @@ describe('TEST MY API', () => {
  
    })
 //     //post one user
-//     describe('Test all endpoint for the users', () => {
+    describe('Test all endpoint for the users', () => {
 //         it("it should POST/create one user", (done) => {
 //             const user = {
 //                 email: "robert2i5790@gmail.com",
