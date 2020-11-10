@@ -1,18 +1,19 @@
 let updatess = document.querySelector('.add-new-post #formm');
 let updateinfo =document.querySelector('.update .update-section');
  postinfo =(doc)=> {
-    updatess.innerHTML =`
-    Title
-    <input type="text" id="title" placeholder="" name ="title" value="${doc.data().title}">
-    Sub-body
-    <textarea name="subbody" id="textarea" cols="30" rows="3">  ${doc.data().subbody}</textarea>
+   updatess.innerHTML =`
+       <div class="ele">
+    Title       </div>  <div class="ele">
+    <input type="text" id="title" placeholder="" name ="title" value="${doc.data().title}">       </div>  <div class="ele">
+    Sub-body       </div>  <div class="ele">
+    <textarea name="subbody" id="textarea" cols="30" rows="3">  ${doc.data().subbody}</textarea>      </div>   <div class="ele">
     
-    Body
-    <textarea name="body" id="textarea" cols="30" rows="9">${doc.data().body}</textarea>
-     Image 
-    <input type="file" id="file"  placeholder="image"><br>
-    <a href="javascript:updates('${doc.id}')" class="updatess">update</a> 
-    
+    Body       </div>  <div class="ele">
+    <textarea name="body" id="textarea" cols="30" rows="9">${doc.data().body}</textarea>       </div>  <div class="ele">
+     Image        </div>  <div class="ele">
+    <input type="file" id="file"  placeholder="image">      </div>  <div class="ele"><br> 
+    <a href="javascript:updates('${doc.id}')" class="updatess">update</a>       </div>   <div class="ele">
+          </div>
      `;
 
 

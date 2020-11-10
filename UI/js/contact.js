@@ -9,7 +9,6 @@ let message =document.getElementById('message');
 let emailregex =/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 let nameregex =/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
 var a =nameregex.test(name.value);
-console.log(a);
  contact =()=>{
 if(!(name.value.trim())&& !(email.value.trim())&&!(subject.value.trim())){
     mname.innerHTML="space not allowed";

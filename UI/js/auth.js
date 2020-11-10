@@ -10,28 +10,22 @@ auth.onAuthStateChanged(function (user) {
         <td id="update"> <a href="javascript:updatss('${user.uid}')" id="update">update</a></td>
         <td id="delete"><a href="javascript:userdelete('${user.uid}')" id="delete">delete</a><td>
        </tr>`;
-      console.log("hello");
-      
-       }
+     }
 // admin creating
     else {
-      window.location.href = '/UI/html/blog.html';
 
       }
   } else {
-    console.log('user are signed out');
     alert('login first');
     window.location.href = '/UI/html/loginpage.html';
   }
 });
-
 updatss = (id) => {
   let updateB = document.querySelector('#update');
   updateB.addEventListener('click', (res) => {
     document.querySelector('.update').style.display = 'flex';
     res.innerHTML += `
-  
-  `;
+ `;
   })
   let close = document.querySelector('.close').addEventListener('click', () => {
     document.querySelector('.update').style.display = 'none';

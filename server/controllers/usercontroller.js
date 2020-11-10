@@ -51,6 +51,17 @@ export default class usercontroller {
             message: error.details[0].message
             })
         }
+           const user = await usermodel.findOne({ email: req.body.email });
+        if (!user) {
+            return res.status(400).json({
+                message: "incorect  email or password"
+            })
+        }
+    if (req.loggeduser.userId !== user.userId) {
+      return res.status(403).json({
+        message:"You cann't update which not belongs to you"
+      })
+    }
         // hash the password 
         const salt = await bcrypt.genSalt(6);
         const hashpassword = await bcrypt.hash(req.body.password, salt);
@@ -59,7 +70,7 @@ export default class usercontroller {
                 { _id: id },
                 { $set: { email: req.body.email, password: hashpassword } }
             );
-            res.status(200).json({
+            return res.status(200).json({
                 message: "update user was successfull done",
 
             });
@@ -89,12 +100,10 @@ export default class usercontroller {
         // hash the password 
         const salt = await bcrypt.genSalt(6);
         const hashpassword = await bcrypt.hash(req.body.password, salt);
-        //  create a token 
-        const token = jwt.sign({
-            _id: req.params.id,
-            email: req.body.email
-        }, process.env.tokens);
-
+        // create a token 
+        const token = jwt.sign({ email: req.body.email }, process.env.tokens, {
+            expiresIn:'3h'
+        });
         Joi.validate(req.body, schema);
         const user = usermodel({
             _id: new mongoose.Types.ObjectId(),
@@ -104,40 +113,36 @@ export default class usercontroller {
         })
         try {
             const saveuser = await user.save();
-            res.status(201).json({
+        return    res.status(201).json({
                 message: "user created successfully and logged in ",
                 data: saveuser,
                 token: token
             })
         }
         catch (error) {
-            res.status(400).json({
+          return  res.status(400).json({
                 message: error.message
             })
         }
     }
     //   login route
     static async post(req, res) {
-        const { error } = Joi.validate(req.body, schema);
-        if (error) {
-            res.status(400).json({
-                message: error.details[0].message
-            })
-        }
-        const user = await usermodel.findOne({ email: req.body.email });
+     const user = await usermodel.findOne({ email: req.body.email });
         if (!user) {
-            res.status(400).json({
-                message: "invalid email"
+            return res.status(400).json({
+                message: "incorect  email or password"
             })
         }
         const validpass = await bcrypt.compare(req.body.password, user.password);
         if (!validpass) {
-            res.status(400).json({
-                message: "invalid password"
+            return res.status(400).json({
+                message: "incorect  email or password"
             })
         }
         // create a token 
-        const token = jwt.sign({ _id: new mongoose.Types.ObjectId(), email: req.body.email }, process.env.tokens);
+        const token = jwt.sign({ userId: user._id, email: req.body.email }, process.env.tokens, {
+            expiresIn:'3h'
+        });
         res.header("auth-token", token)
         try {
             res.status(200).json({
@@ -156,12 +161,17 @@ export default class usercontroller {
     // delete one user
     static async delete(req, res) {
         let id = req.params.uid;
-        const getone = await usermodel.findById({ _id: id })
-        if (!getone) {
-            res.status(400).json({
+        const user = await usermodel.findById({ _id: id })
+        if (!user) {
+         return   res.status(400).json({
                 message: "invalid id number"
             })
         }
+          if (req.loggeduser.userId !== user.userId) {
+      return res.status(403).json({
+        message:"You cann't update which not belongs to you"
+      })
+    }
 
         try {
             const userid = await usermodel.deleteOne({ _id: id });
@@ -170,7 +180,7 @@ export default class usercontroller {
             });
         }
         catch (error) {
-            res.status(400).json({
+        return    res.status(400).json({
                 error: error.message,
             });
         }

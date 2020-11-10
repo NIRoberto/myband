@@ -8,11 +8,11 @@ const router = express.Router();
 router.get('/comments',commentcontroller.findAll);
 
    // create one question
-router.post('/comment/create', commentcontroller.postOne);
+router.post('/comment/create', auth,commentcontroller.postOne);
 
 
-router.patch('/comment/update/:id', commentcontroller.patchOne);
+router.patch('/comment/update/:id', auth,commentcontroller.patchOne);
    // delete one
-router.delete('/comment/delete/:id',commentcontroller.deleteOne);
+router.delete('/comment/delete/:id',auth,commentcontroller.deleteOne);
 
 export default router;

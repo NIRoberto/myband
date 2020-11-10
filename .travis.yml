@@ -1,0 +1,17 @@
+sudo: false
+language: node_js
+services:
+  - mongodb
+cashe: npm 
+node_js:
+  - '14.15.0'
+
+script:
+  - npm test 
+install:
+  - npm install
+
+after_success:
+  - npm run coverage
+
+  
