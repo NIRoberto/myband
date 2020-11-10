@@ -28,7 +28,7 @@ describe('TEST MY API', () => {
     // get one blog post 
         
         it("it should GET one   blog post", (done) => {
-           const blogid = '5f9bb1538a075d2a24555953';
+           const blogid = '5fa812e91cbc6b0017423fc5';
             chai.request(server)
                 .get('/api/v1/blog/'+ blogid)
                 .end((err, res) => {
