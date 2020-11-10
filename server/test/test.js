@@ -150,11 +150,11 @@ describe('TEST MY API', () => {
  
    })
     //post one user
-   describe('Test all endpoint for the users', () => {
-       it("it should POST/create one user", (done) => {
-           const user = {
-                 email:"robert2i@gmail.com",
-                password:"123456"
+    describe('Test all endpoint for the users', () => {
+        it("it should POST/create one user", (done) => {
+            const user = {
+                email: "robert2i@gmail.com",
+                password: "123456"
             }
             chai.request(server)
                 .post('/api/v1/signup')
@@ -163,12 +163,12 @@ describe('TEST MY API', () => {
                     res.should.have.status(201);
                     res.body.should.be.a('object');
                     done();
-            })
-       })
-    it("it should not create user because  user already exist", (done) => {
-           const user = {
-                 email:"roberti@gmail.com",
-                password:"123456"
+                })
+        })
+        it("it should not create user because  user already exist", (done) => {
+            const user = {
+                email: "roberti@gmail.com",
+                password: "123456"
             }
             chai.request(server)
                 .post('/api/v1/signup')
@@ -177,12 +177,12 @@ describe('TEST MY API', () => {
                     res.should.have.status(409);
                     res.body.should.be.a('object');
                     done();
-            })
-    })
-         it("it should not create user because  of invalid email", (done) => {
-           const user = {
-                email:"robertigmail.com",
-                password:"123456"
+                });
+        });
+        it("it should not create user because  of invalid email", (done) => {
+            const user = {
+                email: "robertigmail.com",
+                password: "123456"
             }
             chai.request(server)
                 .post('/api/v1/signup')
@@ -191,14 +191,14 @@ describe('TEST MY API', () => {
                     res.should.have.status(400);
                     res.body.should.be.a('object');
                     done();
-            })
-       })
+                });
+        });
 
-       it("it should not create user because password is required", (done) => {
-           const quest = {
-              email: "robz@gmail.com"
+        it("it should not create user because password is required", (done) => {
+            const quest = {
+                email: "robz@gmail.com"
           
-           }
+            }
             chai.request(server)
                 .post('/api/v1/signup/')
                 .send(quest)
@@ -206,12 +206,12 @@ describe('TEST MY API', () => {
                     res.should.have.status(400);
                     res.body.should.be.a('object');
                     done();
-            })
-       })
-         it("it should login a user ", (done) => {
-           const user = {
-                 email:"robert2i@gmail.com",
-                password:"123456"
+                });
+        });
+        it("it should login a user ", (done) => {
+            const user = {
+                email: "robert2i@gmail.com",
+                password: "123456"
             }
             chai.request(server)
                 .post('/api/v1/login')
@@ -220,12 +220,12 @@ describe('TEST MY API', () => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
                     done();
-            })
-       })
-    it("it should not login user because  invalid email", (done) => {
-           const user = {
-                 email:"rober3t3@gmail.com",
-                password:"123456"
+                });
+        });
+        it("it should not login user because  invalid email", (done) => {
+            const user = {
+                email: "rober3t3@gmail.com",
+                password: "123456"
             }
             chai.request(server)
                 .post('/api/v1/login')
@@ -234,12 +234,12 @@ describe('TEST MY API', () => {
                     res.should.have.status(400);
                     res.body.should.be.a('object');
                     done();
-            })
-    })
-         it("it should not login user because  of invalid password", (done) => {
-           const user = {
-                email:"robertigmail.com",
-                password:"1234567"
+                });
+        });
+        it("it should not login user because  of invalid password", (done) => {
+            const user = {
+                email: "robertigmail.com",
+                password: "1234567"
             }
             chai.request(server)
                 .post('/api/v1/login')
@@ -248,14 +248,14 @@ describe('TEST MY API', () => {
                     res.should.have.status(400);
                     res.body.should.be.a('object');
                     done();
-            })
-       })
+                });
+        });
 
-       it("it should not login user because password is rquired", (done) => {
-           const quest = {
-              email: "robz@gmail.com"
+        it("it should not login user because password is rquired", (done) => {
+            const quest = {
+                email: "robz@gmail.com"
           
-           }
+            }
             chai.request(server)
                 .post('/api/v1/signup/')
                 .send(quest)
@@ -263,10 +263,10 @@ describe('TEST MY API', () => {
                     res.should.have.status(400);
                     res.body.should.be.a('object');
                     done();
-            })
-       })
+                });
+        });
  
-   })
+    });
 
     })
 
