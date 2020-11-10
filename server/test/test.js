@@ -112,8 +112,8 @@ describe('TEST MY API', () => {
 })
  
    
-//          //post one question
-//    describe('POST /api/v1/question/', () => {
+         //post one question
+   describe('POST /api/v1/question/', () => {
 //        it("it should POST one  question", (done) => {
 //            const quest = {
 //                fullname: "isofddffdf",
