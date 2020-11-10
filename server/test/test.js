@@ -153,7 +153,7 @@ describe('TEST MY API', () => {
     describe('Test all endpoint for the users', () => {
         it("it should POST/create one user", (done) => {
             const user = {
-                email: "robert2i9@gmail.com",
+                email: "robert2i90@gmail.com",
                 password: "123456"
             }
             chai.request(server)
