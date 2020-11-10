@@ -4,7 +4,7 @@ language: node_js
 cashe: npm 
 node_js:
   - '14.15.0'
-install:
+before_install:
   - npm install
 before_script:
   - npm test
