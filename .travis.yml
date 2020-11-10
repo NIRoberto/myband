@@ -7,7 +7,7 @@ node_js:
 
 before_install: 
   - npm install
-install: travis_retry pip install myawesomepackage
+  - travis_retry pip install myawesomepackage
   
 before_script:
   - npm test
