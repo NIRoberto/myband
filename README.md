@@ -17,18 +17,18 @@ Portfolio and Brand is a personal website the help the owner to brand or publish
 This Repository contains Front end and Backend, front end is in folder called Templates and Backend is in folder called Server , The server Hosted on Heroku and Front end hosted on Github Pages.
 
 Technologies Used
-1.HTML5
-2.CSS3
-3.NodeJS
-4.Express
-5.ES6
-Setup
+- HTML5
+- CSS3
+- NodeJS
+- Express
+- ES6
+- Setup
 
-clone the repository using git clone https://github.com/NIRoberto/myband1.git
-Move into project directory using cd capstoneproject
-Install neccesary packages using npm install
-Build the source using npm run build
-Start the server using npm run start
+- clone the repository using git clone https://github.com/NIRoberto/myband1.git
+- Move into project directory using cd capstoneproject
+- Install neccesary packages using npm install
+- Build the source using npm run build
+- Start the server using npm run start
 
 ## Interface the API using postman or any other http client
 ## Features
