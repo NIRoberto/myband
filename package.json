@@ -7,10 +7,10 @@
     "start": "node ./build/app.js ",
     "build": "rm -rf ./build/ && babel ./server/ -d ./build/server/ && cp -r ./server/models/ ./build/models/ && babel ./app.js -d ./build/",
     "dev": "nodemon --exec babel-node app.js",
-    "test": "nyc --reporter=html --reporter=text mocha ./server/test/test.js  --require @babel/register ",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/polyfill --require @babel/register --recursive --exit ./server/test/",
     "covarage":" nyc --reporter=html --reporter=text  npm test"
     },
-  "repository": {
+  "repository":{
     "type": "git",
     "url": "git+https://github.com/NIRoberto/myband1.git"
   },
