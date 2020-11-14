@@ -5,11 +5,16 @@ node:
   - '14.15.0'
 coveralls: true
 codecov: true
-before_install: 
+script: 
   - npm install
   - npm test
-script:
-- travis_wait 20  
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+after_success:
+  - npm run coverage
+  - npm run coveralls
   
 
   
