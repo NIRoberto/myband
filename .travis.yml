@@ -3,8 +3,7 @@ language: node_js
 cache: npm 
 node:
   - '14.15.0'
-coveralls: true
-codecov: true
+
 script: 
   - npm install
   - npm test
