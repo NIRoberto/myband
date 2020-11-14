@@ -1,11 +1,14 @@
-sudo: false
+
 language: node_js
 cache: npm 
 node_js:
   - '14.15.0'
-
+coveralls: true
+codecov: true
 before_install: 
   - npm install
+script:
+- travis_wait 20  
   
 
   
