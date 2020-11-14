@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 
 describe('TEST MY API', () => {
 //  GET all blog post routes
-//     describe('Test all endpoint  for blog post', () => {
+    describe('Test all endpoint  for blog post', () => {
 //         it("it should GET all the blog post", (done) => {
 //             chai.request(server)
 //                 .get('/api/v1/blogs')
