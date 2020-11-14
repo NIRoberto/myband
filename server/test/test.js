@@ -27,19 +27,19 @@ describe('TEST MY API', () => {
 //                })
     // get one blog post 
         
-        it("it should GET one   blog post", (done) => {
-           const blogid = '5fa812e91cbc6b0017423fc5';
-            chai.request(server)
-                .get('/api/v1/blog/'+ blogid)
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.should.be.a('object');
-                    res.body.should.have.property('message');
-                    res.body.should.have.property('data');
+    //     it("it should GET one   blog post", (done) => {
+    //        const blogid = '5fa812e91cbc6b0017423fc5';
+    //         chai.request(server)
+    //             .get('/api/v1/blog/'+ blogid)
+    //             .end((err, res) => {
+    //                 res.should.have.status(200);
+    //                 res.body.should.be.a('object');
+    //                 res.body.should.have.property('message');
+    //                 res.body.should.have.property('data');
 
-                    done();
-            })
-       })
+    //                 done();
+    //         })
+    //    })
          
        let blogid = '5f9a794b0910db08c86bd445';
              it("it should not GET one because of invalid id number", (done) => {
@@ -68,24 +68,24 @@ describe('TEST MY API', () => {
 //             })
 //        })
 
-           it("it should not  POST one  the blog post", (done) => {
-           const blog = {
+        //    it("it should not  POST one  the blog post", (done) => {
+        //    const blog = {
             
-             subbody: "adsfgkewryewtrgfhdsgfjhksaf",
-              body: "fsauhilqewryuyqwuyeutyuywuiter",
-              blogimgs: ".\\img\\1f181cd553a84c49ac33e21b6a71edfd"
-               }
-            const token = null;
-            chai.request(server)
-                .post('/api/v1/blog/')
-                .set('auth-token',token)
-                .send(blog)
-                .end((err, res) => {
-                    res.should.have.status(400);
+        //      subbody: "adsfgkewryewtrgfhdsgfjhksaf",
+        //       body: "fsauhilqewryuyqwuyeutyuywuiter",
+        //       blogimgs: ".\\img\\1f181cd553a84c49ac33e21b6a71edfd"
+        //        }
+        //     const token = null;
+        //     chai.request(server)
+        //         .post('/api/v1/blog/')
+        //         .set('auth-token',token)
+        //         .send(blog)
+        //         .end((err, res) => {
+        //             res.should.have.status(400);
                  
-                    done();
-            })
-           })
+        //             done();
+        //     })
+        //    })
 //          // get one blog post 
 //         let token = null;
 //         it("it should  delete  one   blog post", (done) => {
@@ -100,20 +100,20 @@ describe('TEST MY API', () => {
 //             })
 //        })
          
-        it("it should not delete one blog post because of invalid id number", (done) => {
+//         it("it should not delete one blog post because of invalid id number", (done) => {
                  
-            chai.request(server)
-                .delete('/api/v1/blog/delete'+blogid)
-                .end((err, res) => {
-                    res.should.have.status(404);
-                    done();
-            })
-            })
+//             chai.request(server)
+//                 .delete('/api/v1/blog/delete'+blogid)
+//                 .end((err, res) => {
+//                     res.should.have.status(404);
+//                     done();
+//             })
+//             })
 })
  
    
          //post one question
-   describe('POST /api/v1/question/', () => {
+//    describe('POST /api/v1/question/', () => {
 //        it("it should POST one  question", (done) => {
 //            const quest = {
 //                fullname: "isofddffdf",
@@ -148,125 +148,125 @@ describe('TEST MY API', () => {
 //             })
 //        })
  
-   })
+//    })
 //     //post one user
-    describe('Test all endpoint for the users', () => {
-//         it("it should POST/create one user", (done) => {
+//     describe('Test all endpoint for the users', () => {
+// //         it("it should POST/create one user", (done) => {
+// //             const user = {
+// //                 email: "robert2i5790@gmail.com",
+// //                 password: "123456"
+// //             }
+// //             chai.request(server)
+// //                 .post('/api/v1/signup')
+// //                 .send(user)
+// //                 .end((err, res) => {
+// //                     res.should.have.status(201);
+// //                     res.body.should.be.a('object');
+// //                     done();
+// //                 })
+// //         })
+//         it("it should not create user because  user already exist", (done) => {
 //             const user = {
-//                 email: "robert2i5790@gmail.com",
+//                 email: "robert@gmail.com",
 //                 password: "123456"
 //             }
 //             chai.request(server)
 //                 .post('/api/v1/signup')
 //                 .send(user)
 //                 .end((err, res) => {
-//                     res.should.have.status(201);
+//                     res.should.have.status(409);
 //                     res.body.should.be.a('object');
 //                     done();
-//                 })
-//         })
-        it("it should not create user because  user already exist", (done) => {
-            const user = {
-                email: "roberti@gmail.com",
-                password: "123456"
-            }
-            chai.request(server)
-                .post('/api/v1/signup')
-                .send(user)
-                .end((err, res) => {
-                    res.should.have.status(409);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
-        it("it should not create user because  of invalid email", (done) => {
-            const user = {
-                email: "robertigmail.com",
-                password: "123456"
-            }
-            chai.request(server)
-                .post('/api/v1/signup')
-                .send(user)
-                .end((err, res) => {
-                    res.should.have.status(400);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
+//                 });
+//         });
+//         it("it should not create user because  of invalid email", (done) => {
+//             const user = {
+//                 email: "robertigmail.com",
+//                 password: "123456"
+//             }
+//             chai.request(server)
+//                 .post('/api/v1/signup')
+//                 .send(user)
+//                 .end((err, res) => {
+//                     res.should.have.status(400);
+//                     res.body.should.be.a('object');
+//                     done();
+//                 });
+//         });
 
-        it("it should not create user because password is required", (done) => {
-            const quest = {
-                email: "robz@gmail.com"
+//         it("it should not create user because password is required", (done) => {
+//             const quest = {
+//                 email: "robz@gmail.com"
           
-            }
-            chai.request(server)
-                .post('/api/v1/signup/')
-                .send(quest)
-                .end((err, res) => {
-                    res.should.have.status(400);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
-        it("it should login a user ", (done) => {
-            const user = {
-                email: "robert2i@gmail.com",
-                password: "123456"
-            }
-            chai.request(server)
-                .post('/api/v1/login')
-                .send(user)
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
-        it("it should not login user because  invalid email", (done) => {
-            const user = {
-                email: "rober3t3@gmail.com",
-                password: "123456"
-            }
-            chai.request(server)
-                .post('/api/v1/login')
-                .send(user)
-                .end((err, res) => {
-                    res.should.have.status(400);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
-        it("it should not login user because  of invalid password", (done) => {
-            const user = {
-                email: "robertigmail.com",
-                password: "1234567"
-            }
-            chai.request(server)
-                .post('/api/v1/login')
-                .send(user)
-                .end((err, res) => {
-                    res.should.have.status(400);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
+//             }
+//             chai.request(server)
+//                 .post('/api/v1/signup/')
+//                 .send(quest)
+//                 .end((err, res) => {
+//                     res.should.have.status(400);
+//                     res.body.should.be.a('object');
+//                     done();
+//                 });
+//         });
+//         it("it should login a user ", (done) => {
+//             const user = {
+//                 email: "robert2i@gmail.com",
+//                 password: "123456"
+//             }
+//             chai.request(server)
+//                 .post('/api/v1/login')
+//                 .send(user)
+//                 .end((err, res) => {
+//                     res.should.have.status(200);
+//                     res.body.should.be.a('object');
+//                     done();
+//                 });
+//         });
+//         it("it should not login user because  invalid email", (done) => {
+//             const user = {
+//                 email: "rober3t3@gmail.com",
+//                 password: "123456"
+//             }
+//             chai.request(server)
+//                 .post('/api/v1/login')
+//                 .send(user)
+//                 .end((err, res) => {
+//                     res.should.have.status(400);
+//                     res.body.should.be.a('object');
+//                     done();
+//                 });
+//         });
+//         it("it should not login user because  of invalid password", (done) => {
+//             const user = {
+//                 email: "robertigmail.com",
+//                 password: "1234567"
+//             }
+//             chai.request(server)
+//                 .post('/api/v1/login')
+//                 .send(user)
+//                 .end((err, res) => {
+//                     res.should.have.status(400);
+//                     res.body.should.be.a('object');
+//                     done();
+//                 });
+//         });
 
-        it("it should not login user because password is rquired", (done) => {
-            const quest = {
-                email: "robz@gmail.com"
+//         it("it should not login user because password is rquired", (done) => {
+//             const quest = {
+//                 email: "robz@gmail.com"
           
-            }
-            chai.request(server)
-                .post('/api/v1/signup/')
-                .send(quest)
-                .end((err, res) => {
-                    res.should.have.status(400);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
+//             }
+//             chai.request(server)
+//                 .post('/api/v1/signup/')
+//                 .send(quest)
+//                 .end((err, res) => {
+//                     res.should.have.status(400);
+//                     res.body.should.be.a('object');
+//                     done();
+//                 });
+//         });
  
-    });
+//     });
 
     })
 
