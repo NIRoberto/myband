@@ -40,11 +40,11 @@
         <ul class="nav-list">
 
           <li class="nav-ilist"><a href="/UI/html/index.html" class="nav-link   active">home</a></li>
-          <li class="nav-ilist"><a href="/UI/html/portfolio.html" target="_blank" class="nav-link">portfolio</a></li>
-          <li class="nav-ilist"><a href="/UI/html/blog.html" class="nav-link" target="_blank">blog </a></li>
-          <li class="nav-ilist"><a href="/UI/html/loginpage.html" target="_blank" class="nav-link">login</a>
+          <li class="nav-ilist"><a href="/UI/html/portfolio.html"  class="nav-link">portfolio</a></li>
+          <li class="nav-ilist"><a href="/UI/html/blog.html" class="nav-link" >blog </a></li>
+          <li class="nav-ilist"><a href="/UI/html/loginpage.html"  class="nav-link">login</a>
           </li>
-          <li class="nav-ilist"><a href="/UI/html/register.html" target="_blank" class="nav-link">signup</a></li>
+          <li class="nav-ilist"><a href="/UI/html/register.html"  class="nav-link">signup</a></li>
         </ul>
       </div>
 
@@ -72,11 +72,11 @@
       <img src="/UI/img/ROBERT.jpg" alt="">
     </div>
     <div class="about-content">
-      <h1 class="about-title"> About me</h1>
+      <h1 class="about-title"> About me</h1><br>
       <p>I as I stated above my name is Robert NIYITANGA ,I finish my secondary in 2019 in the field of
         MPC(Mathematics-Physics-Computer),I start the career of web development in 2020 ,where I start by building
         sample project but now I can also build larger project.I had </p>
-      <p> <span id="one">1</span> year of experience </p>
+        <br>
 
     </div>
   </div><br><br><br><br>
@@ -86,20 +86,27 @@
 
     <div class="contact-page">
       <div class="contact-content">
-        <h1 id="title"> Messsage me </h1>
+        <h1 id="title"> Message me </h1>
         <form class="form" onsubmit="return contact()">
-          <input type="text" placeholder="Enter full name..." id="name" name="fname">
-          <span id="m1"></span><br>
-          <input type="email" value="" placeholder="Enter your email...." name="email" id="email">
-          <span id="m2"></span><br>
+          <div class="value">
+            full name
+          </div>
+          <input type="text" id="name" name="fname">
+          <span id="m1"></span>
+          <div class="value">
+          email
+          </div>
+          <input type="email" value=""  name="email" id="email">
+          <span id="m2"></span>
 
-          <input type="text" value="" placeholder="Subject" id="subject" name="subject">
-          <span id="m3"></span><br>
+          <div class="value">
+         message
+          </div>
 
-          <textarea name="message" id="message" cols="52" rows="15">Type your message here...</textarea>
+          <textarea name="message" id="message" cols="52" rows="15"></textarea>
           <span id="m4"></span><br>
 
-          <button type="submit">Send</button>
+          <button type="submit">Send <i class="fas fa-paper-plane"></i></button>
         </form>
       </div>
       <div class="contact-content">
@@ -161,9 +168,10 @@
     firebase.analytics();
     const db = firebase.firestore();
   </script>
+  <script src="/UI/js/questions.js"></script>
+
   <script src="/UI/js/contact.js"></script>
   <script src="/UI/js/nav.js"></script>
-  <script src="/UI/js/questions.js"></script>
 </body>
 
 </html>

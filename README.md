@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 [![Build Status](https://travis-ci.com/NIRoberto/myband.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband)[![Netlify Status](https://api.netlify.com/api/v1/badges/2d170af8-8240-4315-93ee-0efc4c5618af/deploy-status)](https://app.netlify.com/sites/robzweb/deploys) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage) ![npm](https://img.shields.io/npm/v/npm) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/NIRoberto/myband1)
+=======
+<<<<<<< HEAD
+[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1) [![Netlify Status](https://api.netlify.com/api/v1/badges/2d170af8-8240-4315-93ee-0efc4c5618af/deploy-status)](https://app.netlify.com/sites/robzweb/deploys) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage) ![npm](https://img.shields.io/npm/v/npm) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/NIRoberto/myband1)
+=======
+<<<<<<< HEAD
+[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage)
+=======
+[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=develop)](https://coveralls.io/github/NIRoberto/myband1?branch=develop) 
+# Capstone Project : Portfolio+Brand Website
+ ## Table of contents
+>>>>>>> 55bc99b... * update all contact form
+>>>>>>> 0fcfe06... * update all contact form
+>>>>>>> bc782bc... * update all contact form
 ## Capstone project: Portfolio+brand website
 ## Table of contents
 ## General Info

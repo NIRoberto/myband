@@ -245,7 +245,7 @@ body {
   }
   .toggle .l3 {
     transform: rotate(45deg) translate(-5px, -5px);
-    transition: 00.7s;
+    transition: 0.7s;
   }
 }
 
@@ -309,13 +309,13 @@ body {
 .about-me {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-evenly; */
   padding: 1em 3em 1em 3em;
   font-family: "Roboto", sans-serif;
 }
 .about-content {
   background-color: white;
-  box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.1);
+  /* box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.1); */
+  flex-basis: 50%;
   height: auto;
   padding-right: 5px;
   width: auto;
@@ -325,9 +325,10 @@ body {
   font-size: 4em;
 }
 .about-content img {
-  width: 100%;
+  width: 60%;
   height: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 50%;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 .about-content .about-title {
   text-align: center;
@@ -386,8 +387,8 @@ body {
 
 .contact-page .contact-content {
   flex: 1;
-  background-color: rgb(209, 208, 208);
-  padding: 1em 3em 1em 3em;
+  background-color: var(--bg-primary);
+  padding: 1em 3em 1em 5em;
 }
 
 .contact-content #link,
@@ -397,24 +398,35 @@ body {
   flex-direction: column;
 }
 .contact-content #titles {
-  margin-left: 1.7em;
+  margin-left: 0em;
+  padding-bottom: 1em;
+  color: white;
 }
 .contact-content #social {
   display: flex;
   flex-direction: row;
   padding-top: 5rem;
 }
+.value{
+  color:white;
+  text-transform: capitalize;
+padding-top: 8px;
+padding-bottom: 8px;
+font-weight: bold;
+}
 .contact-content #social li a {
   padding: 1em 2em 0 0;
-  color: black;
+  color: white;
   font-size: x-large;
 }
-
-.contact-content #link li i {
-  font-size: 1.3em;
+.contact-content #link li i ,li{
+  font-size: 1em;
+  color: white;
 }
 .contact-content #title {
-  padding-left: 5em;
+  padding-left: 4.6em;
+  color: white;
+  padding-bottom: 1em;
 }
 .contact-content .form {
   display: flex;
@@ -442,30 +454,55 @@ textarea {
 button {
   width: 5rem;
   height: 2rem;
-  background-color: rgb(15, 109, 216);
-  color: white;
+  background-color: white;
+  color: rgb(15, 109, 216);
   border-radius: 5px;
   border: none;
   outline: none;
+  font-weight: bold;
 }
+button[type=submit]:hover{
+    background-color:var(--txt-color);
+    border: 1px solid white;
+  color: white;
+}
+
 footer {
-  background-color: whitesmoke;
-  color: black;
+  background-color: rgb(13, 112, 241);
+  color: rgb(48, 47, 47);
   text-align: center;
 }
 footer p {
-  font-size: 10px;
+  font-size: 13px;
+  font-family: var(--font-family);
+  padding: 3px;
 }
 
 /*--------------- end contact me page---------------*/
 /*--------------- media query contact me page---------------*/
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 560px) {
   .contact-page {
     display: flex;
     flex-direction: column-reverse;
     font-family: "Roboto", sans-serif;
   }
+  .contact-page .contact-content {
+  flex: 1;
+  background-color: var(--bg-primary);
+  padding: 1em 3em 1em 3em;
+}
+}
+@media only screen and (max-width: 600px) {
+  .contact-page {
+    display: flex;
+    flex-direction:row;
+    font-family: "Roboto", sans-serif;
+  }
+  .contact-content #link li i ,li{
+  font-size: 1em;
+  color: white;
+}
   .contact-content .form {
     display: flex;
     flex-direction: column;
@@ -476,7 +513,7 @@ footer p {
   }
   .contact-content #social li a {
     padding: 1em 2em 0 0;
-    color: black;
+   
     font-size: large;
   }
   input[type="text"],
@@ -490,6 +527,7 @@ textarea {
 
 }
 }
+
 @media only screen and (max-width: 760px) {
   .contact-page {
     display: flex;
@@ -506,7 +544,7 @@ textarea {
   }
   .contact-content #social li a {
     padding: 1em 2em 0 0;
-    color: black;
+    color:white;
     font-size: large;
   }
 }

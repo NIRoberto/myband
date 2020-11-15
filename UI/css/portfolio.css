@@ -560,26 +560,41 @@ box-shadow:var(--shadow) ;
   flex-direction: column;
   align-items: center;
   justify-content: center;
- border-left: 1px solid rgb(204, 201, 201);
+ border-left: 1px solid white;
 
 
 }
+.value{
+  color:white;
+  text-transform: capitalize;
+padding-top: 0px;
+padding-bottom: 10px;
+font-weight: bold;
+font-family: var(--font-family);
+}
+
 #link,#social{
   list-style: none;
-   color: rgb(219, 216, 216);
+   color: white;
   font-family: var(--font-family);
   font-size: large;
-
 }
 #link li{
   padding: 5px;
 }
 #titles{
-  color: rgb(224, 219, 219);
+  color:white;
+  font-family: var(--font-family);
+  text-transform: capitalize;
 }
 #title{
-  color: rgb(219, 216, 216);
+  color: white;
+  text-transform: capitalize;
+padding-bottom: 6px;
   font-size:1.5em ;
+  padding-left: 0.2em;
+  font-family: var(--font-family);
+
 }
 #social{
   display: flex;
@@ -633,7 +648,9 @@ textarea{
   text-align: center;
   font-size: large;
   padding: 7px;
-  border-radius: 10px;
+  border-radius: 5px;
+  outline:none;
+  border: none;
   font-weight: bold;
   transition: 0.5s;
 

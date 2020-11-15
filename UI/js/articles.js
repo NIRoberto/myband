@@ -35,9 +35,12 @@ getblogpost = (doc) => {
    
  
 };
+ updatesss = (id) => {
+window.location.href='/UI/admin post/post/update.html#'+id;
+}
 delet = (id) => {
 
-  if (confirm("Are you sure you want to delete this blop post")) {
+  if (confirm("Are you sure you want to delete this blog post")) {
      db.collection("blog")
      .doc(id).delete().then((res) => {
        window.location.href = "/UI/admin post/post/all.html";
@@ -48,7 +51,9 @@ delet = (id) => {
      
    }
    
- };
+};
+
+ 
 
 db.collection("blog")
   .get()
