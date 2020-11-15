@@ -7,6 +7,9 @@
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
 
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+
+
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <!-- fontawasome -->
@@ -71,7 +74,7 @@
                     <th >action</th>
                
                 </tr>
-                <tr class="row">
+                <!-- <tr class="row">
                     <td class="td">Robert NIYITANGA</td>
                     <td class="td">robz@gmail.com</td>
                     <td>good</td>
@@ -82,7 +85,7 @@
                     <td class="td">dev@gmail.com</td>
                     <td>good</td>
                  <td id="delete"><a href="" id="delete">delete</a><td>
-                </tr>
+                </tr> -->
              
             </table>
         </div>
@@ -108,6 +111,9 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+var auth = firebase.auth();
+
   firebase.analytics();
   
 </script>

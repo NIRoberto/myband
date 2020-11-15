@@ -7,7 +7,7 @@ loginform.addEventListener('submit',(e)=>{
   //   login 
    auth.signInWithEmailAndPassword(email,password).then((cred)=>{
        
-       console.log('user has succefull logged in ',cred.user);
+       console.log('user has succefully logged in ',cred.user);
       window.location.href='/UI/admin post/post/all.html';
 }).catch((error)=>{
        console.log(error.message);

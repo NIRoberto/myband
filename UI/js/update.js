@@ -1,9 +1,12 @@
-let updatess = document.querySelector('.add-new-post #formm');
-let updateinfo =document.querySelector('.update .update-section');
- postinfo =(doc)=> {
-   updatess.innerHTML =`
-       <div class="ele">
+let  update_form = document.querySelector('#formm');
+const id =window.location.hash.replace("#","");
+
+ post_info =(doc)=> {
+   update_form.innerHTML =`
+    <div class="ele">
     Title       </div>  <div class="ele">
+    <input type="hidden" id="title" placeholder="" name ="title" value="${doc.id}">       </div>  <div class="ele">
+    
     <input type="text" id="title" placeholder="" name ="title" value="${doc.data().title}">       </div>  <div class="ele">
     Sub-body       </div>  <div class="ele">
     <textarea name="subbody" id="textarea" cols="30" rows="3">  ${doc.data().subbody}</textarea>      </div>   <div class="ele">
@@ -12,43 +15,35 @@ let updateinfo =document.querySelector('.update .update-section');
     <textarea name="body" id="textarea" cols="30" rows="9">${doc.data().body}</textarea>       </div>  <div class="ele">
      Image        </div>  <div class="ele">
     <input type="file" id="file"  placeholder="image">      </div>  <div class="ele"><br> 
-    <a href="javascript:updates('${doc.id}')" class="updatess">update</a>       </div>   <div class="ele">
+              <button class="updatess" onclick=' return updates()'> Update</button>
+    </div>   <div class="ele">
           </div>
      `;
-
-
-}
-updatesss = (id) => {
-window.location.href='/UI/admin post/post/update.html';
 }
 db.collection("blog")
+    .doc(id)
   .get()
-  .then((querySnapshotss) => {
-    querySnapshotss.forEach((doc) => {
-postinfo(doc);
 
-    });
+  .then(doc => {
+  
+      post_info(doc);
+    
   });
+
+
 let put = document.querySelector('#formm');
 updates=(id)=>{
 // To update age and favorite color:
- put.addEventListener("click", (e) => {
-    e.preventDefault();
    db.collection("blog").doc(id).update({
      title: put.title.value,
      body: put.body.value,
      subbody: put.subbody.value,
-
-    
-   }).then(() => {
-     alert("update has succefful done");
+ }).then(() => {
+     alert("update has done.");
      window.location.href = '/UI/admin post/post/all.html';
 
    }).catch((error) => {
      alert(error.message);
    });
-     put.title.value="",
-    put.body.value="",
-    put.subbody.value=""
- })
+     
 }

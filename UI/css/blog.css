@@ -363,6 +363,7 @@ h3 {
   color: white;
   border: 1px solid #1187ee;
 }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 460px) {
   .intro-1 {
@@ -396,7 +397,7 @@ h3 {
     font-size: large;
   }
   .text p {
-    font-size: x-large;
+    font-size: large;
     line-height: 1.4em;
   }
   .blog-post {
@@ -591,25 +592,42 @@ h3 {
 ul {
   list-style: none;
 }
+#titles{
+  padding-left: 0.5rem;
+}
+
+
+#title,#titles{
+  color: white;
+  padding-bottom: 0.5em;
+}
+.contact-me{
+  padding-top: 1em;
+}
+.contact-me-from{
+  padding-left: 2em;
+}
 .contact-me,
 .contact-me-s {
   display: flex;
   height: 300px;
   width: 100%;
-  background-color: grey;
-  color: grey;
+  background-color:var(--bg-primary);
   list-style: none;
+  font-family: var(--font-family);
   margin-left: 0;
 }
 .contact-me .contact-me-s .contact-me-s1 {
   flex: 1;
-  /* border: 1px solid red; */
   justify-content: center;
   align-content: center;
   width: 100%;
 }
 .location {
-  padding-left: 6rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 .location #social {
   color: white;
@@ -617,18 +635,18 @@ ul {
   flex-direction: row;
 }
 #social li a {
-  color: black;
+  color: white;
 }
 #social li {
   color: white;
 }
 .location i {
-  color: black;
+  color: white;
   font-size: 1.1em;
   margin: 0 8px;
 }
 #link li {
-  color: black;
+  color:white;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   padding: 5px 5px;
@@ -646,6 +664,17 @@ ul {
   justify-content: center;
   align-content: center;
   justify-content: space-evenly;
+}
+.value{
+  color:white;
+  text-transform: capitalize;
+padding-top: 8px;
+padding-bottom: 10px;
+font-weight: bold;
+font-family: var(--font-family);
+}
+.btn{
+  padding-top: 10px;
 }
 input[type="email"] {
   height: 1.7rem;
@@ -666,18 +695,34 @@ textarea {
   border-radius: 4px;
   outline: none;
   border: none;
-  color: black;
+  color: white;
 }
 #button {
-  background: #1187ee;
-  padding: 5px 8px;
-  color: rgb(243, 250, 249);
-  text-decoration: none;
+  width: 5em;
+  height: 2em;
+  color:var(--txt-color);
+  background: white;
+  text-align: center;
+  font-size: large;
+  padding: 7px;
   border-radius: 5px;
+  outline:none;
+  border: none;
+  font-weight: bold;
+  transition: 0.5s;
+
+}
+#button:hover{
+ border: 1px solid white;
+  color:white;
+  transition: 0.5s;
+  background: #0088ff;
+
 }
 #footer {
   display: flex;
   justify-content: center;
+  color: #0a508d;
   background-color: rgb(212, 211, 211);
 }
 #footer p {
@@ -694,7 +739,6 @@ textarea {
     display: flex;
     height: 35rem;
     width: 100%;
-    background-color: grey;
     color: grey;
     list-style: none;
     margin-left: 0;
@@ -704,7 +748,7 @@ textarea {
     padding-left: 0rem;
   }
   .location i {
-    color: black;
+    color: white;
     font-size: 1em;
     margin: 0 4px;
   }
@@ -719,8 +763,6 @@ textarea {
     display: flex;
     height: 300px;
     width: 100%;
-    background-color: grey;
-    color: grey;
     list-style: none;
     margin-left: 0;
   }
