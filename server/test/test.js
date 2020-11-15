@@ -115,6 +115,7 @@ describe('TEST MY API', () => {
          //post one question
    describe('POST /api/v1/question/', () => {
        it("it should POST one  question", (done) => {
+	       let token=null;
            const quest = {
                fullname: "isofddffdf",
               email: "robz@gmail.com",
@@ -135,6 +136,8 @@ describe('TEST MY API', () => {
  
 
        it("it should not POST one  question", (done) => {
+	       let token=null;
+	       
            const quest = {
               email: "adsfgkewryewtrgfhdsgfjhksaf",
               subject: "fsauhilqewryuyqwuyeutyuywuiter",
