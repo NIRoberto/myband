@@ -157,20 +157,20 @@ describe('TEST MY API', () => {
    })
     //post one user
     describe('Test all endpoint for the users', () => {
-        it("it should POST/create one user", (done) => {
-            const user = {
-                email: "robrto2i5jh790@gmail.com",
-                password: "123456"
-            }
-            chai.request(server)
-                .post('/api/v1/signup')
-                .send(user)
-                .end((err, res) => {
-                    res.should.have.status(201);
-                    res.body.should.be.a('object');
-                    done();
-                })
-        })
+//         it("it should POST/create one user", (done) => {
+//             const user = {
+//                 email: "robrto2i5jh790@gmail.com",
+//                 password: "123456"
+//             }
+//             chai.request(server)
+//                 .post('/api/v1/signup')
+//                 .send(user)
+//                 .end((err, res) => {
+//                     res.should.have.status(201);
+//                     res.body.should.be.a('object');
+//                     done();
+//                 })
+//         })
         it("it should not create user because  user already exist", (done) => {
             const user = {
                 email: "robert@gmail.com",
