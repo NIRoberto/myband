@@ -14,6 +14,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: var(--font-family);
 }
 body {
   box-sizing: border-box;
@@ -300,7 +301,6 @@ input[type="text"] {
   border-radius: 5px;
   outline: none;
   margin: 0.5em 0 0.5em 0;
-
   border: 1px solid grey;
 }
 textarea {
@@ -439,6 +439,15 @@ padding: 1em;
     grid-template-columns: repeat(1, 5% 90% 5%);
 
   }
+  input[type="email"],
+input[type="text"] {
+  width: 100%;
+
+}
+textarea {
+  width: 100%;
+
+}
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
