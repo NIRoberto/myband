@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import usermodel from '../models/usermodel.js';
+import usermodel from '../models/usermodel';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import Joi from '@hapi/joi';
@@ -10,16 +10,17 @@ const schema = {
 export default class usercontroller {
     // find all users
     static async find(req, res) {
-        const getalluser = await usermodel.find();
+     
 
         try {
-            res.status(200).json({
-                message: "all  user are:",
+               const getalluser = await usermodel.find();
+          return  res.status(200).json({
+                message: "all  user are",
                 data: getalluser
             })
         }
         catch (error) {
-            res.status(404).json({
+         return   res.status(404).json({
                 message: error.message
             })
         }
@@ -30,13 +31,13 @@ export default class usercontroller {
         try {
             const getone = await usermodel.findById({ _id: id })
 
-            res.status(200).json({
+      return  res.status(200).json({
                 message: "success",
                 data: getone
             })
         }
         catch (error) {
-            res.status(400).json({
+            return res.status(400).json({
                 message: error.message
             })
 
@@ -47,7 +48,7 @@ export default class usercontroller {
         // validate data 
         const { error } = Joi.validate(req.body, schema);
          if (error) {
-            res.status(400).json({
+          return  res.status(400).json({
             message: error.details[0].message
             })
         }
@@ -57,7 +58,7 @@ export default class usercontroller {
                 Error: "incorrect  email or password"
             })
         }
-    if (req.loggeduser.userId !== user.userId) {
+    if (req.loggeduser.userId !== id) {
       return res.status(403).json({
         Error:"You can't update user which not belongs to you"
       })
@@ -75,7 +76,7 @@ export default class usercontroller {
 
             });
         } catch (error) {
-            res.status(404).json({
+           return res.status(404).json({
                 error: error.message,
             });
         }
@@ -163,7 +164,7 @@ export default class usercontroller {
                 Error: "User you want to delete doesn't exist "
             })
         }
-          if (req.loggeduser.userId !== user.userId) {
+          if (req.loggeduser.userId === id) {
       return res.status(403).json({
         Error:"You can't update which not belongs to you"
       })
