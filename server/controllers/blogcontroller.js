@@ -30,13 +30,13 @@ export default class blopost {
     })
     try {
       const newblog = await blogpost.save();
-      res.status(201).json({
-        message: "Blog post successfully created.",
+      return  res.status(201).json({
+        message: "success created",
         data: newblog
       });
 }
     catch (error) {
-      res.status(400).json({
+      return res.status(400).json({
         error: error.message
       });
     }

@@ -91,6 +91,32 @@ export default class questionscontroller {
       });
     }
   }
+   // get one comment
+  static async getOne(req, res) {
+    const id = req.params.id;
+    const comment = await commentmodel.findById(id);
+     if (!comment) {
+    return   res.status(404).json({
+        message: "not found"
+      });
+    }
+     
+   
+      try {
+        
+      return res.status(200).json({
+        message: "success ",
+        data:comment
+      });
+   
+    }
+    
+    catch (error) {
+    return  res.status(404).json({
+        error: error.message,
+      });
+    }
+}
  // delete comment
   static async deleteOne(req, res) {
     const id = req.params.id;
