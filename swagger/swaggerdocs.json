@@ -689,7 +689,7 @@
       "description": "Unauthorized"
      },
      "403": {
-      "description": "Cann't delete comment which is not yours."
+      "description": "You Cann't delete comment which is not yours."
      },
      "404": {
       "description": "Comment not found"

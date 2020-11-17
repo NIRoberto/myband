@@ -6,7 +6,7 @@ var fs = require('fs');
 gulp.task('swagger', function (done) {
     var doc = yaml.safeLoad(fs.readFileSync(path.join(__dirname, "../api/swagger/swagger.yaml")));
     fs.writeFileSync(
-        path.join(__dirname, "../swagger/swagger.json"),
+        path.join(__dirname, "../swagger/swaggerdocs.json"),
         JSON.stringify(doc, null, " ")
     );
     done();
