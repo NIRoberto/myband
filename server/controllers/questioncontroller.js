@@ -28,7 +28,7 @@ export default class questionscontroller {
   // validate data 
     const { error } = Joi.validate(req.body, schema);
     if (error) {
-      res.status(400).json({
+    return  res.status(400).json({
         message: error.details[0].message
       })
     }

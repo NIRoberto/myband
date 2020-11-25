@@ -101,9 +101,7 @@ export default class usercontroller {
         const salt = await bcrypt.genSalt(6);
         const hashpassword = await bcrypt.hash(req.body.password, salt);
         // create a token 
-        const token = jwt.sign({ email: req.body.email }, process.env.tokens, {
-            expiresIn:'3h'
-        });
+        const token = jwt.sign({ email: req.body.email }, process.env.tokens);
         Joi.validate(req.body, schema);
         const user = usermodel({
             _id: new mongoose.Types.ObjectId(),
@@ -140,9 +138,7 @@ export default class usercontroller {
             })
         }
         // create a token 
-        const token = jwt.sign({ userId: user._id, email: req.body.email }, process.env.tokens, {
-            expiresIn:'3h'
-        });
+        const token = jwt.sign({ userId: user._id, email: req.body.email }, process.env.tokens,);
         res.header("auth-token", token)
         try {
             res.status(200).json({
@@ -169,7 +165,7 @@ export default class usercontroller {
         }
           if (req.loggeduser.userId !== user.userId) {
       return res.status(403).json({
-        message:"You cann't update which not belongs to you"
+        message:"You cann't update which not belongs to you."
       })
     }
 
