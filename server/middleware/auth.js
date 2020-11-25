@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 module.exports = function (req, res, next) {
     const token = req.header('auth-token');
     if (!token) {
-        res.status(401).json({
+     return   res.status(401).json({
             message: "unauthorized"
         })
     }
@@ -16,7 +16,7 @@ module.exports = function (req, res, next) {
         next();
     }
     catch (error) {
-        res.status(400).json({
+     return   res.status(400).json({
             message: "invalid token"
         });
     }
