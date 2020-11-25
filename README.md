@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage)
+[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1)
 ## Capstone project: Portfolio+brand website
 ## Table of contents
 ## General Info
