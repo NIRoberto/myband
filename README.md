@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage) ![npm](https://img.shields.io/npm/v/npm) ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter%2F%40RobertNiyitanga)
+[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage) ![npm](https://img.shields.io/npm/v/npm) https://img.shields.io/github/languages/code-size/NIRoberto/myband1
 ## Capstone project: Portfolio+brand website
 ## Table of contents
 ## General Info
@@ -72,3 +72,5 @@ The UI Templates can be found at : https://robzweb.netlify.app/ui/html/
 The project is hosted on heroku
 
 Copyright (c)  Robert Niyitanga
+
+![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter%2F%40RobertNiyitanga)
