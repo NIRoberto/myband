@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage)
+[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage) ![npm](https://img.shields.io/npm/v/npm) ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter%2F%40RobertNiyitanga)
 ## Capstone project: Portfolio+brand website
 ## Table of contents
 ## General Info
