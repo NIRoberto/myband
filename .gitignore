@@ -6,4 +6,8 @@ docs
 coverage
 .nyc_output
 api
+<<<<<<< HEAD
 .prettierrrc
+=======
+.prettierrc
+>>>>>>> c0b4f0e... * Update README.md
