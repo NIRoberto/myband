@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage) ![npm](https://img.shields.io/npm/v/npm) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/NIRoberto/myband1)
+[![Build Status](https://travis-ci.com/NIRoberto/myband1.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband1) [![Netlify Status](https://api.netlify.com/api/v1/badges/2d170af8-8240-4315-93ee-0efc4c5618af/deploy-status)](https://app.netlify.com/sites/robzweb/deploys) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage) ![npm](https://img.shields.io/npm/v/npm) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/NIRoberto/myband1)
 ## Capstone project: Portfolio+brand website
 ## Table of contents
 ## General Info
