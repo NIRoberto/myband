@@ -516,7 +516,7 @@ ul {
 .contact-me,
 .contact-me-s {
   display: flex;
-  height: 300px;
+  height: auto;
   width: 100%;
   background-color:var(--bg-primary);
   list-style: none;

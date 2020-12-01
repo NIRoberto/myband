@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [![Build Status](https://travis-ci.com/NIRoberto/myband.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband)[![Netlify Status](https://api.netlify.com/api/v1/badges/2d170af8-8240-4315-93ee-0efc4c5618af/deploy-status)](https://app.netlify.com/sites/robzweb/deploys) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage) ![npm](https://img.shields.io/npm/v/npm) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/NIRoberto/myband1)
 =======
 <<<<<<< HEAD
@@ -13,6 +14,9 @@
 >>>>>>> 55bc99b... * update all contact form
 >>>>>>> 0fcfe06... * update all contact form
 >>>>>>> bc782bc... * update all contact form
+=======
+[![Build Status](https://travis-ci.com/NIRoberto/myband.svg?branch=develop)](https://travis-ci.com/NIRoberto/myband)[![Netlify Status](https://api.netlify.com/api/v1/badges/2d170af8-8240-4315-93ee-0efc4c5618af/deploy-status)](https://app.netlify.com/sites/robzweb/deploys) [![Coverage Status](https://coveralls.io/repos/github/NIRoberto/myband1/badge.svg?branch=ch-increase-coverage)](https://coveralls.io/github/NIRoberto/myband1?branch=ch-increase-coverage) ![npm](https://img.shields.io/npm/v/npm) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/NIRoberto/myband1)
+>>>>>>> a8e538d... Update README.md
 ## Capstone project: Portfolio+brand website
 ## Table of contents
 ## General Info
