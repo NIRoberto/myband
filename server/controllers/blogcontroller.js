@@ -7,7 +7,7 @@ export default class blopost {
     try {
       const blogpost = await blog.find();
       res.status(200).json({
-        message: "success all",
+        message: "success ",
         data: blogpost
       });
     }
@@ -31,7 +31,7 @@ export default class blopost {
     try {
       const newblog = await blogpost.save();
       res.status(201).json({
-        message: "success created",
+        message: "Blog post successfully created.",
         data: newblog
       });
 }
@@ -48,8 +48,8 @@ export default class blopost {
    try {
     const post = await blog.findById(id);
     if (!post) {
-      res.status(400).json({
-        message: "not found"
+      res.status(404).json({
+        Error: "blog not found"
       })
     }
       return res.status(200).json({
@@ -60,7 +60,7 @@ export default class blopost {
     }
     catch (error) {
       res.status(404).json({
-        message: "blog not found"
+        Error: "blog not found"
       })
     }
   }
@@ -71,13 +71,13 @@ export default class blopost {
         const post = await blog.findById(id);
   
       if (!post) {
-       return res.status(400).json({
-        message: "not found"
+       return res.status(404).json({
+        Error: "The blog you are trying does not exist"
       })
     }
       if (req.loggeduser.userId !== post.userId) {
       return res.status(403).json({
-        message:"You cann't update which not belongs to you"
+        Error:"You can't update which not belongs to you"
       })
     }
     try {
@@ -86,7 +86,7 @@ export default class blopost {
         { $set: { title: req.body.title, subbody: req.body.subbody, body: req.body.body, blogimgs: req.file.path } }
       );
       res.status(200).json({
-        message: "update blog post was successfull done",
+        message: "update blog post was successfully done",
 
       });
     } catch (error) {
@@ -102,20 +102,20 @@ export default class blopost {
     const post = await blog.findById(id);
   
     if (!post) {
-       return res.status(400).json({
-        message: "not found"
+       return res.status(404).json({
+        Error: " Blog not found"
       })
     }
     if (req.loggeduser.userId !== post.userId) {
       return res.status(403).json({
-        message:"You cann't delete which not belongs to you"
+        Error:"You can't delete which not belongs to you"
       })
     }
 
     try {
       const deleteone = await blog.remove({ _id: id });
      return  res.status(200).json({
-        message: "delete  a blog post was succesfull deleted!",
+        message: "delete  a blog post was successfully deleted!",
       });
     }
     catch (error) {
