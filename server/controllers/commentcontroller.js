@@ -13,7 +13,7 @@ export default class questionscontroller {
     try {
       const comment = await commentmodel.find();
       res.status(200).json({
-        message: "success all",
+        message: "success ",
         data: comment
       });
     }
@@ -67,13 +67,13 @@ export default class questionscontroller {
       const comment = await commentmodel.findById(id);
      if (!comment) {
     return   res.status(404).json({
-        message: "not found"
+        Error: "Comment not found"
       });
     }
 
       if (req.loggeduser.userId !== comment.userId) {
       return res.status(403).json({
-        message:"You cann't update which not belongs to you"
+        Error:"You can't update which not belongs to you"
       })
     }
     try {
@@ -82,7 +82,7 @@ export default class questionscontroller {
         { $set: { email: req.body.email, fullname: req.body.fullname, comment: req.body.comment } }
       );
       res.status(200).json({
-        message: "update blog post was successfull done",
+        message: "Update blog post was successfully done",
 
       });
     } catch (error) {
@@ -97,19 +97,19 @@ export default class questionscontroller {
     const comment = await commentmodel.findById(id);
      if (!comment) {
     return   res.status(404).json({
-        message: "not found"
+        Error: "Comment you want to delete does not exist."
       });
     }
        if (req.loggeduser.userId !== comment.userId) {
       return res.status(403).json({
-        message:"You cann't delete which not belongs to you"
+        Error:"You can't delete which not belongs to you"
       })
     }
    
       try {
           const commentdelete = await commentmodel.remove({ _id: id });
       return res.status(200).json({
-        message: "delete  a quest was succesfull done!",
+        message: "Delete  a comment was successfully done!",
       });
    
     }
