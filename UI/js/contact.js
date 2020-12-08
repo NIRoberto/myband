@@ -1,44 +1,41 @@
+
 let mname =document.getElementById('m1');
 let memail =document.getElementById('m2');
-let msubject =document.getElementById('m3');
 let mmessage =document.getElementById('m4');
 let name =document.getElementById('name');
 let email =document.getElementById('email');
-let subject =document.getElementById('subject');
 let message =document.getElementById('message');
-let emailregex =/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-let nameregex =/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
-var a =nameregex.test(name.value);
+let nameregex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+let messageregex = /^[ \t]+/;
+console.log(message.value);
  contact =()=>{
-if(!(name.value.trim())&& !(email.value.trim())&&!(subject.value.trim())){
+if(!(name.value.trim())&& !(email.value.trim())&&!(message.value.trim())){
     mname.innerHTML="space not allowed";
-    mname.style.color="red";
+    mname.style.color="rgb(73, 4, 4)";
     memail.innerHTML="space not allowed";
-    memail.style.color="red";
-    msubject.innerHTML="space not allowed";
-    msubject.style.color="red";
+    memail.style.color="rgb(73, 4, 4)";
+    mmessage.innerHTML="space not allowed";
+    mmessage.style.color="rgb(97, 3, 3)";
  
     return false;
 }
- if(!(nameregex.test(name.value))&&!(email.value.trim())&&!(subject.value.trim())){
+      if(!(nameregex.test(name.value))&&!(email.value.trim())&&!(messageregex.test(message.value))){
  
     mname.innerHTML="enter valid name";
-    mname.style.color="red";
+    mname.style.color="rgb(97, 3, 3)";
     memail.innerHTML="space not allowed";
-    memail.style.color="red";
-    msubject.innerHTML="space not allowed";
-    msubject.style.color="red";
+    memail.style.color="rgb(97, 3, 3)";
+  mmessage.innerHTML=" enter valid subject";
+  mmessage.style.color="rgb(97, 3, 3)";
     return false;
 }
-else{
-    mname.innerHTML="valid name";
-    mname.style.color="green";
-    memail.innerHTML="valid  email";
-    memail.style.color="green";
-    msubject.innerHTML="valid subject";
-    msubject.style.color="green";
-    window.location.href='/UI/html/index.html';
 
+else{
+         name.value = "";
+        email.value = "";
+        message.value = "";
+          
+  
     return true;
 }
 }

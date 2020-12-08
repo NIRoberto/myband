@@ -5,4 +5,4 @@ docs
 .vscode
 coverage
 .nyc_output
-docs
+api

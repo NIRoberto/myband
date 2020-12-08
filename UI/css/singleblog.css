@@ -14,6 +14,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: var(--font-family);
 }
 body {
   box-sizing: border-box;
@@ -260,12 +261,9 @@ body {
 .single h1 {
   color: rgb(17, 120, 236);
   padding-left: 1rem;
+  
 }
-.single p {
-  padding: 15px 15px;
-  float: left;
-  border-bottom: 1px solid rgb(212, 211, 211);
-}
+
 .single i {
   color: grey;
 }
@@ -283,41 +281,41 @@ body {
 .single-sections {
   background-color: white;
 
-  box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.4);
 }
-.single-sections p {
-  line-height: 1.3em;
-  font-size: large;
-  /* padding: 5px 5px 5px 5px; */
+.single-sections  .text p ,h2 {
+  line-height: 1.5em;
+  font-size: 1.3em;
+  padding:2em 5em 2em 5em; 
 }
 
 button:hover {
-  background-color: rgb(66, 66, 66);
+  background-color: rgb(23, 97, 209);
+  transition: 2s;
 }
-.comment {
-  padding-left: 1em;
-}
+
 input[type="email"],
 input[type="text"] {
-  width: 90%;
+  width: 50%;
+  padding: 1em;
   height: 2.5em;
   border-radius: 5px;
   outline: none;
+  margin: 0.5em 0 0.5em 0;
   border: 1px solid grey;
 }
 textarea {
-  width: 90%;
+  width: 50%;
   height: 6rem;
   outline: none;
   border: 1px solid grey;
+  margin: 1em 0 1em 0;
+  padding: 1em;
+
   border-radius: 5px;
 }
 textarea:focus {
-  width: 90%;
-  height: 6rem;
-  outline: none;
+
   border: 1.5px solid black;
-  border-radius: 5px;
 }
 button {
   width: 8em;
@@ -326,20 +324,87 @@ button {
   color: whitesmoke;
   outline: none;
   border: 1px solid white;
+  border-radius: 10px;
 }
 
 .single-comment {
-  /* border: 1px solid rgb(177, 11, 11); */
-  text-align: left;
-  padding: 1em 1em 0 1em;
-  border-bottom: 1px solid rgb(212, 211, 211);
+  display: flex;
+  flex-direction: column;
+   border-radius: 10px;
+   justify-content: space-evenly;
+  width: 50%;
+}
+.comment-card{
+   box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.24);
+   border-radius: 10px;
+
 }
 
-.single-comment span a {
+.single-comment .info{
+  flex-basis: 20%;
+  padding: 1em;
+  display: flex;
+ 
+  /* border:1px solid red; */
+
+}
+.single-comment .info .full_name{
+
+ font-weight: bold;
+ padding-right: 1em;
+
+}
+.single-comment .info .email{
+ 
+ padding-right: 1em;
+
+}
+.single-comment .info .email a{
+
+ text-decoration: none;
+
+}
+h2{
+  font-size: 2em;
+}
+.single-comment .comment-text{
+  flex-basis: 60%;
+  display: flex;
+  padding: 1em;
+  line-height: 1.3em;
+
+}.single-comment .action{
   float: right;
-  padding-right: 1em;
-  padding-top: 1em;
+  flex-basis: 20%;
+padding: 1em;
+}
+.single-comment   .action span .delete{
+
+  background: red;
+  border: 2px solid green;
+
+  color: white;
+  border-radius: 7px;
+  padding: 7px;
+  width: 3em;
   text-decoration: none;
+  text-transform: capitalize;
+  flex-basis: 20%;
+  border:none;
+  outline:none;
+}
+.single-comment   .action .update{
+
+  background:var(--bg-primary);
+  color: white;
+  border-radius: 7px;
+  padding: 7px;
+  width: 3em;
+  text-decoration: none;
+  text-transform: capitalize;
+  flex-basis: 20%;
+  border:none;
+  outline:none;
 }
 .single-sectio {
   padding-left: 1em;
@@ -368,13 +433,21 @@ button {
     margin: 0;
     padding: 0;
   }
+ 
+
   .single-blog {
-    display: grid;
     grid-template-columns: repeat(1, 5% 90% 5%);
-    grid-template-rows: repeat(3, auto);
-    padding-top: 5rem;
-    width: 100%;
+
   }
+  input[type="email"],
+input[type="text"] {
+  width: 100%;
+
+}
+textarea {
+  width: 100%;
+
+}
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -382,33 +455,45 @@ button {
   .single {
     margin: 0;
     padding: 0;
-  }
-  .single-blog {
-    display: grid;
-    grid-template-columns: repeat(1, 5% 90% 5%);
-    grid-template-rows: repeat(3, auto);
-    padding-top: 5rem;
-    width: 100%;
+    
   }
   .single-sections img {
-    width: 100%;
-    height: 15rem;
+  width: 100%;
+  height: 20em;
+}
+   .single-comment {
+
+  width: 100%;
+}
+    .single-sections  .text p ,h2 {
+
+  padding:0; 
+}
+
+  .single-blog {
+    grid-template-columns: repeat(1, 5% 90% 5%);
+
   }
+   .single-sections  .text p ,h2 {
+
+  padding:1em 0em 1em 0em; 
+}
+h3{
+  padding:1em;
+}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .single-blog {
-    display: grid;
-    grid-template-columns: repeat(1, 10% 70% 20%);
-    grid-template-rows: repeat(3, auto);
-    padding-top: 5rem;
-    width: 100%;
+    grid-template-columns: repeat(1, 10% 80% 10%);
+    font-family: var(--font-family);
+
   }
   .single-sections img {
-    width: 100%;
-    height: 30rem;
+    height: 30%;
   }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -422,14 +507,29 @@ button {
 ul {
   list-style: none;
 }
+#titles{
+  padding-left: 0.5rem;
+}
+
+
+#title,#titles{
+  color: white;
+  padding-bottom: 0.5em;
+}
+.contact-me{
+  padding-top: 1em;
+}
+.contact-me-from{
+  padding-left: 2em;
+}
 .contact-me,
 .contact-me-s {
   display: flex;
-  height: 300px;
+  height: auto;
   width: 100%;
-  background-color: grey;
-  color: grey;
+  background-color:var(--bg-primary);
   list-style: none;
+  font-family: var(--font-family);
   margin-left: 0;
 }
 .contact-me .contact-me-s .contact-me-s1 {
@@ -439,7 +539,10 @@ ul {
   width: 100%;
 }
 .location {
-  padding-left: 8rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 .location #social {
   color: white;
@@ -454,10 +557,13 @@ ul {
 }
 .location i {
   color: white;
+  font-size: 1.1em;
+  margin: 0 8px;
 }
 #link li {
-  color: white;
-
+  color:white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
   padding: 5px 5px;
 }
 
@@ -468,18 +574,24 @@ ul {
   font-size: 1.3em;
   padding: 1rem 1rem;
 }
-#title,
-#titles {
-  color: white;
-}
 .contact {
   display: flex;
   justify-content: center;
   align-content: center;
   justify-content: space-evenly;
-  width: 100%;
 }
-.input[type="email"] {
+.value{
+  color:white;
+  text-transform: capitalize;
+padding-top: 8px;
+padding-bottom: 10px;
+font-weight: bold;
+font-family: var(--font-family);
+}
+.btn{
+  padding-top: 10px;
+}
+#email[type="email"] {
   height: 1.7rem;
   width: 15rem;
   color: grey;
@@ -490,7 +602,7 @@ ul {
   padding: 12px 12px;
 }
 
-.textarea {
+#textarea {
   height: 5rem;
   width: 15rem;
   color: grey;
@@ -499,23 +611,35 @@ ul {
   outline: none;
   border: none;
   color: black;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+label{
+  display: flex;
+  flex-direction: column;
 }
 #button {
-  background: #1187ee;
-  padding: 7px 9px;
-  color: rgb(243, 250, 249);
-  text-decoration: none;
+  width: 5em;
+  height: 2em;
+  color:var(--txt-color);
+  background: white;
+  text-align: center;
+  font-size: large;
+  padding: 7px;
   border-radius: 5px;
-}
-#footer {
-  display: flex;
-  justify-content: center;
-  background-color: rgb(212, 211, 211);
-}
-#footer p {
-  font-size: smaller;
-}
+  outline:none;
+  border: none;
+  font-weight: bold;
+  transition: 0.5s;
 
+}
+#button:hover{
+ border: 1px solid white;
+  color:white;
+  transition: 0.5s;
+  background: #0088ff;
+
+}
 /* end of footer */
 @media (max-width: 760px) {
   .contact-me,

@@ -219,8 +219,10 @@ th,
 /* end of all users */
 /* add new user */
 .add-new-user {
-	padding-left: 20em;
-	padding-bottom: 12rem;
+display: flex;
+justify-content: center;
+align-items: center;
+/* padding-left: 20em; */
 }
 #form {
 	display: flex;
@@ -389,7 +391,9 @@ p {
 /* add new blog post */
 
 .add-new-post {
-	padding-left: 20em;
+	display: flex;
+		justify-content: center;
+		align-items: center;
 }
 
 #formm {
@@ -397,9 +401,17 @@ p {
 	flex-direction: column;
 	justify-content: space-evenly;
 	color: rgb(100, 98, 98);
+	width: 80%;
+	display: flex;
+	justify-content: center;
+
 }
 .ele{
 	padding: 3px;
+}
+.eles{
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 #form {
@@ -407,9 +419,13 @@ p {
 	flex-direction: column;
 	justify-content: space-evenly;
 	color: rgb(100, 98, 98);
+	width: 80%;
+		display: flex;
+	justify-content: center;
+	align-content: center;
 }
 #textarea {
-	width: 50%;
+	width: 100%;
 	height: 150%;
 	border-radius: 5px;
 	padding-left: 5px;
@@ -572,7 +588,9 @@ th,
 		height: 50%;
 	}
 	.add-new-post {
-		padding-left: 0.7em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	#textarea {
 		width: 90%;
@@ -591,7 +609,9 @@ th,
 		width: 95%;
 	}
 	.add-new-user {
-		padding-left: 1em;
+			display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	input[type='text'],
 	input[type='email'],
@@ -668,7 +688,9 @@ th,
 		height: 50%;
 	}
 	.add-new-post {
-		padding-left: 0.7em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	#textarea {
 		width: 90%;
@@ -686,7 +708,9 @@ th,
 		width: 95%;
 	}
 	.add-new-user {
-		padding-left: 1em;
+			display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	input[type='text'],
 	input[type='email'],
@@ -737,7 +761,9 @@ th,
 		padding: 5px 10px;
 	}
 	.add-new-post {
-		padding-left: 5em;
+			display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	.admin {
 		box-shadow: 2px 2px 12px rgb(0, 0, 0, 0);
@@ -748,7 +774,9 @@ th,
 		overflow: hidden;
 	}
 	.add-new-user {
-		padding-left: 20em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 }
 
@@ -766,9 +794,12 @@ th,
 	.pagination a {
 		padding: 8px 16px;
 	}
-	.add-new-post {
-		padding-left: 5em;
+	.add-new-user{
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
+	
 	#table {
 		overflow-y: hidden;
 		overflow-x: scroll;
@@ -800,7 +831,9 @@ th,
 		grid-template-rows: repeat(1, 30em);
 	}
 	.add-new-post {
-		padding-left: 20em;
+			display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	.admin {
 		box-shadow: 2px 2px 12px rgb(0, 0, 0, 0);
