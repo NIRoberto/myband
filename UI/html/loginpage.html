@@ -1,111 +1,60 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- The core Firebase JS SDK is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-    <!--css file-->
-    <link rel="stylesheet" href="/UI/css/loginpage.css" />
-    <!-- end  of css file-->
-    <!---google font-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <!---end of google font-->
-    <title>login</title>
-  </head>
-  <body>
-    
-    <!--nav bar -->
-    <header class="nav">
-      <div class="nav-main">
-      <div class="nav-section">
-          <div class="logo">
-              <h1>Robert</h1>
-               </div>
-              <div class="burger">
-                <div class="l1"></div>
-                <div class="l2"></div>
-                <div class="l3"></div>
-              </div>
-                
-              <ul class="nav-list">
-                 
-                  <li class="nav-ilist"><a href="/UI/html/index.html" class="nav-link" >home</a></li>
-                  <li class="nav-ilist"><a href="/UI/html/portfolio.html" class="nav-link">portfolio</a></li>
-                  <li class="nav-ilist"><a href="/UI/html/blog.html" class="nav-link" >blog </a></li>
-                  <li class="nav-ilist"><a href="/UI/html/loginpage.html"  class="nav-link  active">login</a></li>
-                  <li class="nav-ilist"><a href="/UI/html/register.html"  class="nav-link">signup</a></li>
-              </ul>
-          </div>
-          
-        </div>
-  </header>
-<!---end of nav bar -->
-    <div class="loginpage">
-      <form id="formm" onsubmit="return loginvalidation()">
-        <h1 class="ll">Login here</h1><br>
-        <div id="log-ele">
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            id="email"
-          />
-          <span id="spaceemail"></span><br />
-          <span id="invalidemail"></span><br />
-        </div>
-        <div id="log-ele">
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter your password"
-            id="password"
-            min="6"
-            max="8"
-          />
-          <span id="spacedpass"></span><br />
-          <span id="char"></span><br />
-        </div>
-        <div class="log">
-          <div>
-            <h2></h2>
-          </div>
-          <div>
-            <button type="submit">login</button>
-            <a class="dd" href="/UI/html/register.html">Create account</a>
-          </div>
-        </div>
-      </form>
-    </div>
-  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-analytics.js"></script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My brand - blog </title>
+  <link rel="icon" href="/UI/img/ROBERT LOGG.jpg" />
+   <!-- font awesome  icon -->
+  <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
+    <!-- end  font awesome  icon -->
+     <!-- Google font -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+  <!-- end of Google font -->
+  <!-- css file for this link -->
+<link rel="stylesheet" href="/UI/css/loginpage.css">
+  <!-- end of css file for this link -->
+  <script src="/UI/js/nav.js" defer></script>
+</head>
+
+<body>
+
   
-  <script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-      apiKey: "AIzaSyBTD8mvWiUv3sN10vpmhd7SOeC8-npKaV4",
-      authDomain: "blog-5686d.firebaseapp.com",
-      databaseURL: "https://blog-5686d.firebaseio.com",
-      projectId: "blog-5686d",
-      storageBucket: "blog-5686d.appspot.com",
-      messagingSenderId: "901218445844",
-      appId: "1:901218445844:web:60c0867d6506139b84d501",
-      measurementId: "G-D9FQWJR2PW"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    var db = firebase.firestore();
-    var auth = firebase.auth();
-  </script>
-<script src="/UI/js/index.js"></script>
-<script src="/UI/js/login.js"></script>
-    <script src="/UI/js/nav.js"></script>
-  </body>
-</html>
+   <!-- #####################   section number 1 ############################ -->
+<div class="login_page">
+
+  <div class="login-container">
+<div class="logo">
+  <a href="/UI/html/index.html">
+    <img src="/UI/img/ROBERT LOGG.jpg" alt=" My logo">
+
+  </a>
+  </div>
+
+  <div class="form">
+
+    <h1>Login page</h1>
+
+    <!-- <button class="btn"> <i class="fab fa-google"></i> Login with google</button> -->
+    <form >
+     <label for="Email">
+        Email
+        <input type="text">
+      </label>
+      <label for="Email">
+        Password
+        <input type="password">
+
+        <button>Login</button>
+      </label>
+
+<p>If you don't have an account <a href="/UI/html/register.html">  Register</a></p>
+      
+    </form>
+  </div>
+  </div>
+
+
+</div>
+  <!-- #####################   end of section number 1 ############################ -->
