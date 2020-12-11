@@ -4,8 +4,8 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import Joi from '@hapi/joi';
 const schema = {
-    email: Joi.string().min(6).required().email(),
-    password: Joi.string().min(6).max(10).required()
+    email: Joi.string().min(6).email(),
+    password: Joi.string().min(6).max(10)
 }
 export default class usercontroller {
     // find all users
@@ -14,7 +14,7 @@ export default class usercontroller {
 
         try {
             res.status(200).json({
-                message: "all  user are",
+                message: "all  user are:",
                 data: getalluser
             })
         }
@@ -51,15 +51,15 @@ export default class usercontroller {
             message: error.details[0].message
             })
         }
-           const user = await usermodel.findOne({ email: req.body.email });
+           const user = await usermodel.findById(id);
         if (!user) {
             return res.status(400).json({
-                message: "incorect  email or password"
+                Error: "incorrect  email or password"
             })
         }
     if (req.loggeduser.userId !== user.userId) {
       return res.status(403).json({
-        message:"You cann't update which not belongs to you"
+        Error:"You can't update user which not belongs to you"
       })
     }
         // hash the password 
@@ -71,7 +71,7 @@ export default class usercontroller {
                 { $set: { email: req.body.email, password: hashpassword } }
             );
             return res.status(200).json({
-                message: "update user was successfull done",
+                message: "Update user was successfully done",
 
             });
         } catch (error) {
@@ -88,11 +88,11 @@ export default class usercontroller {
 
         if (error) {
             res.status(400).json({
-                message: error.details[0].message
+             Error: error.details[0].message
             })
         }
-        const emailexist = await usermodel.findOne({ email: req.body.email });
-        if (emailexist) {
+        const User = await usermodel.findOne({ email: req.body.email });
+        if (user) {
             res.status(409).json({
                 message: "email exist"
             })
@@ -112,7 +112,7 @@ export default class usercontroller {
         try {
             const saveuser = await user.save();
         return    res.status(201).json({
-                message: "user created successfully and logged in ",
+                message: "User created successfully and logged in ",
                 data: saveuser,
                 token: token
             })
@@ -128,13 +128,13 @@ export default class usercontroller {
      const user = await usermodel.findOne({ email: req.body.email });
         if (!user) {
             return res.status(400).json({
-                message: "incorect  email or password"
+                Error: "Incorrect  email or password"
             })
         }
         const validpass = await bcrypt.compare(req.body.password, user.password);
         if (!validpass) {
             return res.status(400).json({
-                message: "incorect  email or password"
+               Error: "Incorrect  email or password1"
             })
         }
         // create a token 
@@ -142,7 +142,7 @@ export default class usercontroller {
         res.header("auth-token", token)
         try {
             res.status(200).json({
-                message: "You have successfull logged in as",
+                message: "You have successfully logged in as",
                 data: user,
                 token: token
             })
@@ -160,12 +160,12 @@ export default class usercontroller {
         const user = await usermodel.findById({ _id: id })
         if (!user) {
          return   res.status(400).json({
-                message: "invalid id number"
+                Error: "User you want to delete doesn't exist "
             })
         }
           if (req.loggeduser.userId !== user.userId) {
       return res.status(403).json({
-        message:"You cann't update which not belongs to you."
+        Error:"You can't update which not belongs to you"
       })
     }
 

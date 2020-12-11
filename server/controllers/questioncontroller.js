@@ -14,7 +14,7 @@ export default class questionscontroller {
     try {
       const questions = await questionmodel.find();
      return res.status(200).json({
-        message: "success all",
+        message: "success ",
         data: questions
       });
     }
@@ -61,19 +61,19 @@ export default class questionscontroller {
     const quest = await questionmodel.findById(id);
     if (!quest) {
       res.status(404).json({
-        message: "not found"
+        Error: "Question not found"
       });
     }
        if (req.loggeduser.userId !== quest.userId) {
       return res.status(403).json({
-        message:"You cann't delete which not belongs to you"
+        message:"You can't delete which not belongs to you"
       })
     }
 
     try {
        const deletequest = await questionmodel.remove({ _id: id });
      return  res.status(200).json({
-        message: "delete  a quest was succesfull done!",
+        message: "Delete  a quest was successfully done!",
       });
    
     }

@@ -41,7 +41,7 @@ app.use('/api/v1', commentroute);
 
 app.use((req, res, next) => {
     res.status(404).json({
-        message: "invalid url"
+        Error: "invalid url"
     })
 
 })
