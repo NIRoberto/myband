@@ -13,10 +13,6 @@ import mongoose ,{Schema} from 'mongoose';
         type: String,
         required: true
     },
-    subject: {
-        type: String,
-        required: true
-    },
     message: {
          type: String,
         required: false 

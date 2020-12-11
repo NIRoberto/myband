@@ -9,7 +9,9 @@ router.get('/questions', auth, questioncontroller.findAll);
 
   // create one question
 
-router.post('/question',auth,questioncontroller.postOne);
+router.post('/question', auth, questioncontroller.postOne);
+router.get('/question/:id',auth,questioncontroller.getOne);
+
 // delete one
 router.delete('/question/delete/:id', auth, questioncontroller.deleteOne);
 
