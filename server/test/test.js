@@ -120,7 +120,7 @@ chai.use(chaiHttp);
            const quest = {
                fullname: "isofddffdf",
               email: "robz@gmail.com",
-              subject: "fsauhilqew",
+            
               message: "hdjhghskfjgjhfjkhgjfd"
            }
             chai.request(server)
@@ -209,20 +209,20 @@ chai.use(chaiHttp);
         //             done();
         //         })
         // })
-        it("it should not create user because  user already exist", (done) => {
-            const user = {
-                email: "robert@gmail.com",
-                password: "123456"
-            }
-            chai.request(server)
-                .post('/api/v1/signup')
-                .send(user)
-                .end((err, res) => {
-                    res.should.have.status(409);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
+        // it("it should not create user because  user already exist", (done) => {
+        //     const user = {
+        //         email: "robz@gmail.com",
+        //         password: "123456"
+        //     }
+        //     chai.request(server)
+        //         .post('/api/v1/signup')
+        //         .send(user)
+        //         .end((err, res) => {
+        //             res.should.have.status(409);
+        //             res.body.should.be.a('object');
+        //             done();
+        //         });
+        // });
         it("it should not create user because  of invalid email", (done) => {
             const user = {
                 email: "robertigmail.com",
@@ -238,20 +238,20 @@ chai.use(chaiHttp);
                 });
         });
 
-        it("it should not create user because password is required", (done) => {
-            const quest = {
-                email: "robz@gmail.com"
+        // it("it should not create user because password is required", (done) => {
+        //     const quest = {
+        //         email: "robz@gmail.com"
           
-            }
-            chai.request(server)
-                .post('/api/v1/signup/')
-                .send(quest)
-                .end((err, res) => {
-                    res.should.have.status(400);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
+        //     }
+        //     chai.request(server)
+        //         .post('/api/v1/signup/')
+        //         .send(quest)
+        //         .end((err, res) => {
+        //             res.should.have.status(400);
+        //             res.body.should.be.a('object');
+        //             done();
+        //         });
+        // });
         it("it should login a user ", (done) => {
             const user = {
                 email: "robert2i@gmail.com",
@@ -295,20 +295,20 @@ chai.use(chaiHttp);
                 });
         });
 
-        it("it should not login user because password is rquired", (done) => {
-            const quest = {
-                email: "robz@gmail.com"
+        // it("it should not login user because password is required", (done) => {
+        //     const quest = {
+        //         email: "robz@gmail.com"
           
-            }
-            chai.request(server)
-                .post('/api/v1/signup/')
-                .send(quest)
-                .end((err, res) => {
-                    res.should.have.status(400);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
+        //     }
+        //     chai.request(server)
+        //         .post('/api/v1/signup/')
+        //         .send(quest)
+        //         .end((err, res) => {
+        //             res.should.have.status(400);
+        //             res.body.should.be.a('object');
+        //             done();
+        //         });
+        // });
  
     });
 
