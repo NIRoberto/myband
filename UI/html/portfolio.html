@@ -1,277 +1,196 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>portfolio</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!--fontawasome icon-->
-    
-    <script
-      src="https://kit.fontawesome.com/dc095f94cf.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- end of fontawasome icon-->
-    <!--google font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap"
-      rel="stylesheet"
-    />
+<html lang="en">
 
-    <!-- end of google font -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My brand - Portfolio </title>
+  <link rel="icon" href="/UI/img/ROBERT LOGG.jpg" />
+  <!-- font awesome  icon -->
+  <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
+  <!-- end  font awesome  icon -->
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap"
+    rel="stylesheet">
+  <!-- end of Google font -->
+  <!-- css file for this link -->
+  <link rel="stylesheet" href="/UI/css/portfolio.css">
+  <!-- end of css file for this link -->
 
-    <!--css file-->
-    <link rel="stylesheet" href="/UI/css/portfolio.css" />
-    <!-- end css file-->
-  </head>
+  <script src="/UI/js/nav.js" defer></script>
+</head>
 
-  <body>
-    <!--header -->
-  <!--nav bar -->
-  <header class="nav">
-    <div class="nav-main">
-      <div class="nav-section">
-        <div class="logo">
-          <h1>Robert</h1>
+<body>
+
+  <!-- #####################   nav ############################ -->
+  <nav>
+    <div class="logo">
+      <a href="/UI/html/index.html">
+        <img src="/UI/img/ROBERT LOGG.jpg" alt=" My logo">
+
+      </a>
+    </div>
+
+
+    <ul class="nav-list">
+      <li class="nav-list-item"><a href="/UI/html/index.html" class="nav-link ">Home</a></li>
+      <li class="nav-list-item"><a href="/UI/html/about.html" class="nav-link">About</a></li>
+      <li class="nav-list-item"><a href="/UI/html/portfolio.html" class="nav-link active">Portfolio</a></li>
+      <li class="nav-list-item"><a href="/UI/html/blog.html" class="nav-link  ">Blog</a></li>
+      <li class="nav-list-item"><a href="/UI/html/contact.html" class="nav-link">Contact </a></li>
+
+    </ul>
+
+    <div class="burger">
+      <div class="l1"></div>
+      <div class="l2"></div>
+      <div class="l3"></div>
+    </div>
+  </nav>
+  <!-- #####################   end of  nav ############################ -->
+
+
+
+  <!-- #####################   section number 1 ############################ -->
+  <section>
+
+
+    <div class="shower">
+      <div class="title">
+        Portfolio
+      </div>
+      <div class="link">
+        <span class="link1"><a href="/UI/html/index.html" class="home">
+            Home |
+          </a>
+          <a href="/UI/html/portfolio.html" class="home"> Portfolio</a></span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- #####################   end of section number 1 ############################ -->
+
+
+
+
+
+  <!-- #####################  Services I offers to my client section  ############################ -->
+  
+  
+  <section>
+    <div class="service">
+  
+      <h1>Services I offer to my client</h1>
+      <div class="service-section">
+        <div class="service-card">
+  
+          <div class="icon">
+            <i class="fas fa-crop-alt"></i>
+  
+          </div>
+          <div class="heading">
+            <h2>UI/ UX designer</h2>
+          </div>
+          <div class="text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis fuga possimus atque vel at magni
+            impedit nihil quae odio voluptates?
+          </div>
+          <div class="button">
+            <a href="/UI/html/portfolio.html" class="learn-more">Learn more</a>
+          </div>
         </div>
-        <div class="burger">
-          <div class="l1"></div>
-          <div class="l2"></div>
-          <div class="l3"></div>
+        <div class="service-card">
+  
+          <div class="icon">
+            <i class="fas fa-code"></i>
+  
+          </div>
+          <div class="heading">
+            <h2>Web development</h2>
+          </div>
+          <div class="text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis fuga possimus atque vel at magni
+            impedit nihil quae odio voluptates?
+          </div>
+          <div class="button">
+            <a href="/UI/html/portfolio.html" class="learn-more">Learn more</a>
+          </div>
         </div>
+        <div class="service-card">
+  
+          <div class="icon">
+            <i class="fas fa-file-alt"></i>
+  
+          </div>
+          <div class="heading">
+            <h2>Testing & Documentation</h2>
+          </div>
+          <div class="text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis fuga possimus atque vel at magni
+            impedit nihil quae odio voluptates?
+          </div>
+          <div class="button">
+            <a href="/UI/html/portfolio.html" class="learn-more">Learn more</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <!-- #####################  end of Services I offers to my client section  ############################ -->
+  <!-- #####################  Recent done project on my websites  ############################ -->
+  
+  <div class="recent-project">
+    <h1> Recent done project</h1>
+    <div class="project-select">
+      <ul class="project-nav">
+        <li class="project-nav-link"><a href="#" class="link active">All</a> </li>
+        <!-- <li class="project-nav-link"><a href="#" class="link">Popular</a></li>
+          <li class="project-nav-link"><a href="#" class="link">Latest</a> </li>
+          <li class="project-nav-link"><a href="#" class="link">Upcoming </a> </li> -->
+      </ul>
+    </div>
+  
+    <div class="project-image">
+      <a href="https://adminpaneltemplate.netlify.app/html" class="first-project">
+        <img src="/UI/img/project.JPG" alt="my first project">
+      </a>
+      <a href="https://landing-fylo.netlify.app/" class="second-project">
+        <img src="/UI/img/langing project.JPG" alt="my first project">
+  
+      </a>
+    </div>
+  
+  
+  </div>
+  <!-- ##################### end of recent done project Recent done project on my websites  ############################ -->
+  <!-- #####################  footer  ############################ -->
+  <footer>
+    <div class="footer_item">
+      <div class="logo">
+        <a href="/UI/html/index.html">
+          <img src="/UI/img/ROBERT LOGG.jpg" alt="My logo">
+        </a>
+      </div>
+      <div class="nav-footer">
         <ul class="nav-list">
-        <li class="nav-ilist"><a href="/UI/html/index.html" class="nav-link">home</a></li>
-          <li class="nav-ilist"><a href="/UI/html/portfolio.html" class="nav-link active">portfolio</a></li>
-          <li class="nav-ilist"><a href="/UI/html/blog.html" class="nav-link" >blog </a></li>
-    
+          <li class="single-list"><a href="/UI/html/index.html" class="link">Home</a></li>
+          <li class="single-list"><a href="/UI/html/about.html" class="link"> About</a></li>
+          <li class="single-list"><a href="/UI/html/portfolio.html" class="link">Portfolio</a></li>
+          <li class="single-list"><a href="/UI/html/blog.html" class="link">Blog</a></li>
+          <li class="single-list"><a href="/UI/html/contact.html" class="link"> Contact</a></li>
+  
         </ul>
       </div>
   
-    </div>
-  </header>
-  <!-- -end of nav bar-->
-<!---end of nav bar -->
-  <!-- intro section -->
-<section class="intro-sec">
-  <div class="intro-section">
-  <div class="intro1">
- <span id="span1">Hi, I'm </span>
- <span id='span2'>Robert NIYITANGA</span>
- <span id="span3">junior frontend web developer</span><br>
-
-<img src="/UI/img/robz.jpg" alt=" my profile">
-  </div>
-  <div class="intro2">
-  <img src="/UI/img/undraw_laravel_and_vue_59tp.svg" alt="">
-
-  </div>
-</div>
-</section>
-  <!-- intro section -->
-    <!--  who am i  -->
-      <h1 class="title">Who am I</h1>
-
-    <div class="myprofile">
-      <div class="myprofiles">
-        <img src="/UI/img/undraw_product_iteration_kjok.svg" alt="  profile  image">
-      </div>
-      <div class="text">
-         <h2>I am skilled frontend web developer</h2><br>
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, tenetur vel nobis officia veniam a non expedita? Suscipit
-         molestias excepturi fugit, facere asperiores illum nesciunt adipisci pariatur dicta aliquam nobis.</p>
-         <br><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, tenetur vel nobis officia veniam a non expedita?
-         Suscipit molestias excepturi fugit, facere asperiores illum nesciunt adipisci pariatur dicta aliquam nobis.</p>
-
-      </div>
-     
-    </div>
-    <div class="myskills">
-      <h1 class="title"> My skills</h1>
-      <div class="skillscard">
-        <div class="skillscard1">
-          <span class="fas fa-globe"></span>
-           <h2>frontend </h2>
-              <div class="list-skills">
-                <label for="skill">html </label>
-              <i class="fab fa-html5"></i>
-              
-              </div>
-        <div class="list-skills">
-          <label for="skill">css</label>
-        <i class="fab fa-css3-alt"></i>
-
-        </div>
-          <div class="list-skills">
-            <label for="skill">javascript</label>
-        <i class="fab fa-node-js"></i>
-          
-          </div>
-         </div>
-              <div class="skillscard1">
-                <span class="fas fa-tools"></span>
-                <h2>backend </h2>
-                <div class="list-skills">
-                  <label for="skill">Node.js</label>
-              <i class="fab fa-node"></i>
-              </div>
-                <div class="list-skills">
-                  <label for="skill">express</label>
-                  <i class="fab fa-node"></i>
-                </div>
-            </div>
-                <div class="skillscard1">
-                  <span class="fas fa-tools"></span>
-                  <h2>web design </h2>
-                  <div class="list-skills">
-                    <label for="skill">figma</label>
-                  <i class="fab fa-figma"></i>
-                  </div>
-                    <div class="list-skills">
-                      <label for="skill">font awasome</label>
-                    <i class="fab fa-font-awesome"></i>
-                    </div>
-                     </div>
-                     </div>
-                    </div>
-
-    <!--  end of who I am i who am i  -->
-  <!-- serves section -->
-  <div class="servise">
-<div class="inner">
-  <h1 class="title">what I do</h1>
-  <div class="border"></div>
-  <div class="servise-container">
-    <div class="servise-box">
-      <div class="icon">
-      <i class="fas fa-code"></i>
-      </div>
-      <div class="servise-title">
-        <h1>web development</h1>
-
-      </div>
-      <div class="servise-desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, reprehenderit totam. Expedita voluptates cum excepturi
-        eveniet illum commodi repellat sunt.
-
-      </div>
-    </div>
-    <div class="servise-box">
-      <div class="icon">
-      <i class="fab fa-figma"></i>
-
-      </div>
-      <div class="servise-title">
-        <h1>web design</h1>
-    
-      </div>
-      <div class="servise-desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, reprehenderit totam. Expedita voluptates cum
-        excepturi
-        eveniet illum commodi repellat sunt.
-    
-      </div>
-    </div><div class="servise-box">
-      <div class="icon">
-            <i class="fas fa-code"></i>
-
-
-      </div>
-      <div class="servise-title">
-        <h1>backend develop</h1>
-    
-      </div>
-      <div class="servise-desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, reprehenderit totam. Expedita voluptates cum
-        excepturi
-        eveniet illum commodi repellat sunt.
-    
-      </div>
-    </div>
-    <div class="servise-box">
-      <div class="icon">
-    <i class="fas fa-database"></i>
-      </div>
-      <div class="servise-title">
-        <h1>database</h1>
-    
-      </div>
-      <div class="servise-desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, reprehenderit totam. Expedita voluptates cum
-        excepturi
-        eveniet illum commodi repellat sunt.
-    
-      </div>
-    </div>
-    <div class="servise-box">
-      <div class="icon">
-        <i class="fas fa-database"></i>
-      </div>
-      <div class="servise-title">
-        <h1>database</h1>
-    
-      </div>
-      <div class="servise-desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, reprehenderit totam. Expedita voluptates cum
-        excepturi
-        eveniet illum commodi repellat sunt.
-    
-      </div>
-    </div><div class="servise-box">
-      <div class="icon">
-        <i class="fas fa-database"></i>
-      </div>
-      <div class="servise-title">
-        <h1>database </h1>
-    
-      </div>
-      <div class="servise-desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, reprehenderit totam. Expedita voluptates cum
-        excepturi
-        eveniet illum commodi repellat sunt.
-    
-      </div>
-    </div>
-  </div>
-</div>
-  
-
- 
-  </div>
-  <!-- serves section -->
-<!-- my project  -->
-<div class="project">
-  
-</div>
-<!--  project  -->
-
-
-
-  <!-- footer -->
-
-<footer>
-  <div class="footeritem">
-    <div class="footer1">
-      <div class=" location">
-      
-          <h1 id="titles">contact me</h1><br>
-          <ul id="link">
-            <li>
-              <i class="fas fa-map-marker-alt"></i>
-              Rwanda, Huye
-            </li>
-            <li>
-              <i class="fas fa-phone-square-alt"></i>+250787491277
-            </li>
-            <li><i class="far fa-envelope"></i>robertwilly668@gmail.com</li>
-          </ul>
-    
-        <ul id="social">
+      <div class="social-icon">
+        <ul class="social-list">
           <li>
             <a
-              href="https://free.facebook.com/roberto.will.906?ref_component=mfreebasic_home_header&ref_page=MFriendsCenterMBasicController"><i
-                class="fab fa-facebook-f"></i></a>
-          </li>
+              href="https://free.facebook.com/roberto.will.906?ref_component=mfreebasic_home_header&ref_page=MFriendsCenterMBasicController">
+              <i class="fab fa-facebook-f"></i></a> </li>
           <li>
             <a href="https://github.com/NIRoberto/"><i class="fab fa-github"></i></a>
           </li>
@@ -283,40 +202,14 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="footer1">
-<div class="form">
-  <div class="contact-me-from">
-    <h1 id="title">message me </h1>
-    <div class="form">
-      
-      <div class="formitem">
-    <div class="value">
-            email
-          </div>
-      <input type="email"  required />
-    </div>
-
-      <div class="formitem">
-           <div class="value">
-            message
-          </div>
-
-      <textarea name="" id="" cols="30" rows="10">
-</textarea>
-</div>
-<div class="formitem btn">
-      <button type="submit"  id="button">send<i class="fas fa-paper-plane"></i> </button>
-    </div>
-    </div>
-  </div>
-</div>
+      <div class="developer">
+        <h4>&COPY; copyright by Robert Niyitanga</h4>
+      </div>
+  
     </div>
   
-  </div>
-  <div class="powered" > &copy; copyright by Robert Niyitanga</div>
-</footer> 
-    <!--   end of the footer-->
-    <script src="/UI/js/nav.js"></script>
-  </body>
-</html>
+  
+  </footer>
+  
+  
+  <!-- ##################### end of  footer  ############################ -->
