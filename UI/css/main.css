@@ -1,12 +1,13 @@
-html{
-  scroll-behavior: smooth;
-}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font);
   
+}
+html{
+  scroll-behavior: smooth;
 }
 :root{
   --main-color:#1187ee;
