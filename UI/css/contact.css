@@ -149,6 +149,7 @@ section .shower{
 }
 
 }
+
 /*   *****************   Nav bar  ************************   */
 /* end of  shower */
 
@@ -239,8 +240,10 @@ padding: 1.3em;
     padding: 1em;
 }
 @media(max-width:760px){
+
     .contact-form{
         flex-direction: column;
+        height: 120vh;
     }
     .contact-form .location{
         align-items: center;
@@ -386,6 +389,17 @@ color: white;
 margin-left: 0.7em;
 }
 
+}
+@media(max-width:360px){
+section .shower{
+ width: 113%;
+}
+section .shower .title{
+font-size: 2em;
+}
+footer{
+  width: 113%;
+}
 }
 
 
