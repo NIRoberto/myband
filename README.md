@@ -66,7 +66,7 @@ Technologies Used
 The API documentation can be found at : swagger 
 
 # Templates
-The UI Templates can be found at : https://robzweb.netlify.app/ui/html/
+The UI Templates can be found at : https://rob-mybrand.netlify.app/ui/html
 
 # Status
 The project is hosted on heroku
