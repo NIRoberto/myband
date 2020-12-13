@@ -39,12 +39,8 @@ getblogpost = (doc) => {
 window.location.href='/UI/admin post/post/update.html#'+id;
 }
 delet = (id) => {
-<<<<<<< HEAD
 
   if (confirm("Are you sure you want to delete this blog post")) {
-=======
- if (confirm("Are you sure you want to delete this blop post")) {
->>>>>>> f4f0ac4... fix CORS error, edit better status  code and message
      db.collection("blog")
      .doc(id).delete().then((res) => {
        window.location.href = "/UI/admin post/post/all.html";

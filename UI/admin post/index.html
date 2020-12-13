@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawasome icon -->
+  <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
+    <!-- end of fontawasome icon -->
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <!--end google font -->
+
+    <!-- css file -->
+    <link rel="stylesheet" href="/UI/admin css/admin.css">
+    <!-- end of css file  -->
+    <title>dashboard</title>
+<script src="/UI/js/index.js" defer></script>
+
+
+
+</head>
+<body>
+    <div id="loading">
+    </div>
+    <div class="admin disappear">
+ <!-- admin dashboard nav bar -->
+<div class="nav-bar">
+<ul class="navbar-item">
+    <li class="item">
+        <a class="burger " draggable="true">
+      <i class="fas fa-bars"   onclick="sidebar()"  ></i>
+
+    </a></li>
+      <li class="item">
+        <a href="" class="logo">
+   <i class="my-logo">Robert</i>
+    </a></li>
+</ul>
+<form action="" class="search">
+    <input type="text" name="search" id="search">
+    <i class="fas fa-search"></i>
+</form>
+<ul class="navbar-item right">
+    <!-- <li class="item">
+        <a href="" class="notification ">
+     <i class="fas fa-bell"></i>
+     <span class="not-number">14</span>
+     <ul class="notification-drop">
+         <div class="dropdown-header">
+           <a href="#">Notification</a>
+         </div>
+           <div class="dropdown-content">
+            <a href="#" class="dropdown-link">
+                <div class="icon"> <i class="fas fa-bell"></i></div>
+            <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, perspiciatis!</span>
+       
+            </a>
+            
+         </div>
+              <div class="dropdown-footer ">
+             <span>View all notification</span>
+         </div>
+     </ul>
+    </a></li> -->
+      <li class="item">
+      <div class="profile ">
+            <img src="/UI/img/robz.jpg" alt="my profile">
+
+    <ul class="notification-drop"></ul>
+      </div></li>
+</ul>
+</div>
+<!-- end of nav -->
+    <!--side bar  -->
+    <div class="side-bar">
+        <ul class="sidebar-nav-bar">
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link ">
+                    <div class="sidebar-icon">
+                        <i class="fas fa-user"></i>
+    
+                    </div>
+                    <span>
+                        Robert
+                    </span>
+                </a>
+    
+            </li>
+            <li class="sidebar-item">
+                <a href="/UI/admin post/index.html" class="sidebar-link active  ">
+                    <div class="sidebar-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+    
+                    </div>
+                    <span>
+                        Dashboard
+                    </span>
+                </a>
+    
+            </li>
+            <li class="sidebar-item">
+                <a href="/UI/admin post/users/all.html" class="sidebar-link ">
+                    <div class="sidebar-icon">
+                        <i class="fas fa-users "></i>
+                    </div>
+                    <span>
+                        Users
+                    </span>
+                </a>
+    
+            </li>
+            <li class="sidebar-item">
+                <a href="/UI/admin post/users/create.html" class="sidebar-link ">
+                    <div class="sidebar-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <span>
+                        Add user
+                    </span>
+                </a>
+    
+            </li>
+            <li class="sidebar-item">
+                <a href="/UI/admin post/post/all.html" class="sidebar-link ">
+                    <div class="sidebar-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <span>
+                        All posts
+    
+                    </span>
+                </a>
+    
+            </li>
+            <li class="sidebar-item">
+                <a href="/UI/admin post/post/create.html" class="sidebar-link ">
+                    <div class="sidebar-icon">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <span>
+                        Add post
+                    </span>
+                </a>
+    
+            </li>
+            <li class="sidebar-item">
+                <a href="/UI/admin post/post/update.html" class="sidebar-link ">
+                    <div class="sidebar-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <span>
+                        Update post
+                    </span>
+                </a>
+    
+            </li>
+            <li class="sidebar-item">
+                <a href="/UI/admin post/queries/all.html" class="sidebar-link">
+                    <div class="sidebar-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <span>
+                        Queries
+                    </span>
+                </a>
+    
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <div class="sidebar-icon">
+                        <i class="fad fa-sign-out"></i>
+                    </div>
+                    <span>
+                        Logout
+                    </span>
+                </a>
+    
+            </li>
+        </ul>
+    
+    </div>
+    <!--end of side bar side bar  -->
+<div class="main-content">
+<div class="row">
+    <div class="col-1">
+        <div class="card">
+            <div class="card-content">
+                <div class="header">
+                    
+                        <i class="fas fa-users"></i>
+
+                </div>
+                <div class="body">
+               Users
+                </div>
+                <div class="footer">
+ 15+
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="col-2">
+        <div class="card">
+            <div class="card-content">
+                 <div class="header">
+                    
+                                         <i class="fas fa-book-reader"></i>
+
+
+                </div>
+                <div class="body">
+               Post
+                </div>
+                <div class="footer">
+ 15+
+                </div>
+            </div>
+        </div>
+    </div>  <div class="col-3">
+        <div class="card">
+            <div class="card-content">
+                <div class="header">
+                    
+                                      <i class="fas fa-question-circle"></i>
+
+
+                </div>
+                <div class="body">
+               Queries
+                </div>
+                <div class="footer">
+ 15+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<div class="status">
+    <table class="table">
+        <tr class="table-row">
+            <th class="header">N/A</th>
+            <th class="header">Users</th>
+            <th class="header"> status</th>
+            <th class="header">Date</th>
+        </tr>
+        <tr class="table-row">
+            <td class="content">1</td>
+            <td class="content">Robert Niyitanga</td>
+            <td class="content">online</td>
+            <td class="content">2020/3/12</td>
+        </tr>
+            <tr class="table-row">
+            <td class="content">2</td>
+            <td class="content">Robert Niyitanga</td>
+            <td class="content">Offline</td>
+            <td class="content">2020/3/12</td>
+        </tr>
+        
+    </table>
+</div>
+</div>
+    <!-- main content of admin panel -->
+</div>
+</body>
+</html>

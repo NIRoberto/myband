@@ -1,0 +1,232 @@
+:root{
+  --txt-color: #1187ee;
+  --bg-primary: #1187ee;
+  --font-family:"Roboto", sans-serif;
+   --light-color:white;
+  --shadow: 0px 13px 17px #36363624;
+  --text-color:#444;
+  --delete-color:red;
+  --update:green;
+
+}
+*{
+    box-sizing: border-box;
+}
+.questions-section{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+          justify-content: center;
+    align-items: center;
+ 
+    
+ 
+}
+.main-content .title{
+    color: var(--txt-color);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.main-content .title .titl {
+    border-bottom: 3px solid var(--bg-primary);
+}
+.questions{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(185, 182, 182);
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 10px;
+    position: relative;
+}
+@media (max-width:600px){
+   .questions{
+     width: 105%;
+     padding: 5px;
+} 
+.questions-section{
+width: 120%;
+}
+.pagination{
+  padding-left: 1.7em;
+}
+.pagination .pages{
+
+    padding: 0.1rem;
+    margin: 1px;
+}
+
+}
+.fullname{
+    display: flex;
+    justify-content: space-around;
+  
+}
+.fullname .name{
+    color: var(--txt-color);
+    text-transform: capitalize;
+
+}
+.fullname .date{
+    margin-left: 2em;
+    color: rgb(156, 151, 151);
+}
+.questions .question{
+    padding-top: 5px;
+    color: var(--text-color);
+}
+.actions{
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+
+}
+.actions .edit {
+    text-decoration: none;
+    color: var(--txt-color);
+    text-transform: capitalize;
+
+}
+.actions .delete {
+    text-decoration: none;
+    color: var(--delete-color);
+    text-transform: capitalize;
+    padding-left: 1em;
+}
+.answer{
+    text-decoration: none;
+    color: var(--text-color);
+    width: 100%;
+    text-align: center;
+
+}
+.answer i{
+    padding-right: 0.4em;
+}
+.pagination{
+    display: flex;
+    padding-top: 1em;
+    align-items: center;
+    justify-content: center;
+}
+.pagination .pages{
+    background-color: var(--bg-primary);
+    color: var(--light-color);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 5px;
+}
+.pagination .pages:hover{
+    background-color: #115b9c;
+}
+.pagination .pages .page{
+    text-decoration: none;
+    color: var(--light-color);
+}
+.pagination .page-active{
+    background-color: #115b9c;
+}
+
+.update-popup{
+    background-color: rgb(19, 121, 19);
+    color: white;
+    width:15em;
+    padding: 1px 5px 1px 5px;
+    border-radius: 5px;
+    text-align: center;
+    animation: 4s update forwards;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+}
+@keyframes update{
+    100%{
+        opacity: 0;
+    }
+    0%{
+    opacity: 1;
+    }
+}
+.delete-popup{
+    background-color: rgb(19, 121, 19);
+    color: white;
+    width:15em;
+    padding: 1px 5px 1px 5px;
+    border-radius: 5px;
+    text-align: center;
+    animation: 0s Delete forwards;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: 2s;
+
+}
+@keyframes Delete{
+    100%{
+        opacity: 0;
+    }
+    0%{
+    opacity: 1;
+    }
+}
+.update-question{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    box-shadow: 2px 2px 12px rgb(0, 0, 0,0.1);
+    width: 50%;
+    left: 20%;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    transition: 2s ease-in;
+    
+
+}
+.update-question form label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.update-question form label  h5{
+    color: #1187ee;
+    font-size: 1em;
+}
+.update-question form label textarea{
+    border: 1px solid #1187ee;
+    height: 4em;
+    border-radius: 5px;
+    border-radius: none;
+    padding: 10px;
+    width: 120%;
+    outline: none;
+    margin-bottom: 1em;
+}
+
+.update-question form label button{
+background-color: #1187ee;
+color: white;
+border-radius: 5px;
+margin-left: 1em;
+outline: none;
+border: none;
+width: 100%;
+padding: 5px;
+cursor: pointer;
+margin-bottom: 1em;
+}
+.update-question form label .btn{
+    display: flex;
+
+    
+}
+.update-question form label .btn #cancel{
+    background-color: red;
+}

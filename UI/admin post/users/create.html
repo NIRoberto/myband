@@ -1,77 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- fontawasome -->
-    <script
-      src="https://kit.fontawesome.com/dc095f94cf.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--  end of fontawasome -->
 
-    <!-- custom file  -->
-    <link rel="stylesheet" href="/UI//admin css/admin.css" />
-    <!-- end of  custom file  -->
-    <title>create | user</title>
-  </head>
-  <body>
-    <div class="nav">
-      <div class="admin">
-         <div class="burger">
-           <div class="l1"></div>
-           <div class="l2"></div>
-           <div class="l3"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fontawasome icon -->
+  <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
+  <!-- end of fontawasome icon -->
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <!--end google font -->
+
+  <!-- css file -->
+  <link rel="stylesheet" href="/UI/admin css/admin.css">
+
+  <link rel="stylesheet" href="/UI/admin css/user.css">
+  <!-- end of css file  -->
+  <title>Admin panel - create user </title>
+  <script src="/UI/js/index.js" defer></script>
+
+
+</head>
+
+<body>
+  <div id="loading">
+  </div>
+  <div class="admin">
+    <!-- admin dashboard nav bar -->
+    <div class="nav-bar">
+      <ul class="navbar-item">
+        <li class="item">
+          <a class="burger">
+            <i class="fas fa-bars" onclick="sidebar()"></i>
+          </a>
+        </li>
+        <li class="item">
+          <a href="" class="logo">
+            <i class="my-logo">Robert</i>
+          </a>
+        </li>
+      </ul>
+      <form action="" class="search">
+        <input type="text" name="search" id="search">
+        <i class="fas fa-search"></i>
+      </form>
+      <ul class="navbar-item right">
+        <!-- <li class="item">
+        <a href="" class="notification ">
+     <i class="fas fa-bell"></i>
+     <span class="not-number">14</span>
+     <ul class="notification-drop">
+         <div class="dropdown-header">
+           <a href="#">Notification</a>
          </div>
+           <div class="dropdown-content">
+            <a href="#" class="dropdown-link">
+                <div class="icon"> <i class="fas fa-bell"></i></div>
+            <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, perspiciatis!</span>
+       
+            </a>
+            
+         </div>
+              <div class="dropdown-footer ">
+             <span>View all notification</span>
+         </div>
+     </ul>
+    </a></li> -->
+        <li class="item">
+          <div class="profile ">
+                      <img src="/UI/img/robz.jpg" alt="my profile">
+
+            <ul class="notification-drop"></ul>
+          </div>
+        </li>
+      </ul>
     </div>
-   </div>
-    <div class="wrapper">
-      <div class="link-wrapper">
+    <!-- end of nav -->
+    <!--side bar  -->
+    <div class="side-bar">
+      <ul class="sidebar-nav-bar">
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-user"></i>
     
-        <div class="link-item">
-          <h3><i class="fas fa-home"></i>Dashboard</h3>
-      
-          <a href="/UI/admin post/index.html" >Profile information</a>
-        </div>
-        <div class="link-item">
-          <h3><i class="fas fa-users-cog"></i>User information</h3>
-          <a href="/UI/admin post/users/all.html">All users</a>
-          <a href="/UI/admin post/users/create.html" class="active" >Add  Users</a>
-        </div>
-        <div class="link-item">
-          <h3><i class="fas fa-envelope-open-text"></i>Post</h3>
-          <a href="/UI/admin post/post/all.html">All post</a>
-          <a href="/UI/admin post/post/create.html" >Add new post</a>
-          <a href="/UI/admin post/post/update.html">Update post</a>
+            </div>
+            <span>
+              Robert
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/index.html" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-tachometer-alt"></i>
+    
+            </div>
+            <span>
+              Dashboard
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/users/all.html" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-users "></i>
+            </div>
+            <span>
+              Users
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/users/create.html" class="sidebar-link active">
+            <div class="sidebar-icon">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <span>
+              Add user
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/post/all.html" class="sidebar-link  ">
+            <div class="sidebar-icon">
+              <i class="fas fa-book-reader"></i>
+            </div>
+            <span>
+              All posts
+    
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/post/create.html" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-book-medical"></i>
+            </div>
+            <span>
+              Add post
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/post/update.html" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-edit"></i>
+            </div>
+            <span>
+              Update post
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/queries/all.html" class="sidebar-link">
+            <div class="sidebar-icon">
+              <i class="fas fa-question-circle"></i>
+            </div>
+            <span>
+              Queries
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">
+            <div class="sidebar-icon">
+              <i class="fad fa-sign-out"></i>
+            </div>
+            <span>
+              Logout
+            </span>
+          </a>
+    
+        </li>
+      </ul>
+    
+    </div>
+    <!--end of side bar side bar  -->
+    <div class="main-content">
 
-        </div>
-        <div class="link-item">
-          <h3><i class="fas fa-question-circle"></i>Questions</h3>
-          <a href="/UI/admin post/queries/all.html">All question</a>
-          <a href="#" class="logout">Logout</a>
-        </div>
-      </div>
-      <div class="content-wrapper">
-      
-        <h1>Add new user </h1>
-        <div class="add-new-user">
-        
-          <form action="#" id="for">
+      <div class="create-new-user">
+        <h1 class="h1">Create a new user</h1>
+        <form action="" class="user-create">
 
-           <div class="eles"><p>Full name</p></div>
-              <input type="text" >
-             <div class="eles"><p> Email</p></div>
-              <input type="email" >
-              <div class="eles"><p>password</p></div>
-              <input type="password" ><br><br>
-              <button type="submit">Add user</button>
+          <label for="full name">
+            Full name
+            <input type="text" name="full name">
 
-          </form>
+          </label>
 
-        </div>
+          <label for="email">
+            Email
+            <input type="text" name="email">
+
+          </label>
+          <label for="email">
+            password
+            <input type="text" name="password">
+
+          </label>
+          <label for="button">
+            <button type="submit"> Create</button>
+          </label>
+        </form>
       </div>
     </div>
-<script src="/UI/js/adminrespo.js"></script>
-    
-  </body>
+
+    <!-- main content of admin panel -->
+  </div>
+</body>
+
 </html>
