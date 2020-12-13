@@ -1,65 +1,40 @@
+let single_blog = document.getElementById("single_blog");
+const id = window.location.hash.replace("#", "");
 
-let post = document.querySelector(".list-allpost");
-let setid =document.querySelector('.blog-top');
+db.collection("Blog")
+   .doc(id)
+   .get()
+   .then((doc) => {
+      single_blog.innerHTML = `
+     <div class="blog-card">
+<div class="image">
+  <img src="/UI/img/my journey.png" alt="My coding journey image">
+</div>
 
+<div class="date">
+  <span><i class="fal fa-calendar-day"></i>  Feb 20 2020</span>
+</div>
+<div class="blog-title">
+  <h1 class="title">
+${doc.data().title} </h1>
+</div>
+<div class="text">
+<p>${doc.data().body}</p>
+</div>
+<div class="comment">
+  <a href="#">
+  <span>
+    <i class="far fa-comments"> 03</i>
+    Comment
+  </span>
+  <span>
+<i class="fal fa-thumbs-up"> 2</i>
 
-let storageref;
+Like
 
-getblogpost = (doc) => {
- storageref = firebase.storage().ref().child(`/blogimage/backend.jpg`).getDownloadURL().then(function(url) {
-     post.innerHTML += `
-    <div class="blog-top" id="${doc.id}">
-    <div class="blog-post">
-      <div class="blog-img"><img class="imgs" src="${url}" alt="html" /></div>
-      <div class="blog-desc">
-        <div class="title">
-          <h3 class="h3">${doc.data().title}</h3>
-        </div>
-        <div class="text">
-          <p>
-          ${doc.data().subbody}
-          </p><br>
-          <div class="button">
-            <a href="javascript:updatesss('${doc.id}')" id="updates">edit</a>
-            <a href="javascript:delet('${doc.id}')" id="deletes">Delete</a>
-        </div>
-        </div>
+  </span>
+  </a>
+</div>
     </div>
-    </div>
-    <br /><br />
-  </div>
     `;
-  }).catch(function(error) {
-    console.log(`there is an error${error.message}`);
-    });
-   
- 
-};
- updatesss = (id) => {
-window.location.href='/UI/admin post/post/update.html#'+id;
-}
-delet = (id) => {
-
-  if (confirm("Are you sure you want to delete this blog post")) {
-     db.collection("blog")
-     .doc(id).delete().then((res) => {
-       window.location.href = "/UI/admin post/post/all.html";
-     });
-    
-   } else {
-   alert('ok');
-     
-   }
-   
-};
-
- 
-
-db.collection("blog")
-  .get()
-  .then((querySnapshots) => {
-    querySnapshots.forEach((doc) => {
-      getblogpost(doc);
-    });
-  });
-
+   });

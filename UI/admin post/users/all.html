@@ -1,221 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!--  firebase file   -->
+      <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-storage.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- fontawasome icon -->
-  <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
-  <!-- end of fontawasome icon -->
-  <!-- google font -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-  <!--end google font -->
+      <!--  end of firebase file   -->
+      <!-- fontawasome icon -->
+      <link
+         href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css"
+         rel="stylesheet"
+      />
+      <!-- end of fontawasome icon -->
+      <!-- google font -->
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@500&display=swap"
+         rel="stylesheet"
+      />
+      <!--end google font -->
 
-  <!-- css file -->
-  <link rel="stylesheet" href="/UI/admin css/user.css">
-  <link rel="stylesheet" href="/UI/admin css/admin.css">
-  <!-- end of css file  -->
-  <title>Admin panel - all users </title>
-  <script src="/UI/js/index.js" defer></script>
+      <!-- css file -->
+      <link rel="stylesheet" href="/UI/admin css/user.css" />
+      <link rel="stylesheet" href="/UI/admin css/admin.css" />
+      <!-- end of css file  -->
+      <title>Admin panel - all users</title>
+      <script src="/UI/js/index.js" defer></script>
+   </head>
 
+   <body>
+      <div id="loading"></div>
+      <div class="admin">
+         <!-- admin dashboard nav bar -->
+         <div class="nav-bar">
+            <ul class="navbar-item">
+               <li class="item">
+                  <a class="burger">
+                     <i class="fas fa-bars" onclick="sidebar()"></i>
+                  </a>
+               </li>
+               <li class="item">
+                  <a href="/UI/html/index.html" class="logo">
+                     <i class="my-logo">Robert</i>
+                  </a>
+               </li>
+            </ul>
+            <form action="" class="search">
+               <input type="text" name="search" id="search" />
+               <i class="fas fa-search"></i>
+            </form>
+            <ul class="navbar-item right">
+               <li class="item">
+                  <div class="profile">
+                     <img src="/UI/img/robz.jpg" alt="my profile" />
 
-</head>
-
-<body>
-  <div id="loading">
-  </div>
-  <div class="admin">
-    <!-- admin dashboard nav bar -->
-    <div class="nav-bar">
-      <ul class="navbar-item">
-        <li class="item">
-          <a class="burger">
-            <i class="fas fa-bars" onclick="sidebar()"></i>
-          </a>
-        </li>
-        <li class="item">
-          <a href="/UI/html/index.html" class="logo">
-            <i class="my-logo">Robert</i>
-          </a>
-        </li>
-      </ul>
-      <form action="" class="search">
-        <input type="text" name="search" id="search">
-        <i class="fas fa-search"></i>
-      </form>
-      <ul class="navbar-item right">
-        <!-- <li class="item">
-        <a href="" class="notification ">
-     <i class="fas fa-bell"></i>
-     <span class="not-number">14</span>
-     <ul class="notification-drop">
-         <div class="dropdown-header">
-           <a href="#">Notification</a>
+                     <ul class="notification-drop"></ul>
+                  </div>
+               </li>
+            </ul>
          </div>
-           <div class="dropdown-content">
-            <a href="#" class="dropdown-link">
-                <div class="icon"> <i class="fas fa-bell"></i></div>
-            <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, perspiciatis!</span>
-       
-            </a>
-            
+         <!-- end of nav -->
+         <!--side bar  -->
+         <div class="side-bar">
+            <ul class="sidebar-nav-bar">
+               <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">
+                     <div class="sidebar-icon">
+                        <i class="fas fa-user"></i>
+                     </div>
+                     <span> Robert </span>
+                  </a>
+               </li>
+               <li class="sidebar-item">
+                  <a href="/UI/admin post/index.html" class="sidebar-link">
+                     <div class="sidebar-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                     </div>
+                     <span> Dashboard </span>
+                  </a>
+               </li>
+               <li class="sidebar-item">
+                  <a
+                     href="/UI/admin post/users/all.html"
+                     class="sidebar-link active"
+                  >
+                     <div class="sidebar-icon">
+                        <i class="fas fa-users"></i>
+                     </div>
+                     <span> Users </span>
+                  </a>
+               </li>
+               <li class="sidebar-item">
+                  <a
+                     href="/UI/admin post/users/create.html"
+                     class="sidebar-link"
+                  >
+                     <div class="sidebar-icon">
+                        <i class="fas fa-user-plus"></i>
+                     </div>
+                     <span> Add user </span>
+                  </a>
+               </li>
+               <li class="sidebar-item">
+                  <a href="/UI/admin post/post/all.html" class="sidebar-link">
+                     <div class="sidebar-icon">
+                        <i class="fas fa-book-reader"></i>
+                     </div>
+                     <span> All posts </span>
+                  </a>
+               </li>
+               <li class="sidebar-item">
+                  <a
+                     href="/UI/admin post/post/create.html"
+                     class="sidebar-link"
+                  >
+                     <div class="sidebar-icon">
+                        <i class="fas fa-book-medical"></i>
+                     </div>
+                     <span> Add post </span>
+                  </a>
+               </li>
+               <li class="sidebar-item">
+                  <a
+                     href="/UI/admin post/post/update.html"
+                     class="sidebar-link"
+                  >
+                     <div class="sidebar-icon">
+                        <i class="fas fa-edit"></i>
+                     </div>
+                     <span> Update post </span>
+                  </a>
+               </li>
+               <li class="sidebar-item">
+                  <a
+                     href="/UI/admin post/queries/all.html"
+                     class="sidebar-link"
+                  >
+                     <div class="sidebar-icon">
+                        <i class="fas fa-question-circle"></i>
+                     </div>
+                     <span> Queries </span>
+                  </a>
+               </li>
+               <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">
+                     <div class="sidebar-icon">
+                        <i class="fad fa-sign-out"></i>
+                     </div>
+                     <span> Logout </span>
+                  </a>
+               </li>
+            </ul>
          </div>
-              <div class="dropdown-footer ">
-             <span>View all notification</span>
+         <!--end of side bar side bar  -->
+         <div class="main-content">
+            <h1 class="h1">All users</h1>
+            <br />
+
+            <div class="all-users">
+               <table class="all-user-info">
+                  <tr class="user-header">
+                     <th class="header">Name</th>
+                     <th class="header">email</th>
+                     <th class="header" colspan="2">Action</th>
+                  </tr>
+                  <tr class="user-list">
+                     <td class="list">Robert NIYITANGA</td>
+                     <td class="list">robz@gmail.com</td>
+                     <td class="list"><a class="edit" href="">Update</a></td>
+                     <td class="list"><a class="delete" href="">Delete</a></td>
+                  </tr>
+                  <tr class="user-list">
+                     <td class="list">Dev Ed</td>
+                     <td class="list">robz@gmail.com</td>
+                     <td class="list"><a class="edit" href="">Update</a></td>
+                     <td class="list"><a class="delete" href="">Delete</a></td>
+                  </tr>
+               </table>
+            </div>
          </div>
-     </ul>
-    </a></li> -->
-        <li class="item">
-          <div class="profile ">
-                  <img src="/UI/img/robz.jpg" alt="my profile">
 
-            <ul class="notification-drop"></ul>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <!-- end of nav -->
-    <!--side bar  -->
-    <div class="side-bar">
-      <ul class="sidebar-nav-bar">
-        <li class="sidebar-item">
-          <a href="#" class="sidebar-link ">
-            <div class="sidebar-icon">
-              <i class="fas fa-user"></i>
-    
-            </div>
-            <span>
-              Robert
-            </span>
-          </a>
-    
-        </li>
-        <li class="sidebar-item">
-          <a href="/UI/admin post/index.html" class="sidebar-link ">
-            <div class="sidebar-icon">
-              <i class="fas fa-tachometer-alt"></i>
-    
-            </div>
-            <span>
-              Dashboard
-            </span>
-          </a>
-    
-        </li>
-        <li class="sidebar-item">
-          <a href="/UI/admin post/users/all.html" class="sidebar-link active">
-            <div class="sidebar-icon">
-              <i class="fas fa-users "></i>
-            </div>
-            <span>
-              Users
-            </span>
-          </a>
-    
-        </li>
-        <li class="sidebar-item">
-          <a href="/UI/admin post/users/create.html" class="sidebar-link ">
-            <div class="sidebar-icon">
-              <i class="fas fa-user-plus"></i>
-            </div>
-            <span>
-              Add user
-            </span>
-          </a>
-    
-        </li>
-        <li class="sidebar-item">
-          <a href="/UI/admin post/post/all.html" class="sidebar-link  ">
-            <div class="sidebar-icon">
-              <i class="fas fa-book-reader"></i>
-            </div>
-            <span>
-              All posts
-    
-            </span>
-          </a>
-    
-        </li>
-        <li class="sidebar-item">
-          <a href="/UI/admin post/post/create.html" class="sidebar-link ">
-            <div class="sidebar-icon">
-              <i class="fas fa-book-medical"></i>
-            </div>
-            <span>
-              Add post
-            </span>
-          </a>
-    
-        </li>
-        <li class="sidebar-item">
-          <a href="/UI/admin post/post/update.html" class="sidebar-link ">
-            <div class="sidebar-icon">
-              <i class="fas fa-edit"></i>
-            </div>
-            <span>
-              Update post
-            </span>
-          </a>
-    
-        </li>
-        <li class="sidebar-item">
-          <a href="/UI/admin post/queries/all.html" class="sidebar-link">
-            <div class="sidebar-icon">
-              <i class="fas fa-question-circle"></i>
-            </div>
-            <span>
-              Queries
-            </span>
-          </a>
-    
-        </li>
-        <li class="sidebar-item">
-          <a href="#" class="sidebar-link">
-            <div class="sidebar-icon">
-              <i class="fad fa-sign-out"></i>
-            </div>
-            <span>
-              Logout
-            </span>
-          </a>
-    
-        </li>
-      </ul>
-    
-    </div>
-    <!--end of side bar side bar  -->
-    <div class="main-content">
-      <h1 class="h1"> All users</h1><br>
-
-      <div class="all-users">
-        <table class="all-user-info">
-
-          <tr class="user-header">
-            <th class="header">Name</th>
-            <th class="header">email</th>
-            <th class="header" colspan="2">Action</th>
-          </tr>
-          <tr class="user-list">
-            <td class="list">Robert NIYITANGA</td>
-            <td class="list">robz@gmail.com</td>
-            <td class="list "> <a class="edit" href="">Update</a> </td>
-            <td class="list"> <a class=" delete" href="">Delete</a></td>
-          </tr>
-          <tr class="user-list">
-            <td class="list">Dev Ed</td>
-            <td class="list">robz@gmail.com</td>
-            <td class="list "> <a class="edit" href="">Update</a> </td>
-            <td class="list"> <a class=" delete" href="">Delete</a></td>
-          </tr>
-        </table>
+         <!-- main content of admin panel -->
       </div>
-
-    </div>
-
-    <!-- main content of admin panel -->
-  </div>
-</body>
-
+      <script src="/UI/js/firebaseinit.js"></script>
+      <script src="/UI/js/auth.js"></script>
+   </body>
 </html>

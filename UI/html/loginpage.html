@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My brand - Login </title>
   <link rel="icon" href="/UI/img/ROBERT LOGG.jpg" />
+  <!--  firebase file   -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-storage.js"></script>
+  
+  <!--  end of firebase file   -->
    <!-- font awesome  icon -->
   <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
     <!-- end  font awesome  icon -->
@@ -29,20 +36,35 @@
 
   </a>
   </div>
-
+    <div class="popup">
+      <div class="popup-content">
+        <label for="click" class="fas fa-check"> </label>
+        <h4 id="user"></h4>
+    
+    
+        <button id="btn">Ok</button>
+      </div>
+    </div>
   <div class="form">
 
     <h1>Login page</h1>
+      <span id="check"></span>
 
     <!-- <button class="btn"> <i class="fab fa-google"></i> Login with google</button> -->
-    <form >
+    <form id="form" >
      <label for="Email">
         Email
-        <input type="text">
+        <input type="text" id="email">
+       <span id="Email">
+
       </label>
       <label for="Email">
         Password
-        <input type="password">
+        <input type="password" id="password">
+   
+      <label for="password">
+ 
+
 
         <button>Login</button>
       </label>
@@ -56,3 +78,7 @@
 
 </div>
   <!-- #####################   end of section number 1 ############################ -->
+  <script src="/UI/js/login.js"></script>
+<script src="/UI/js/firebaseinit.js"></script>
+</body>
+</html>
