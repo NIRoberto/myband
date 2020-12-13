@@ -1,49 +1,56 @@
-let  update_form = document.querySelector('#formm');
-const id =window.location.hash.replace("#","");
+let update_form = document.getElementById("update_form");
+const id = window.location.hash.replace("#", "");
+let blog_title = document.getElementById("title");
+let blog_content = document.getElementById("body");
+let update_popup = document.querySelector(".update-popup");
+blog_content.value = doc.data().body;
+blog_title.value = doc.data().title;
 
- post_info =(doc)=> {
-   update_form.innerHTML =`
-    <div class="ele">
-    Title       </div>  <div class="ele">
-    <input type="hidden" id="title" placeholder="" name ="title" value="${doc.id}">       </div>  <div class="ele">
-    
-    <input type="text" id="title" placeholder="" name ="title" value="${doc.data().title}">       </div>  <div class="ele">
-    Sub-body       </div>  <div class="ele">
-    <textarea name="subbody" id="textarea" cols="30" rows="3">  ${doc.data().subbody}</textarea>      </div>   <div class="ele">
-    
-    Body       </div>  <div class="ele">
-    <textarea name="body" id="textarea" cols="30" rows="9">${doc.data().body}</textarea>       </div>  <div class="ele">
-     Image        </div>  <div class="ele">
-    <input type="file" id="file"  placeholder="image">      </div>  <div class="ele"><br> 
-              <button class="updatess" onclick=' return updates()'> Update</button>
-    </div>   <div class="ele">
-          </div>
-     `;
-}
-db.collection("blog")
-    .doc(id)
-  .get()
+db.collection("Blog")
+   .doc(id)
+   .get()
+   .then((doc) => {
+      update_form.innerHTML = `
+          <label for="title">
+            Title
+            <input type="text" id="title" name="title" value='${
+               doc.data().title
+            }'>
 
-  .then(doc => {
-  
-      post_info(doc);
-    
-  });
+          </label>
 
+          <label for="content">
+            Body
+            <textarea name="body" id="body" cols="30" rows="10">${
+               doc.data().body
+            }</textarea>
 
-let put = document.querySelector('#formm');
-updates=(id)=>{
-// To update age and favorite color:
-   db.collection("blog").doc(id).update({
-     title: put.title.value,
-     body: put.body.value,
-     subbody: put.subbody.value,
- }).then(() => {
-     alert("update has done.");
-     window.location.href = '/UI/admin post/post/all.html';
+          </label>
+          <label for="image">
+            Image
+            <input type="file" name="image">
 
-   }).catch((error) => {
-     alert(error.message);
+          </label>
+          <label for="button">
+<a href="javascript:update_blog('${doc.id}')">Update</a>
+           
+          </label>`;
    });
-     
-}
+update_blog = (id) => {
+   db.collection("Blog")
+      .doc(id)
+      .update({
+         title: blog_title.value,
+         body: blog_content.value,
+      })
+      .then((res) => {
+         update_popup.style.display = "flex";
+         setTimeout(() => {
+            window.location.href = "/UI/admin post/post/all.html";
+         }, 5000);
+      })
+      .catch((error) => {
+         console.log(error.message);
+      });
+   console.log(blog_title.value);
+};
