@@ -1,72 +1,107 @@
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const emailfalied = document.getElementById("spaceemail");
-const invalidemail = document.getElementById("invalidemail");
-const passfalied = document.getElementById("spacedpass");
-const passfalie = document.getElementById("char");
-let vemail = "enter valid email";
-let vpass = "password must be larger than 5 charaters";
-let rspace = "blank email not allowed";
-let prspace = "blank  password not allowed";
-loginvalidation = () => {
-  if (!email.value.trim() && !password.value.trim()) {
-    emailfalied.innerHTML = "blank email not allowed";
-    emailfalied.style.color = "red";
-    passfalied.innerHTML = "blank password not allowed";
-    passfalied.style.color = "red";
-    return false;
-  } else if (
-    email.value.trim() &&
-    password.value.trim() &&
-    password.value.length < 5
-  ) {
-    emailfalied.innerHTML = `<del>${rspace}</del>`;
-    emailfalied.style.color = "red";
-    passfalied.innerHTML = `<del>${prspace}</del>`;
-    passfalied.style.color = "red";
-    passfalie.innerHTML = "password must be larger than 5 charaters";
-    passfalie.style.color = "red";
-    return false;
-  } else {
-    passfalie.innerHTML = `<del>${vpass}</del>`;
-    invalidemail.innerHTML = `<del>${vemail}</del>`;
-    return true;
-  }
-};
-const semail = document.getElementById("semail");
-const spassword = document.getElementById("spassword");
-const bemail = document.getElementById("spaceemail");
-const bpass = document.getElementById("spacepassword");
-const emailsr = document.getElementById("email");
-const passsr = document.getElementById("pass");
 
-var eregex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-let fbemail = "blank email not allowed";
-let fbpass = "blank password not allowed";
-let spass = "password must be longer than 6 characters";
-signupvalidation = () => {
-  if (!semail.value.trim() && !spassword.value.trim()) {
-    bemail.innerHTML = "blank email not allowed";
-    bemail.style.color = "red";
-    bpass.innerHTML = "blank password not allowed";
-    bpass.style.color = "red";
-    return false;
-  } else if (
-    semail.value.trim() &&
-    spassword.value.trim() &&
-    spassword.value.length < 6 &&
-    eregex.test(semail.value)
-  ) {
-    bemail.innerHTML = `<del>${fbemail}</del>`;
-    bemail.style.color = "red";
-    bpass.innerHTML = `<del>${fbpass}</del>`;
-    bpass.style.color = "red";
+const body = document.getElementsByTagName('div');
+let humber_burg = document.querySelector('.fas');
+let burger = document.querySelector('.fa-times');
 
-    passsr.innerHTML = "password must be longer than 6 characters";
-    passsr.style.color = "red";
-    return false;
-  } else {
-    passsr.innerHTML = `<del>${spass}</del>`;
-    return true;
+
+// fas fa-times
+const link = document.querySelectorAll('.sidebar-link  span');
+ sidebar =()=> {
+   body.item(1).classList.toggle('sidebar-expand');
+   link.forEach((link, index) => {
+     if (link.style.animation) {
+       link.style.animation = '';
+     }else{
+       link.style.animation = `link 2s ease-in forwards`;
+     }
+
+   })
+    humber_burg.classList.toggle('fa-times');
+
+}
+//  search input field
+const searchbar = document.querySelector('input');
+let search_btn = document.querySelector('.fa-search');
+search_btn.addEventListener('click', () => {
+  const term = searchbar.value.toLowerCase();
+
+  const single_question = document.querySelectorAll('.questions');
+  const single_blog = document.querySelectorAll('.single-post');
+  const not = document.querySelector('.not-found h5');
+  
+  Array.from(single_blog).forEach(single_blog => {
+    const blog = single_blog.textContent;
+  if (blog.toLowerCase().indexOf(term) !== -1) {
+    single_blog.style.display = 'flex';
+
+}
+  else {
+    single_blog.style.display = 'none';
+    
+    }
+    })
+Array.from(single_question).forEach( single_question => {
+  const quest = single_question.textContent;
+
+  if (quest.toLowerCase().indexOf(term) !== -1) {
+    single_question.style.display = 'flex';
+
+}
+  else{
+    single_question.style.display = 'none';
   }
-};
+  })
+
+
+})
+// let Edit = document.getElementsByClassName('edit');
+let Edit = document.querySelectorAll('#update');
+let update_form = document.getElementById('question-update');
+let cancel = document.getElementById('cancel');
+let Delete = document.querySelectorAll('#delete');
+let btn = document.getElementById('btn-update');
+let btn_delete = document.getElementById('btn-update');
+
+let update_popup = document.querySelector('.update-popup');
+let delete_popup = document.querySelector('.delete-popup');
+
+
+btn.addEventListener('click', () => {
+   
+  update_form.style.display = 'none';
+  update_popup.style.display = 'flex';
+  setTimeout(() => {
+      window.location.href = "/UI/admin post/queries/all.html";
+  }, 10000)
+})
+
+cancel.addEventListener('click', () => {
+  update_form.style.display = 'none';
+  
+})
+
+Array.from(Edit).forEach(edit => {
+
+  edit.addEventListener('click', (e) => {
+    update_form.style.display = 'flex';
+
+
+})
+});
+Array.from(Delete).forEach(quest_delete => {
+  quest_delete.addEventListener('click', () => {
+     delete_popup.style.display = 'flex';
+    delete_popup.style.animation = ' Delete 4s linear 1s forwards';
+      setTimeout(() => {
+       window.location.href = "/UI/admin post/queries/all.html";
+      
+    },6000)
+    
+  })
+ 
+})
+
+
+
+
+

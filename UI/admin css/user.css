@@ -1,0 +1,140 @@
+:root{
+  --txt-color: #1187ee;
+  --bg-primary: #1187ee;
+  --font-family:"Roboto", sans-serif;
+   --light-color:white;
+  --shadow: 0px 13px 17px #36363624;
+  --text-color:#444;
+  --delete-color:red;
+  --update:green;
+
+}
+*{
+    box-sizing: border-box;
+}
+.all-users{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding-bottom: 40vh;
+}
+.h1{
+    color: var(--txt-color);
+    text-align: center;
+}
+.all-users .h1,.create-new-user .h1{
+    color: var(--txt-color);
+    text-align: center;
+}
+.all-user-info{
+    border-collapse: collapse;
+background-color: white;
+box-shadow: 2px 2px 12px rgb(0, 0, 0,0.1);
+
+}
+.all-user-info tr th{
+border-bottom: 1px solid rgb(201, 198, 198);
+padding: 1.3rem;
+color:var(--txt-color) ;
+text-transform: capitalize;
+}
+.all-user-info .user-list .list{
+    padding: 1em;
+border-bottom: 1px solid rgb(201, 198, 198);
+
+}
+.edit{
+    background:var(--bg-primary);
+    color: var(--light-color);
+    padding: 10px;
+    border-radius: 15%;
+    text-decoration: none;
+}
+.delete{
+    background-color: var(--delete-color);
+    color:white;
+    text-decoration: none;
+    border-radius: 15%;
+    padding: 10px;
+}
+.edit:hover{
+    background-color: #1368b3;
+}
+.delete:hover{
+    background-color: rgb(196, 18, 18);
+}
+.create-new-user{
+    padding-top: 3em;
+height: 100vh;
+
+}
+.create-new-user .user-create{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.user-create label{
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+   
+}
+.user-create  input[type=text]{
+    width: 20rem;
+    height: 2.9em;
+    border: 2px solid var(--bg-primary);
+    border-radius: 10px;
+    outline:none;
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.user-create label[for=button]{
+    padding-top: 0.5em;
+    padding-bottom: 3em;
+}
+.user-create button{
+    width:20rem ;
+    padding: 0.5em;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bg-primary);
+    color: var(--light-color);
+    font-size: large;
+  
+}
+.user-create button:hover{
+    background-color: #0e6fc4;
+}
+@media (max-width:600px){
+  .user-create  input[type=text]{
+    width:110% ;
+
+}
+.user-create label[for=button]{
+    width:110% ;
+
+}
+.user-create button{
+    width:110% ;
+    padding-left: 1em;
+ 
+  
+}  
+.user-create label[for=button]{
+    padding-top: 0.5em;
+    padding-bottom: 3em;
+    width: 100%;
+}
+.all-users{
+overflow-x: auto;
+align-items: flex-start;
+justify-content: flex-start;
+width: 120%;
+
+}
+}
