@@ -1,125 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-           <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fontawasome icon -->
+  <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
+  <!-- end of fontawasome icon -->
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <!--end google font -->
+
+  <!-- css file -->
+  <link rel="stylesheet" href="/UI/admin css/admin.css">
+  <link rel="stylesheet" href="/UI/admin css/question.css">
+  <!-- end of css file  -->
+  <title>Admin panel - all question </title>
+  <script src="/UI/js/index.js" defer></script>
+  <!-- <script src="/js/search.js" defer></script>
+  <script src="/js/pagination.js" defer></script> -->
 
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <!-- fontawasome -->
-    <script
-      src="https://kit.fontawesome.com/dc095f94cf.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--  end of fontawasome -->
+</head>
 
-    <!-- custom file  -->
-    <link rel="stylesheet" href="/UI//admin css/admin.css" />
-    <!-- end of  custom file  -->
-    <title>all queries</title>
-  </head>
-  <body>
-    <div class="nav">
-      <div class="admin">
-         <div class="burger">
-           <div class="l1"></div>
-           <div class="l2"></div>
-           <div class="l3"></div>
+<body>
+  <div id="loading">
+  </div>
+  <div class="admin">
+    <!-- admin dashboard nav bar -->
+    <div class="nav-bar">
+      <ul class="navbar-item">
+        <li class="item">
+          <a class="burger">
+            <i class="fas fa-bars" onclick="sidebar()"></i>
+
+
+          </a>
+        </li>
+        <li class="item">
+          <a href="" class="logo">
+            <i class="my-logo">Robert</i>
+          </a>
+        </li>
+      </ul>
+      <form action="" class="search">
+        <input type="text" name="search" id="search">
+        <i class="fas fa-search"></i>
+      </form>
+      <ul class="navbar-item right">
+        <!-- <li class="item">
+        <a href="" class="notification ">
+     <i class="fas fa-bell"></i>
+     <span class="not-number">14</span>
+     <ul class="notification-drop">
+         <div class="dropdown-header">
+           <a href="#">Notification</a>
          </div>
-    
-   </div>
-   </div>
-    <div class="wrapper">
-      <div class="link-wrapper">
-    
-        <div class="link-item">
-          <h3><i class="fas fa-home"></i>Dashboard</h3>
-
-          <a href="/UI/admin post/index.html" >Profile information</a>
-        </div>
-        <div class="link-item">
-          <h3><i class="fas fa-users-cog"></i>User information</h3>
-          <a href="/UI/admin post/users/all.html">All users</a>
-          <a href="/UI/admin post/users/create.html">Add  Users</a>
-        </div>
-        <div class="link-item">
-          <h3><i class="fas fa-envelope-open-text"></i>Post</h3>
-          <a href="/UI/admin post/post/all.html">All post</a>
-          <a href="/UI/admin post/post/create.html" >Add new post</a>
-          <a href="/UI/admin post/post/update.html">Update post</a>
-
-        </div>
-        <div class="link-item">
-          <h3><i class="fas fa-question-circle"></i>Questions</h3>
-          <a href="/UI/admin post/queries/all.html" class="active">All question</a>
-          <a href="#" class="logout">Logout</a>
-        </div>
-      </div>
-      <div class="content-wrapper">
-      
-        <div class="all-queries-table">
-            <h1>All question</h1>
-            <div id="table">
-            <table class="users-table" >
-                <tr class="row">
-                    <th>Full name</th>
-                    <th>email</th>
-                    <th>question</th>
-                    <th >action</th>
-               
-                </tr>
-                <!-- <tr class="row">
-                    <td class="td">Robert NIYITANGA</td>
-                    <td class="td">robz@gmail.com</td>
-                    <td>good</td>
-                    <td id="delete"><a href="" id="delete">delete</a><td>
-                </tr>
-                <tr class="row">
-                    <td class="td">dev ed</td>
-                    <td class="td">dev@gmail.com</td>
-                    <td>good</td>
-                 <td id="delete"><a href="" id="delete">delete</a><td>
-                </tr> -->
-             
-            </table>
-        </div>
-        </div>
+           <div class="dropdown-content">
+            <a href="#" class="dropdown-link">
+                <div class="icon"> <i class="fas fa-bell"></i></div>
+            <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, perspiciatis!</span>
        
-      </div>
+            </a>
+            
+         </div>
+              <div class="dropdown-footer ">
+             <span>View all notification</span>
+         </div>
+     </ul>
+    </a></li> -->
+        <li class="item">
+          <div class="profile ">
+                    <img src="/UI/img/robz.jpg" alt="my profile">
+
+            <ul class="notification-drop"></ul>
+          </div>
+        </li>
+      </ul>
     </div>
-  </body>
-  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+    <!-- end of nav -->
+    <!--side bar  -->
+    <div class="side-bar">
+      <ul class="sidebar-nav-bar">
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-user"></i>
+    
+            </div>
+            <span>
+              Robert
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/index.html" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-tachometer-alt"></i>
+    
+            </div>
+            <span>
+              Dashboard
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/users/all.html" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-users "></i>
+            </div>
+            <span>
+              Users
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/users/create.html" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <span>
+              Add user
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/post/all.html" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-book-reader"></i>
+            </div>
+            <span>
+              All posts
+    
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/post/create.html" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-book-medical"></i>
+            </div>
+            <span>
+              Add post
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/post/update.html" class="sidebar-link ">
+            <div class="sidebar-icon">
+              <i class="fas fa-edit"></i>
+            </div>
+            <span>
+              Update post
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="/UI/admin post/queries/all.html" class="sidebar-link  active">
+            <div class="sidebar-icon">
+              <i class="fas fa-question-circle"></i>
+            </div>
+            <span>
+              Queries
+            </span>
+          </a>
+    
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">
+            <div class="sidebar-icon">
+              <i class="fad fa-sign-out"></i>
+            </div>
+            <span>
+              Logout
+            </span>
+          </a>
+    
+        </li>
+      </ul>
+    
+    </div>
+    <!--end of side bar side bar  -->
+    <div class="main-content">
+      <div class="not-found">
+        <h5></h5>
 
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyBTD8mvWiUv3sN10vpmhd7SOeC8-npKaV4",
-    authDomain: "blog-5686d.firebaseapp.com",
-    databaseURL: "https://blog-5686d.firebaseio.com",
-    projectId: "blog-5686d",
-    storageBucket: "blog-5686d.appspot.com",
-    messagingSenderId: "901218445844",
-    appId: "1:901218445844:web:60c0867d6506139b84d501",
-    measurementId: "G-D9FQWJR2PW"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  var db = firebase.firestore();
-var auth = firebase.auth();
 
-  firebase.analytics();
-  
-</script>
-<script src="/UI/js/question.js"></script>
-<script src="/UI/js/adminrespo.js"></script>
-<script src="/UI/js/auth.js"></script>
+        <div class="update-question" id="question-update">
+          <form >
+            <label for="Update question" >
+            <h5>Update question</h5>
+            <textarea name="update" id="textarea" cols="30" rows="10"></textarea>
+
+            <div class="btn">
+              <button id="cancel">Cancel</button>
+            <button id="btn-update">Update</button>
+
+            </div>
+            </label>
+          </form>
+        </div>
+        <div class="update-popup">
+
+          <h4>Update successfully done</h4>
+
+        </div><br>
+          <div class="delete-popup">
+            <h4>Delete successfully done</h4>
+          </div>
+      </div>
+
+      <div class="title">
+        <h1 class="titl">All questions</h1>
+       </div>
+
+      <div class="questions-section" id="questions">
+        <div class="questions">
+          <div class="fullname">
+            <div class="name">
+              dev ed
+            </div>
+            <div class="date">
+              2020/12/12
+            </div>
+          </div>
+          <div class="question">
+            I want you to build a portfolio I will pay you all amount you will want.
+          </div>
+          <div class="actions">
+            <div class="edit"><a href="#" class="edit" id="update">Update</a></div>
+            <div class="Delete"><a href="#" class="delete" id="delete">delete</a></div>
+
+          </div>
+          <!-- <div class="answer"><a href="#" class="answer"> <i class="fas fa-comment-edit"></i>Answer</a></div> -->
+
+        </div>
+        <div class="questions">
+          <div class="fullname">
+            <div class="name">
+              Robert
+            </div>
+            <div class="date">
+              2020/12/124
+            </div>
+          </div>
+          <div class="question">
+            I good job Robert !
+
+          </div>
+          <div class="actions">
+            <div class="edit"><a href="#" class="edit" id="update">Update</a></div>
+            <div class="Delete"><a href="#" class="delete" id="delete">delete</a></div>
+
+          </div>
+          <!-- <div class="answer"><a href="#" class="answer"> <i class="fas fa-comment-edit"></i>Answer</a></div> -->
+
+        </div>
+      </div>
+      <div class="pagination">
+
+        <div class="pages  page-active"><a href="#" class="page F">1</a></div>
+        <div class="pages SH"><a href="# " class="page S">2</a></div>
+        <div class="pages T1H"><a href="#" class="page T">3</a></div>
+        <div class="pages THH"><a href="#" class="page TH">4</a></div>
+        <div class="pages NH"><a href="#" class="page N"> Next </a></div>
+      </div>
+
+    </div>
+
+    <!-- main content of admin panel -->
+  </div>
+</body>
 
 </html>
-

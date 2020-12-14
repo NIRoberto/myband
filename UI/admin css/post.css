@@ -1,0 +1,141 @@
+:root{
+  --txt-color: #1187ee;
+  --bg-primary: #1187ee;
+  --font-family:"Roboto", sans-serif;
+   --light-color:white;
+  --shadow: 0px 13px 17px #36363624;
+  --text-color:#444;
+  --delete-color:red;
+  --update:green;
+
+}
+*{
+    box-sizing: border-box;
+}
+.create-new-post .h1{
+    color: var(--txt-color);
+}
+.create-new-post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.post-create{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 5em;
+ 
+}
+.post-create label{
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+}
+.post-create label input[type=text] {
+    width:90% ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 2.5em;
+    border: 2px solid var(--txt-color);
+    outline:none;
+    padding: 10px;
+  margin-bottom: 10px;
+    margin-top:8px;
+    border-radius:8px;
+  
+}
+.post-create input[type=file]{
+    border: 2px solid var(--txt-color);
+    outline: none;
+    padding: 5px;
+    border-radius: 10px;
+    width:90% ;
+    color: #1187ee;
+    padding: 10px;
+  margin-bottom:8px;
+    margin-top:8px;
+
+}
+.post-create input[type=file]:focus {
+    border: 1px solid var(--txt-color);
+ 
+
+}
+.post-create input[type=text]:focus{
+    border: 1px solid var(--txt-color);
+ 
+
+}
+
+.post-create textarea:focus{
+    border: 1px solid var(--txt-color);
+ }
+.post-create textarea{
+    width: 90%;
+    outline:none;
+    border: 2px solid var(--txt-color);
+    border-radius: 10px;
+    padding: 10px;
+  margin-bottom:8px;
+    margin-top: 8px;
+
+}
+.post-create label[for=button]{
+ padding-top: 1em;
+}
+.post-create label[for=body]{
+    padding-top: 1em;
+    width: 90%;
+    border-radius: 10px;
+    border-radius:10px ;
+    padding-bottom: 1em;
+
+
+}
+.post-create button{
+       width: 90%;
+    background-color: var(--txt-color);
+    outline:none;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    color: white;
+    border-radius:10px ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.post-create button:hover{
+    background-color: #1a67aa;
+    transition: 0.5s;
+}
+
+.div{
+    background: var(--bg-primary);
+}
+
+@media (max-width:600px){
+    .post-create label[for=body]{
+    padding-top: 1em;
+    width: 100%;
+}
+ .post-create{
+  padding-left: 1em;
+}
+.post-create label input[type=text] {
+    width:110% ;
+}
+.post-create input[type=file]{
+  width:110% ;
+ }
+
+.post-create button{
+       width: 110%;
+}
+.create-new-post .h1{
+  
+    font-size: 1.7em;
+    padding-left: 1em;
+}
+}
