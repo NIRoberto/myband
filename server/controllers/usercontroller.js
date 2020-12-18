@@ -58,11 +58,11 @@ export default class usercontroller {
                 Error: "incorrect  email or password"
             })
         }
-    if (req.loggeduser.userId !== id) {
-      return res.status(403).json({
-        Error:"You can't update user which not belongs to you"
-      })
-    }
+    // if (req.loggeduser.userId !== id) {
+    //   return res.status(403).json({
+    //     Error:"You can't update user which not belongs to you"
+    //   })
+    // }
         // hash the password 
         const salt = await bcrypt.genSalt(6);
         const hashpassword = await bcrypt.hash(req.body.password, salt);
