@@ -337,12 +337,13 @@ span {
    right: 0;
 }
 .row {
-   display: grid;
-   grid-template-columns: repeat(3, 30% 30% 30%);
-   grid-template-rows: repeat(auto-fit, 100%);
-   grid-gap: 1em 1em;
-   padding-left: 3em;
+display: flex;
+flex-wrap: wrap;
+margin-left: 3em;
+
 }
+
+
 @media (max-width: 600px) {
    .row {
       display: flex;
@@ -352,16 +353,10 @@ span {
    }
 }
 @media (min-width: 600px) {
-   .row {
-      display: flex;
-      flex-direction: column;
-   }
+
 }
 @media (min-width: 760px) {
-   .row {
-      display: grid;
-      grid-template-columns: repeat(3, 30% 30% 30%);
-   }
+ 
 }
 .row:before,
 .row:after {
@@ -386,22 +381,36 @@ span {
    font-size: 2em;
 }
 .card-content .body {
-   font-size: 2.55em;
+   font-size: 2em;
 }
 .col-1 {
    background: var(--bg-primary);
    border-radius: 15px;
    padding: 3em;
+   margin-right: 1em;
+   margin-bottom: 1em;
+
+   flex-basis: 22%;
+   width: 50%;
+   
 }
 .col-2 {
    background: var(--text-color);
    border-radius: 15px;
-   padding: 3em;
+   padding: 3em;margin-right: 1em;
+   flex-basis: 22%;
+   margin-bottom: 1em;
+
+   width: 50%;
 }
 .col-3 {
    background-color: goldenrod;
    border-radius: 15px;
-   padding: 3em;
+   padding: 3em;margin-right: 1em;
+   margin-bottom: 1em;
+
+   flex-basis: 22%;
+   width: 50%;
 }
 .status {
    display: flex;
