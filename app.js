@@ -7,10 +7,43 @@ import signuproute from './server/routes/user.js';
 import * as bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 
 dotenv.config();
 const app = express();
-// connection to mangodb to an api
+// connection to mango db to an api
+
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Robert brand API documentation',
+      version: '0.1.0',
+      description:
+        'This a route endpoint that  documented my APi with Swagger',
+      contact: {
+        name: 'Robert Niyitanga',
+        url: 'https://github.com/NIRoberto/myband',
+        email: 'robertwilly668@gmail.com',
+      },
+    },
+    servers: [
+      {
+        url: 'http://my2api.herokuapp.com/',
+      },
+    ],
+    produces: ['application/json'],
+  },
+  apis: ['./src/routes/*.js'],
+};
+const specs = swaggerJsdoc(options);
+app.use(
+  '/myband/documentation/',
+  swaggerUi.serve,
+  swaggerUi.setup(specs, { explorer: true }),
+);
+
 const mangoDB = `mongodb+srv://${process.env.dbuser}:${process.env.dbpass}@blog-db.bj3ci.mongodb.net/${process.env.dbname}?retryWrites=true&w=majority`
 mongoose.connect(mangoDB, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
