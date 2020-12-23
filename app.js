@@ -12,7 +12,7 @@ import swaggerUi from 'swagger-ui-express';
 
 dotenv.config();
 const app = express();
-// connection to mangodb to an api
+// connection to mango db to an api
 
 const options = {
   definition: {
@@ -35,12 +35,11 @@ const options = {
     ],
     produces: ['application/json'],
   },
-  apis: ['./server/routes/*.js'],
+  apis: ['./src/routes/*.js'],
 };
-
 const specs = swaggerJsdoc(options);
 app.use(
-  '/api-docs',
+  '/myband/documentation/',
   swaggerUi.serve,
   swaggerUi.setup(specs, { explorer: true }),
 );

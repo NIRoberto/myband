@@ -2,7 +2,7 @@ import express from 'express';
 import usercontroller from '../controllers/usercontroller.js';
 import auth from '../middleware/auth.js';
 /**
- * @swagger
+* @swagger
 *  /signup:
 *    post:
 *      tags:
@@ -172,7 +172,7 @@ import auth from '../middleware/auth.js';
 *        '400':
 *          description: Invalid username supplied
 *        '403':
-*          description: Cann't delete user its for admin user only
+*          description: Can't delete user its for admin user only
 *        '404':
 *          description: User not found
 * 
