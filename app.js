@@ -35,7 +35,7 @@ const options = {
     ],
     produces: ['application/json'],
   },
-  apis: ['./src/routes/*.js'],
+  apis: ['../server/routes/*.js'],
 };
 const specs = swaggerJsdoc(options);
 app.use(
