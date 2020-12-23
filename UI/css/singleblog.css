@@ -172,6 +172,45 @@ color: white;
 text-decoration: none;
 font-size: 1.1em;
 }
+nav .nav-list .nav-list-item .login {
+   background-color: #1689ec;
+   display: none;
+   color: white;
+   border-radius: 5px;
+   padding: 10px 20px;
+}
+nav .nav-list .nav-list-item .login:hover {
+   background-color: #57a9f0;
+   color: white;
+}
+nav .nav-list .drop {
+   position: relative;
+   display: inline-block;
+   display: none;
+
+   height: 100px;
+   top: 40px;
+}
+nav .nav-list .drop .Dropdown {
+   position: absolute;
+   top: 47.6px;
+   list-style-type: none;
+   display: none;
+}
+nav .nav-list .drop .Dropdown li {
+   background-color: white;
+   padding: 10px 20px;
+}
+nav .nav-list .drop:hover .Dropdown {
+   display: block;
+}
+nav .nav-list .drop .Dropdown li:hover {
+   background-color: #80bff7;
+}
+nav .nav-list .drop .Dropdown li a:hover {
+   color: white;
+}
+
 /*end of  shower */
 
 
