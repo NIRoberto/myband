@@ -21,10 +21,10 @@ const options = {
       title: 'Robert brand API documentation',
       version: '0.1.0',
       description:
-        'This a route endpoint that  documented my APi with Swagger',
+        'This is my API documentation using swagger',
       contact: {
         name: 'Robert Niyitanga',
-        url: 'https://github.com/NIRoberto/myband',
+        url: 'https://rob-mybrand.netlify.app/ui/html',
         email: 'robertwilly668@gmail.com',
       },
     },
@@ -39,7 +39,7 @@ const options = {
 };
 const specs = swaggerJsdoc(options);
 app.use(
-  '/myband/documentation/',
+  '/myband/api/documentation/',
   swaggerUi.serve,
   swaggerUi.setup(specs, { explorer: true }),
 );
