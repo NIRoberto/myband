@@ -1,17 +1,45 @@
+
 let login = document.querySelector(".login");
 let logout = document.querySelector("#logout");
 let user_info = document.querySelector(".drop");
+let sub_form = document.getElementById("sub_form");
+let subscript = document.getElementById("subscribe");
+let sub_error = document.getElementById('subscribe_error');
+sub_form.addEventListener("submit", (e) => {
+   e.preventDefault();
+   if (!subscript.value.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
+      sub_error.innerHTML = 'Please check your email';
+      sub_error.style.color = "red";
+      subscript.style.border = "1px solid red";
+      sub_error.style.fontSize = "13px";
+      sub_error.style.marginBottom = '10px';
 
-firebase.auth().onAuthStateChanged((user) => {
-   if (user) {
-      login.style.display = "none";
-      user_info.style.display = "block";
-   } else {
-      login.style.display = "block";
-      user_info.style.display = "none";
+   }
+   else {
+      sub_error.innerHTML = 'Email is valid ';
+      sub_error.style.color = "green";
+      sub_error.style.fontSize = "13px";
+
+      subscript.style.border = "1px solid green";
+
+
+      db.collection("subscribers").add({
+       email:subscript.value
+      }).then(() => {
+         setTimeout(() => {
+           location.reload();
+          }, 2000);
+         
+      })
+      
+
    }
 });
+
 let all_blog = document.getElementById("all_blog");
+let all_blogs = document.querySelector(".all_blog");
+
+console.log(all_blogs);
 let date = new Date();
 
 db.collection("Blog")
@@ -68,3 +96,12 @@ logout.addEventListener("click", () => {
 });
 
 //  single blog logic
+firebase.auth().onAuthStateChanged((user) => {
+   if (user) {
+      login.style.display = "none";
+      user_info.style.display = "block";
+   } else {
+      login.style.display = "block";
+      user_info.style.display = "none";
+   }
+});

@@ -57,6 +57,14 @@
             <li class="nav-list-item">
                <a href="/UI/html/contact.html" class="nav-link">Contact </a>
             </li>
+              <li class="nav-list-item">
+               <a
+                  href="/UI/html/loginpage.html"
+                  class="nav-link login"
+                  id="login"
+                  >Login
+               </a>
+            </li>
          </ul>
 
          <div class="burger">
@@ -92,80 +100,36 @@
                <div id="single_blog"></div>
                <div class="comment_create_section">
                   <div class="comment-section">
-                     <h1>02 comments</h1>
+                     <h1> <span id="comment_number">02</span> comments</h1>
 
-                     <div class="all-comments">
-                        <div class="single-comment">
-                           <div class="image">
-                              <img src="/UI/img/robz.jpg" alt="Comment image" />
-                           </div>
-                           <div class="text">
-                              <p>
-                                 Lorem ipsum dolor sit amet consectetur
-                                 adipisicing elit. Molestiae, ducimus rerum?
-                                 Excepturi eveniet quo debitis.
-                              </p>
-
-                              <div class="name-date">
-                                 <p>
-                                    <a href="#"> Robert Dev</a>
-                                 </p>
-                                 <p>
-                                    <i class="fal fa-calendar-day"></i>
-                                    Feb 20 2020
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="single-comment">
-                           <div class="image">
-                              <img src="/UI/img/robz.jpg" alt="Comment image" />
-                           </div>
-                           <div class="text">
-                              <p>
-                                 Lorem ipsum dolor sit amet consectetur
-                                 adipisicing elit. Molestiae, ducimus rerum?
-                                 Excepturi eveniet quo debitis.
-                              </p>
-
-                              <div class="name-date">
-                                 <p>
-                                    <a href="#"> Robert Dev</a>
-                                 </p>
-                                 <p>
-                                    <i class="fal fa-calendar-day"></i>
-                                    Feb 20 2020
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                     <div class="all-comments" id="comments">
+                      </div>
                   </div>
                   <div class="comment-form">
                      <h1>Leave a comment</h1>
-                     <form action="#">
-                        <label>
-                           Full name
-                           <input type="text" />
-                        </label>
-                        <label>
-                           Email
-                           <input type="text" />
-                        </label>
+                      <form id="form">
+                  <label for="Full name">
+                     Full name
+                     <input type="text" id="name" />
+                     <span id="name_message"></span><br />
+                  </label>
+                  <label for="Email">
+                     Email
+                     <input type="text" id="email" />
+                     <span id="email_message"></span><br /> </label
+                  ><label for="Message">
+                     Comment
+                     <textarea
+                        name="message"
+                        id="textarea"
+                        cols="30"
+                        rows="10"
+                     ></textarea>
+                     <span id="message"></span><br />
 
-                        <label for="comment">
-                           Comment
-
-                           <textarea
-                              name="Comment"
-                              id="text-area"
-                              cols="30"
-                              rows="10"
-                           >
-                           </textarea>
-                           <button>Post comment</button>
-                        </label>
-                     </form>
+                     <button type="submit">Send</button>
+                  </label>
+               </form>
                   </div>
                </div>
             </div>
@@ -221,8 +185,9 @@
                </div>
                <div class="news-later">
                   <h1>New later</h1>
-                  <form action="#">
-                     <input type="text" placeholder="Enter email here ..." />
+                  <form id="sub_form">
+                     <input type="text" id="subscribe" placeholder="Enter email here ..." />
+                     <span id="subscribe_error"></span>
                      <button>Subscribe</button>
                   </form>
                </div>

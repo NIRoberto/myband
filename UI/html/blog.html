@@ -99,7 +99,7 @@
             <div class="link">
                <span class="link1"
                   ><a href="/UI/html/index.html" class="home"> Home | </a>
-                  <a href="/UI/html/about.html" class="home"> Blog</a></span
+                  <a href="/UI/html/blog.html" class="home"> Blog</a></span
                >
             </div>
          </div>
@@ -170,9 +170,10 @@
                </div>
                <div class="news-later">
                   <h1>New later</h1>
-                  <form action="#">
-                     <input type="text" placeholder="Enter email here ..." />
-                     <button>Subscribe</button>
+                 <form id="sub_form">
+                     <input type="text" id="subscribe" placeholder="Enter email here ..." />
+                     <span id="subscribe_error"></span>
+                     <button type="submit">Subscribe</button>
                   </form>
                </div>
             </div>
