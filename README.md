@@ -46,21 +46,22 @@ Technologies Used
 - User can send contact message
 - User can view list of all contact messages (either questions or messages)
 - Endpoints
-- Endpoint	Method	Functionalities
-/api/v1/signup	POST	Create user account
-/api/v1/login	POST	Sigin into account
-/api/v1/users	GET	get all users
-/api/v1//users//update:id	PUT	update user profile information
-/api/v1/blogs	POST	create new Blog
-/api/v1/blog/update/:id	PUT	update an existing blog
-/api/v1/blogs/delete/:id	DELETE	delete an existing blog
-/api/v1/blogs	GET	get list of all blogs
+- 
+|Endpoint	| Method |	Functionalities |
+|/api/v1/signup |	POST	 | Create user account|
+/api/v1/login |	POST |	Sigin into account |
+| /api/v1/users |	GET |	get all users |
+/api/v1//users//update:id |	PUT |	update user profile information |
+| /api/v1/blogs |	POST	 | create new Blog |
+ | /api/v1/blog/update/:id |	PUT |	update an existing blog  |
+ | /api/v1/blogs/delete/:id	 | DELETE |	delete an existing blog |
+ | /api/v1/blogs	| GET |	get list of all blogs |
 
-/api/v1/blog/:id	GET	get single blog infomation
-/api/v1/comments/:id	POST	create a comment to selected blog
-/api/v1/comments/:id	GET	get all comments from selected blog
-/api/v1/contacts	POST	send a contact (message or question)
-/api/v1/contacts	GET	get all questions
+ | /api/v1/blog/:id	| GET |	get single blog infomation |
+| /api/v1/comments/:id	| POST |	create a comment to selected blog |
+| /api/v1/comments/:id	| GET	 | get all comments from selected blog |
+| /api/v1/contacts |	POST |	send a contact (message or question) |
+| /api/v1/contacts |	GET | 	get all questions |
 
 # Documentation
 The API documentation can be found at : swagger 
