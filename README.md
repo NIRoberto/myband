@@ -46,9 +46,9 @@ Technologies Used
 - User can send contact message
 - User can view list of all contact messages (either questions or messages)
 - Endpoints
-- 
+
 |Endpoint	| Method |	Functionalities |
-| --- | --- |
+| --- | --- | --- |
 |/api/v1/signup |	POST	 | Create user account|
 /api/v1/login |	POST |	Sigin into account |
 | /api/v1/users |	GET |	get all users |
