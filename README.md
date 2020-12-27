@@ -45,7 +45,8 @@ Technologies Used
 - User can view the list of comment to any blog
 - User can send contact message
 - User can view list of all contact messages (either questions or messages)
-- Endpoints
+
+# Endpoints
 
 |Endpoint	| Method |	Functionalities |
 | --- | --- | --- |
